@@ -1,0 +1,14 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "C/C++: build project",
+			"command": "make",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+		}
+	]
+}
