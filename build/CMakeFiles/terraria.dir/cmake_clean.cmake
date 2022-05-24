@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/terraria.dir/src/input.cpp.o.d"
   "CMakeFiles/terraria.dir/src/main.cpp.o"
   "CMakeFiles/terraria.dir/src/main.cpp.o.d"
+  "CMakeFiles/terraria.dir/src/window.cpp.o"
+  "CMakeFiles/terraria.dir/src/window.cpp.o.d"
   "terraria"
   "terraria.pdb"
 )

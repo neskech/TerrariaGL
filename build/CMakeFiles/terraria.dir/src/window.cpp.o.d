@@ -1,6 +1,6 @@
-CMakeFiles/terraria.dir/src/input.cpp.o: \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/src/input.cpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/include/input/input.h \
+CMakeFiles/terraria.dir/src/window.cpp.o: \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/src/window.cpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/include/window.h \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glfw/include/GLFW/glfw3.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__config \
@@ -36,6 +36,8 @@ CMakeFiles/terraria.dir/src/input.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_uintptr_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/_types/_intmax_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/_types/_uintmax_t.h \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/Glad/include/glad/glad.h \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/Glad/include/KHR/khrplatform.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/iostream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/ios \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/iosfwd \
@@ -232,8 +234,6 @@ CMakeFiles/terraria.dir/src/input.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__bsd_locale_defaults.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/bitset \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__bit_reference \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/include/window.h \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/Glad/include/glad/glad.h \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/Glad/include/KHR/khrplatform.h \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/include/input/input.h \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/include/image.h \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/include/pch.h

@@ -8,4 +8,5 @@ struct Image{
     uint8_t* pixels;
 };
 
-Ref<Image> LoadImage(const char* path, int reqComps = 0);
+Ref<Image> loadImage(const char* path, int reqComps = 0);
+Image* loadImageAsRaw(const char* path, int reqComps = 0);

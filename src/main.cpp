@@ -1,62 +1,47 @@
 #include <iostream>
-#define GLFW_INCLUDE_NONE
-#include <GLFW/glfw3.h>
-#include <glad/glad.h>
+#include "window.h"
 #include "input/input.h"
 
-void error_callback(int error, const char* description)
-{
-    fprintf(stderr, "Error: %s\n", description);
+static int* get_bits(int n, int bitswanted){
+  int* bits = (int*) malloc(sizeof((int)bitswanted));
+
+  int k;
+  for(k=0; k<bitswanted; k++){
+    int mask =  1 << k;
+    int masked_n = n & mask;
+    int thebit = masked_n >> k;
+    bits[k] = thebit;
+  }
+
+  return bits;
 }
 
 int main(){
-    std::cout<<"start program!";
-    glfwSetErrorCallback(error_callback);
 
-    if (!glfwInit()){
-        std::cerr << "ERROR: GLFW failed to initialize\n";
-        glfwTerminate();
-        return -1;
+    Window* window = new Window(800, 800);
+    if (!window->init())
+        exit(1);
+    
+    MouseListener* m = new MouseListener(window);
+    KeyListener* k = new KeyListener();
+
+    if ( !MouseListener::setCursorImage("../assets/abc.png") ){
+        std::cerr << "Could not make the cursor Image!\n";
+        delete window;
+        exit(1);
     }
 
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 2);
-    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-    //Modern opengl functions
-    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-    GLFWwindow* window = glfwCreateWindow(800, 800, "Terraria", NULL, NULL);
-    if (!window)
-    {
-        std::cerr << "ERROR: Window failed to initialize\n";
-        glfwTerminate();
-        return -1;
+
+    while (!window->windowClosing()){
+         if (MouseListener::isMouseButtonPressed(GLFW_MOUSE_BUTTON_1)){
+            std::cout << MouseListener::isMouseButtonModdedBy(GLFW_MOUSE_BUTTON_1, GLFW_MOD_CONTROL) << " \n";
+         }
+         window->update();
     }
 
-    glfwSetKeyCallback(window, KeyListener::keyCallBack);
-    glfwSetCursorPosCallback(window, MouseListener::cursor_position_callback);
-
-    glfwMakeContextCurrent(window);
-    gladLoadGL();
-    glfwSwapInterval(1);
-
-    int width = 300, height = 300;
-    glfwGetFramebufferSize(window, &width, &height);
-    glViewport(0, 0, width, height);
-
-    std::cout<<"Before loop!";
-    while (!glfwWindowShouldClose(window))
-    {
-        if (KeyListener::isKeyPressed(GLFW_KEY_A))
-            std::cout << MouseListener::GetMousex() << std::endl;
-        // Keep running
-        glfwSwapBuffers(window);
-        glfwPollEvents();
-    }
-
-    glfwDestroyWindow(window);
- 
-    glfwTerminate();
-
+    delete m;
+    delete k;
+    delete window;
     return 0;
 }
 

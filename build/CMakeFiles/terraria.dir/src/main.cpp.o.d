@@ -230,6 +230,7 @@ CMakeFiles/terraria.dir/src/main.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__bsd_locale_defaults.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/bitset \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__bit_reference \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/include/window.h \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glfw/include/GLFW/glfw3.h \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/Glad/include/glad/glad.h \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/Glad/include/KHR/khrplatform.h \

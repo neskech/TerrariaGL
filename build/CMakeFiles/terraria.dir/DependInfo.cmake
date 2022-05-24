@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/shauntemellor/Documents/comsci/Projects/Terraria/src/image.cpp" "CMakeFiles/terraria.dir/src/image.cpp.o" "gcc" "CMakeFiles/terraria.dir/src/image.cpp.o.d"
   "/Users/shauntemellor/Documents/comsci/Projects/Terraria/src/input.cpp" "CMakeFiles/terraria.dir/src/input.cpp.o" "gcc" "CMakeFiles/terraria.dir/src/input.cpp.o.d"
   "/Users/shauntemellor/Documents/comsci/Projects/Terraria/src/main.cpp" "CMakeFiles/terraria.dir/src/main.cpp.o" "gcc" "CMakeFiles/terraria.dir/src/main.cpp.o.d"
+  "/Users/shauntemellor/Documents/comsci/Projects/Terraria/src/window.cpp" "CMakeFiles/terraria.dir/src/window.cpp.o" "gcc" "CMakeFiles/terraria.dir/src/window.cpp.o.d"
   )
 
 # Targets to which this target links.
