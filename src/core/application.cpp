@@ -11,9 +11,11 @@ Application::Application(uint32_t windowWidth, uint32_t windowHeight){
     window = new Window(windowWidth, windowHeight);
     keyListener = new KeyListener();
     mouseListener = new MouseListener(window);
+    assetPool = new AssetPool();
 }
 
 Application::~Application(){
+    delete assetPool;
     delete keyListener;
     delete mouseListener;
     delete window;

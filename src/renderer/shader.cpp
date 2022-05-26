@@ -4,17 +4,16 @@
 #include <sstream>
 #include "glad/glad.h"
 
-Shader::Shader(const char* path): 
-shaderPath(path)
-{
-
+Shader::Shader(const char* shaderPath){
+    if (!construct(shaderPath))
+        std::cerr << "ERROR : In shader constructor. Shader creation failed!\n";
 }
 
 Shader::~Shader(){
 
 }
 
-bool Shader::readShaders(std::string& vs, std::string& fs){
+bool Shader::readShaders(const char* shaderPath, std::string& vs, std::string& fs){
     std::ifstream file(shaderPath);
     if (!file.is_open()){
         std::cerr << "ERROR: In Shader::readShaders. Unable to open the file -- " << shaderPath << " --\n";
@@ -46,25 +45,20 @@ bool Shader::readShaders(std::string& vs, std::string& fs){
 
 }
 
-bool Shader::compile(){
+bool Shader::construct(const char* shaderPath){
     std::string vertexShader, fragmentShader;
-    if (!readShaders(vertexShader, fragmentShader)){
+    if (!readShaders(shaderPath, vertexShader, fragmentShader)){
         std::cerr << "ERROR: In shader::compile. Failed to read shaders from " << shaderPath << '\n';
         return false;
     }
 
-    int vShader = glCreateShader(GL_VERTEX_SHADER);
-    glShaderSource(vShader, 1, vertexShader.str, NULL);
+    int vShader = createShader(vertexShader, GL_VERTEX_SHADER);
     glCompileShader(vShader);
 
-    int fShader = glCreateShader(GL_FRAGMENT_SHADER);
-    glShaderSource(vShader, 1, vertexShader.c_str(), NULL);
+    int fShader = createShader(fragmentShader, GL_FRAGMENT_SHADER);
     glCompileShader(fShader);
 
-    programID = glCreateProgram();
-    glAttachShader(programID, vShader);
-    glAttachShader(programID, fShader);
-    glLinkProgram(programID);
+    programID = createProgram(vShader, fShader);
 
     //check success status
     int success;
@@ -85,6 +79,21 @@ bool Shader::compile(){
 
 }
 
+int Shader::createShader(std::string& shaderSrc, int shaderType){
+    int shaderComponent = glCreateShader(shaderType);
+    const char* src = shaderSrc.c_str();
+    glShaderSource(shaderComponent, 1, &src, NULL);
+    return shaderComponent;
+}
+
+int Shader::createProgram(int vShader, int fShader){
+    int ID = glCreateProgram();
+    glAttachShader(ID, vShader);
+    glAttachShader(ID, fShader);
+    glLinkProgram(ID);
+    return ID;
+}
+
 void Shader::setBool(const std::string &name, bool value) const
 {         
     glUniform1i(glGetUniformLocation(programID, name.c_str()), (int)value); 
@@ -97,8 +106,28 @@ void Shader::setFloat(const std::string &name, float value) const
 { 
     glUniform1f(glGetUniformLocation(programID, name.c_str()), value); 
 } 
+void Shader::setVec2(const std::string &name, glm::vec2 vec) const
+{ 
+    glUniform2fv(glGetUniformLocation(programID, name.c_str()), 2,  (GLfloat*) &vec); 
+} 
+void Shader::setVec3(const std::string &name, glm::vec3 vec) const
+{ 
+    glUniform3fv(glGetUniformLocation(programID, name.c_str()), 3,  (GLfloat*) &vec); 
+} 
+void Shader::setVec4(const std::string &name, glm::vec4 vec) const
+{ 
+    glUniform4fv(glGetUniformLocation(programID, name.c_str()), 4,  (GLfloat*) &vec); 
+} 
+void Shader::setmat3(const std::string &name, glm::mat3x3 mat) const
+{ 
+    glUniformMatrix3fv(glGetUniformLocation(programID, name.c_str()), 1, GL_FALSE, &mat[0][0]); 
+} 
+void Shader::setmat4(const std::string &name, glm::mat4x4 mat) const
+{ 
+    glUniformMatrix4fv(glGetUniformLocation(programID, name.c_str()), 1, GL_FALSE, &mat[0][0]); 
+} 
 
-void Shader::activate(){
+void Shader::use(){
     glUseProgram(programID);
 }
 

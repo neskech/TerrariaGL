@@ -1,6 +1,7 @@
 #pragma once
 #include "window.h"
 #include "core/input.h"
+#include "util/assetpool.h"
 
 class Application{
 
@@ -18,7 +19,9 @@ class Application{
 
     private:
         static Application* instance;
+        
         Window* window;
         KeyListener* keyListener;
         MouseListener* mouseListener;
+        AssetPool* assetPool;
 };

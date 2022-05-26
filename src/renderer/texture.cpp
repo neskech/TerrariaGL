@@ -2,11 +2,12 @@
 #include "util/image.h"
 #include <iostream>
 
-Texture::Texture(const char* assetPath): path(assetPath){
-
+Texture::Texture(const char* assetPath, TexParams params, bool generateMipMaps){
+    if (!generate(assetPath, params, generateMipMaps))
+        std::cerr << "ERROR: In Texture constructor. Texture generation was unsuccessful!\n";
 }
 
-bool Texture::generate(TexParams params, bool generateMipmaps){
+bool Texture::generate(const char* assetPath, TexParams params, bool generateMipmaps){
     glGenTextures(1, &ID);
     glBindTexture(GL_TEXTURE_2D, ID);
 
@@ -15,9 +16,9 @@ bool Texture::generate(TexParams params, bool generateMipmaps){
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, params.minFilter);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, params.magFilter);
 
-    Scoped<Image> img = loadImageAsRaw(path);
+    Scoped<Image> img = loadImageAsRaw(assetPath);
     if (img->pixels == nullptr){
-        std::cerr << "ERROR: In Texture::generate. Failed to load image from path " << path << '\n';
+        std::cerr << "ERROR: In Texture::generate. Failed to load image from path " << assetPath << '\n';
         return false;
     }
 
