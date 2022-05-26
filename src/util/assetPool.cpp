@@ -9,14 +9,22 @@ AssetPool::AssetPool(){
     instance = this;
 }
 
-Shader& AssetPool::getShader(const char* filePath){
-    if (instance->shaders.find(filePath) == instance->shaders.end())
-        instance->shaders.emplace(std::make_pair(filePath, Shader(filePath)));
+AssetPool::~AssetPool(){
+    
+}
+
+Ref<Shader>& AssetPool::getShader(const char* filePath){
+    if (instance->shaders.find(filePath) == instance->shaders.end()){
+        Ref<Shader> s = std::make_shared<Shader>(filePath);
+        instance->shaders[filePath] = std::move(s);
+    }
     return instance->shaders[filePath];
 }
 
-Texture& AssetPool::getTexture(const char* filePath, TexParams params, bool generateMipMaps){
-    if (instance->textures.find(filePath) == instance->textures.end())
-        instance->textures.emplace(std::make_pair(filePath, Texture(filePath, params, generateMipMaps)));
+Ref<Texture>& AssetPool::getTexture(const char* filePath, TexParams params, bool generateMipMaps){
+    if (instance->textures.find(filePath) == instance->textures.end()){
+        Ref<Texture> t = std::make_shared<Texture>(filePath, params, generateMipMaps);
+        instance->textures[filePath] = std::move(t);
+    }
     return instance->textures[filePath];
 }

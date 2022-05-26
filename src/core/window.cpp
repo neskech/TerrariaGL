@@ -1,4 +1,4 @@
-#include "window.h"
+#include "core/window.h"
 #include "core/input.h"
 #include "core/application.h"
 
@@ -34,7 +34,6 @@ bool Window::init(){
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-    std::cout << width << " " << height << std::endl;
     glfw_window = glfwCreateWindow(width, height, "Terraria", NULL, NULL);
     if (glfw_window == nullptr)
     {
@@ -47,10 +46,16 @@ bool Window::init(){
 
     glfwMakeContextCurrent(glfw_window);
 
-    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)){
-        std::cerr << "Failed to initialize GLAD\n";
-        return false;
-    }    
+    // if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)){
+    //     std::cerr << "Failed to initialize GLAD\n";
+    //     return false;
+    // }  
+
+    gladLoadGL();
+    std::cout<<" IOM GONNA DO IT\n";
+     unsigned int ID;
+    glGenBuffers(GL_ARRAY_BUFFER, &ID);
+    std::cout << "YES I DID IT YESSS!\n";
 
     glfwSwapInterval(1);
 

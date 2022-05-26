@@ -9,8 +9,7 @@ class VertexArrayObject{
         VertexArrayObject(VertexArrayObject&& other) = delete;
         ~VertexArrayObject();
 
-        template <class T>
-        void addAtribute(int stride, int dataType, bool divisor = false);
+        void addAtribute(int stride, int dataType, int typeSize, bool divisor = false);
         void addMatrixAttribute(int rows, int cols, bool divisor = false);
 
         inline void bind(){ glBindVertexArray(ID); }
@@ -18,5 +17,5 @@ class VertexArrayObject{
     private:
         unsigned int ID;
         uint16_t numAttributes;
-        uint16_t byteLength;
+        int byteLength;
 };

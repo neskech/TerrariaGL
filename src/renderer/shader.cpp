@@ -5,6 +5,7 @@
 #include "glad/glad.h"
 
 Shader::Shader(const char* shaderPath){
+    std::cout<<"Made shader!\n";
     if (!construct(shaderPath))
         std::cerr << "ERROR : In shader constructor. Shader creation failed!\n";
 }

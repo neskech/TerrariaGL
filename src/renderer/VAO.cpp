@@ -12,18 +12,18 @@ VertexArrayObject::~VertexArrayObject(){
     glDeleteVertexArrays(1, &ID);
 }
 
-template <class T>
-void VertexArrayObject::addAtribute(int stride, int dataType, bool divisor){
+
+void VertexArrayObject::addAtribute(int stride, int dataType, int typeSize, bool divisor){
     bind();
 
-    glVertexAttribPointer(numAttributes, stride, dataType, GL_FALSE, stride * sizeof(T), (void*)byteLength);
+    glVertexAttribPointer(numAttributes, stride, dataType, GL_FALSE, stride * typeSize, (void*)byteLength);
     glEnableVertexAttribArray(numAttributes);  
 
     if (divisor)
         glVertexAttribDivisor(numAttributes, 1);
 
     numAttributes++;
-    byteLength += stride * sizeOf(T);
+    byteLength += stride * typeSize;
 
     unBind();
 }

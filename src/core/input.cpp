@@ -108,14 +108,12 @@ bool MouseListener::setCursorImage(const char* path){
     if (instance->window == nullptr)
         return false;
 
-    std::cout << "im making it!\n";
-    Image* raw = loadImageAsRaw(path);
+    Scoped<Image> raw = loadImageAsRaw(path);
     GLFWimage img;
     img.width = raw->width;
     img.height = raw->height;
     img.pixels = raw->pixels;
     raw->pixels = nullptr;
-    delete raw;
     
     if (instance->cursor != nullptr)
         glfwDestroyCursor(instance->cursor);
