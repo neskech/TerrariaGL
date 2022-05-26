@@ -3,8 +3,8 @@
 #include <GLFW/glfw3.h>
 #include <iostream>
 
-#include "window.h"
-#include "image.h"
+#include "core/window.h"
+#include "util/image.h"
 #include "pch.h"
 
 class KeyListener{

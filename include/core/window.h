@@ -17,6 +17,8 @@ class Window{
         bool init();
         void setupCallbacks();
         void update();
+        void pollEvents();
+        void finishFrame();
 
         inline GLFWwindow* getGLFWwindow() { return glfw_window; } 
         inline bool windowClosing() { return glfwWindowShouldClose(glfw_window); }
@@ -28,5 +30,6 @@ class Window{
         GLFWwindow* glfw_window;
         uint32_t width, height;
 
-        static void onWindowResize(int newWidth, int newHeight);
+        static void error_callback(int error, const char* description);
+        static void resize_callback(GLFWwindow *window, int32_t width, int32_t height);
 };

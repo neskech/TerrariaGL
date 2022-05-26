@@ -1,13 +1,18 @@
 #include "window.h"
-#include "input/input.h"
+#include "core/input.h"
+#include "core/application.h"
 
+Window* Window::instance = nullptr;
 
-static void error_callback(int error, const char* description)
+void Window::error_callback(int error, const char* description)
 {
     fprintf(stderr, "Error: %s\n", description);
 }
 
-Window* Window::instance = nullptr;
+void Window::resize_callback(GLFWwindow *window, int32_t width_, int32_t height_){
+     instance->width = width_;
+     instance->height = height_;
+}
 
 
 Window::Window(uint32_t width_, uint32_t height_){
@@ -25,7 +30,7 @@ bool Window::init(){
     }
 
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 2);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
@@ -41,9 +46,13 @@ bool Window::init(){
     setupCallbacks();
 
     glfwMakeContextCurrent(glfw_window);
-    gladLoadGL();
+
+    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)){
+        std::cerr << "Failed to initialize GLAD\n";
+        return false;
+    }    
+
     glfwSwapInterval(1);
-    glViewport(0, 0, width, height);
 
     return true;
 }
@@ -63,6 +72,18 @@ Window::~Window(){
 }
 
 void Window::update(){
+    if (KeyListener::isKeyPressed(GLFW_KEY_ESCAPE))
+        glfwSetWindowShouldClose(glfw_window, true);
+
+    glViewport(0, 0, width, height);
+    glClearColor(0.2f, 0.1f, 0.5f, 1.0f);
+    glClear(GL_COLOR_BUFFER_BIT);
+}
+
+void Window::pollEvents(){
+    glfwPollEvents();
+}
+
+void Window::finishFrame(){
      glfwSwapBuffers(glfw_window);
-     glfwPollEvents();
 }

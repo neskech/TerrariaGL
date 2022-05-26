@@ -9,8 +9,8 @@ Ref<Image> loadImage(const char* path, int reqComps){
     return img;
 }
 
-Image* loadImageAsRaw(const char* path, int reqComps){
-    Image* img = new Image{};
+Scoped<Image> loadImageAsRaw(const char* path, int reqComps){
+    Scoped<Image> img = std::make_unique<Image>();
     img->pixels = stbi_load(path, &img->width, &img->height, &img->channels, reqComps);
     return img;
 }
