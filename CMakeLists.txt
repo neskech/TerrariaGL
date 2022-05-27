@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.21)
+cmake_minimum_required(VERSION 3.10)
 project(terraria_time)
 
 set(CMAKE_CXX_STANDARD 23)
@@ -13,7 +13,7 @@ file(GLOB_RECURSE file_sources src/*.cpp)
 add_executable(terraria ${file_sources})
 include_directories(terraria include)
 
-#target_precompile_headers(main PRIVATE src/terraria.h)
+target_precompile_headers(terraria PRIVATE include/pch.h)
 
 # glfw
 add_subdirectory(libs/glfw EXCLUDE_FROM_ALL)
@@ -48,11 +48,26 @@ add_library(
 include_directories(imgui libs/imgui libs/imgui/backends)
 include_directories(Glad libs/Glad/include)
 
+
+
 # stb_image
 add_library(stb_image EXCLUDE_FROM_ALL libs/stb_image/stb_image.h libs/stb_image/stb_image.cpp)
 include_directories(stb_image libs/stb_image)
 
+#find_package(OpenGL REQUIRED)
+#target_include_directories(terraria PUBLIC ${OPENGL_INCLUDE_DIR})
+
 # link glfw to imgui and link everything to the main app
+#if (APPLE)
+    target_link_libraries(terraria "-framework Cocoa")
+    target_link_libraries(terraria "-framework OpenGL")
+    target_link_libraries(terraria "-framework IOKit")
+    target_link_libraries(terraria "-framework Foundation")
+    target_link_libraries(terraria "-framework CoreFoundation")
+    target_link_libraries(terraria "-framework CoreVideo")
+   # target_link_libraries(terraria PUBLIC "-framework CoreGraphics")
+#endif (APPLE)
+
 target_link_libraries(imgui PRIVATE glfw)
-target_link_libraries(terraria PRIVATE glfw glm glad imgui stb_image)
+target_link_libraries(terraria glfw glm glad imgui stb_image )
 

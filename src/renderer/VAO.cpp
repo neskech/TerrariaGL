@@ -2,7 +2,7 @@
 #include "glm/glm.hpp"
 #include <iostream>
 
-VertexArrayObject::VertexArrayObject(){
+VertexArrayObject::VertexArrayObject(int vertexSizeBytes_): vertexSizeBytes(vertexSizeBytes_){
     glGenVertexArrays(1, &ID);
     numAttributes = 0;
     byteLength = 0;
@@ -14,9 +14,8 @@ VertexArrayObject::~VertexArrayObject(){
 
 
 void VertexArrayObject::addAtribute(int stride, int dataType, int typeSize, bool divisor){
-    bind();
-
-    glVertexAttribPointer(numAttributes, stride, dataType, GL_FALSE, stride * typeSize, (void*)byteLength);
+    std::cout << "numAttrs " << numAttributes << " byteLength " << byteLength << "\n";
+    glVertexAttribPointer(numAttributes, stride, dataType, GL_FALSE, vertexSizeBytes, (void*)byteLength);
     glEnableVertexAttribArray(numAttributes);  
 
     if (divisor)
@@ -25,11 +24,9 @@ void VertexArrayObject::addAtribute(int stride, int dataType, int typeSize, bool
     numAttributes++;
     byteLength += stride * typeSize;
 
-    unBind();
 }
 
 void VertexArrayObject::addMatrixAttribute(int rows, int cols, bool divisor){
-    bind();
 
     std::size_t size = 0;
     switch (cols){
@@ -59,5 +56,4 @@ void VertexArrayObject::addMatrixAttribute(int rows, int cols, bool divisor){
         byteLength++;
     }
 
-    unBind();
 }

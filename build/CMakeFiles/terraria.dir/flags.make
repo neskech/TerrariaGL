@@ -10,3 +10,23 @@ CXX_FLAGSarm64 =  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Develop
 
 CXX_FLAGS =  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -std=gnu++2b
 
+# PCH options: CMakeFiles/terraria.dir/cmake_pch_arm64.hxx.pch_OPTIONS = -Winvalid-pch;-Xclang;-emit-pch;-Xclang;-include;-Xclang;/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx;-x;c++-header
+
+# PCH options: CMakeFiles/terraria.dir/src/core/application.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx
+
+# PCH options: CMakeFiles/terraria.dir/src/core/input.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx
+
+# PCH options: CMakeFiles/terraria.dir/src/core/main.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx
+
+# PCH options: CMakeFiles/terraria.dir/src/core/window.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx
+
+# PCH options: CMakeFiles/terraria.dir/src/renderer/VAO.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx
+
+# PCH options: CMakeFiles/terraria.dir/src/renderer/shader.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx
+
+# PCH options: CMakeFiles/terraria.dir/src/renderer/texture.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx
+
+# PCH options: CMakeFiles/terraria.dir/src/util/assetPool.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx
+
+# PCH options: CMakeFiles/terraria.dir/src/util/image.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx
+

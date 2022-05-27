@@ -29,8 +29,8 @@ bool Window::init(){
         return false;
     }
 
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
@@ -46,16 +46,10 @@ bool Window::init(){
 
     glfwMakeContextCurrent(glfw_window);
 
-    // if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)){
-    //     std::cerr << "Failed to initialize GLAD\n";
-    //     return false;
-    // }  
-
-    gladLoadGL();
-    std::cout<<" IOM GONNA DO IT\n";
-     unsigned int ID;
-    glGenBuffers(GL_ARRAY_BUFFER, &ID);
-    std::cout << "YES I DID IT YESSS!\n";
+    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
+        std::cout << "failed to initialze glad" << std::endl;
+        return -1;
+    }
 
     glfwSwapInterval(1);
 
@@ -80,7 +74,7 @@ void Window::update(){
     if (KeyListener::isKeyPressed(GLFW_KEY_ESCAPE))
         glfwSetWindowShouldClose(glfw_window, true);
 
-    glViewport(0, 0, width, height);
+   // glViewport(0, 0, width, height);
     glClearColor(0.2f, 0.1f, 0.5f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 }

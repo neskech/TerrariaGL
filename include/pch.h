@@ -1,5 +1,12 @@
 #pragma once
 
+#if 1
+#include <glad/glad.h>
+#endif
+#include <GLFW/glfw3.h>
+
+
+
 #include <memory>
 
 

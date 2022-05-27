@@ -1,5 +1,5 @@
 #pragma once
-#include <glad/glad.h>
+#include "pch.h"
 #include <iostream>
 
 enum class BufferType{
@@ -16,11 +16,8 @@ class Buffer{
     public:
         Buffer(BufferType bufferType_)
         {   
-            std::cout << "HEHEHHEHE\n";
             bufferType = to_underlying(bufferType_);
-            std::cout << bufferType << " " << GL_ARRAY_BUFFER << '\n';
-            glGenBuffers(bufferType, &ID);
-            std::cout << "JHADHIBWDYABIDWBAW\n";
+            glGenBuffers(1, &ID);
         }
 
         ~Buffer(){
@@ -35,23 +32,17 @@ class Buffer{
         void addData(T* elements, int length_, int offset, int drawType){
             length = length_;
 
-            bind();
             glBufferData(bufferType, length * sizeof(T), &elements[offset], drawType);
-            unBind();
         }
 
         template <class T>
         void addSubData(T* elements, int length, int offset, int drawType){
-            bind();
             glBufferSubData(bufferType, offset, length, &elements[offset]);
-            unBind();
         }
 
         template <class T>
         void allocateData(int length){
-            bind();
             glBufferData(bufferType, length * sizeof(T), nullptr, GL_STATIC_DRAW);
-            unBind();
         }
 
         template <class T>

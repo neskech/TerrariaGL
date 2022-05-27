@@ -1,7 +1,4 @@
 #pragma once
-#define GLFW_INCLUDE_NONE
-#include <GLFW/glfw3.h>
-#include <iostream>
 
 #include "core/window.h"
 #include "util/image.h"

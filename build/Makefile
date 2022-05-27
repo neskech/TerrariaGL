@@ -252,6 +252,21 @@ glad/fast:
 	$(MAKE) $(MAKESILENT) -f libs/Glad/CMakeFiles/glad.dir/build.make libs/Glad/CMakeFiles/glad.dir/build
 .PHONY : glad/fast
 
+# target to build an object file
+cmake_pch_arm64.hxx.pch:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/cmake_pch_arm64.hxx.pch
+.PHONY : cmake_pch_arm64.hxx.pch
+
+# target to preprocess a source file
+cmake_pch_arm64.hxx.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/cmake_pch_arm64.hxx.i
+.PHONY : cmake_pch_arm64.hxx.i
+
+# target to generate assembly for a file
+cmake_pch_arm64.hxx.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/cmake_pch_arm64.hxx.s
+.PHONY : cmake_pch_arm64.hxx.s
+
 libs/imgui/backends/imgui_impl_glfw.o: libs/imgui/backends/imgui_impl_glfw.cpp.o
 .PHONY : libs/imgui/backends/imgui_impl_glfw.o
 
@@ -679,6 +694,9 @@ help:
 	@echo "... imgui"
 	@echo "... stb_image"
 	@echo "... terraria"
+	@echo "... cmake_pch_arm64.hxx.pch"
+	@echo "... cmake_pch_arm64.hxx.i"
+	@echo "... cmake_pch_arm64.hxx.s"
 	@echo "... libs/imgui/backends/imgui_impl_glfw.o"
 	@echo "... libs/imgui/backends/imgui_impl_glfw.i"
 	@echo "... libs/imgui/backends/imgui_impl_glfw.s"

@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/terraria.dir/cmake_pch_arm64.hxx.pch"
+  "CMakeFiles/terraria.dir/cmake_pch_arm64.hxx.pch.d"
   "CMakeFiles/terraria.dir/src/core/application.cpp.o"
   "CMakeFiles/terraria.dir/src/core/application.cpp.o.d"
   "CMakeFiles/terraria.dir/src/core/input.cpp.o"

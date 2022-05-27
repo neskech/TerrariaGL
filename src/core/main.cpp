@@ -1,6 +1,5 @@
 #include <iostream>
 #include "core/application.h"
-#include "glad/glad.h"
 
 int main(){
 

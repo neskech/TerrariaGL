@@ -1,9 +1,9 @@
 #pragma once
-#include <glad/glad.h>
+#include "pch.h"
 
 class VertexArrayObject{
     public:
-        VertexArrayObject();
+        VertexArrayObject(int vertexSizeBytes_);
         VertexArrayObject(const VertexArrayObject& other) = delete;
         VertexArrayObject(VertexArrayObject& other) = delete;
         VertexArrayObject(VertexArrayObject&& other) = delete;
@@ -16,6 +16,7 @@ class VertexArrayObject{
         inline void unBind(){ glBindVertexArray(0); }
     private:
         unsigned int ID;
-        uint16_t numAttributes;
+        int vertexSizeBytes;
+        int numAttributes;
         int byteLength;
 };

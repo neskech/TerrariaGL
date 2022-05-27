@@ -2,7 +2,7 @@
 #include <fstream>
 #include <iostream>
 #include <sstream>
-#include "glad/glad.h"
+#include "pch.h"
 
 Shader::Shader(const char* shaderPath){
     std::cout<<"Made shader!\n";
@@ -11,12 +11,14 @@ Shader::Shader(const char* shaderPath){
 }
 
 Shader::~Shader(){
-
+    std::cout << "Destructed the shader!\n";
+    glDeleteProgram(programID);
 }
 
 bool Shader::readShaders(const char* shaderPath, std::string& vs, std::string& fs){
-    std::ifstream file(shaderPath);
-    if (!file.is_open()){
+    std::ifstream file;
+    file.open(shaderPath);
+    if (file.fail()){
         std::cerr << "ERROR: In Shader::readShaders. Unable to open the file -- " << shaderPath << " --\n";
         return false;
     }
@@ -26,7 +28,7 @@ bool Shader::readShaders(const char* shaderPath, std::string& vs, std::string& f
     int a = 0;
     while (file.good()){
         std::getline(file, line);
-        if (line.find("#shader") != std::string::npos){
+        if (line.find("#type") != std::string::npos){
             if (line.find("vertex") != std::string::npos)
                 a = 0;
             else if (line.find("fragment") != std::string::npos)
@@ -43,6 +45,7 @@ bool Shader::readShaders(const char* shaderPath, std::string& vs, std::string& f
 
     vs = streams[0].str();
     fs = streams[1].str();
+    return true;
 
 }
 
@@ -56,13 +59,45 @@ bool Shader::construct(const char* shaderPath){
     int vShader = createShader(vertexShader, GL_VERTEX_SHADER);
     glCompileShader(vShader);
 
+    int success = 0;
+    glGetShaderiv(vShader, GL_COMPILE_STATUS, &success);
+
+    if(success == GL_FALSE)
+    {
+        GLint maxLength = 0;
+        glGetShaderiv(vShader, GL_INFO_LOG_LENGTH, &maxLength);
+
+        char buffer[maxLength];
+        glGetShaderInfoLog(vShader, maxLength, &maxLength, &buffer[0]);
+        std::cout << "Vertex shader failed to compile : " << buffer << '\n';
+
+        glDeleteShader(vShader); 
+        return false;
+    }
+
     int fShader = createShader(fragmentShader, GL_FRAGMENT_SHADER);
     glCompileShader(fShader);
+
+    success = 0;
+    glGetShaderiv(fShader, GL_COMPILE_STATUS, &success);
+    if(success == GL_FALSE)
+    {
+        GLint maxLength = 0;
+        glGetShaderiv(fShader, GL_INFO_LOG_LENGTH, &maxLength);
+
+        char buffer[maxLength];
+        glGetShaderInfoLog(fShader, maxLength, &maxLength, &buffer[0]);
+        std::cout << "Vertex shader failed to compile : " << buffer << '\n';
+
+        glDeleteShader(fShader); 
+        glDeleteShader(vShader); 
+        return false;
+    }
 
     programID = createProgram(vShader, fShader);
 
     //check success status
-    int success;
+    success = 0;
     glGetProgramiv(programID, GL_LINK_STATUS, &success);
 
     if (!success){
@@ -71,6 +106,10 @@ bool Shader::construct(const char* shaderPath){
 
         std::cerr << "ERROR: In shader::compile. Failed to link shaders from " << shaderPath << '\n'
         << buffer << '\n';
+
+        glDeleteShader(vShader);
+        glDeleteShader(fShader);
+        glDeleteProgram(programID);
         return false;
     }
 

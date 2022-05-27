@@ -8,15 +8,26 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx.cxx" "CMakeFiles/terraria.dir/cmake_pch_arm64.hxx.pch" "gcc" "CMakeFiles/terraria.dir/cmake_pch_arm64.hxx.pch.d"
+  "/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx" "CMakeFiles/terraria.dir/cmake_pch_arm64.hxx.pch" "gcc" "CMakeFiles/terraria.dir/cmake_pch_arm64.hxx.pch.d"
   "/Users/shauntemellor/Documents/comsci/Projects/Terraria/src/core/application.cpp" "CMakeFiles/terraria.dir/src/core/application.cpp.o" "gcc" "CMakeFiles/terraria.dir/src/core/application.cpp.o.d"
+  "/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx" "CMakeFiles/terraria.dir/src/core/application.cpp.o" "gcc" "CMakeFiles/terraria.dir/src/core/application.cpp.o.d"
   "/Users/shauntemellor/Documents/comsci/Projects/Terraria/src/core/input.cpp" "CMakeFiles/terraria.dir/src/core/input.cpp.o" "gcc" "CMakeFiles/terraria.dir/src/core/input.cpp.o.d"
+  "/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx" "CMakeFiles/terraria.dir/src/core/input.cpp.o" "gcc" "CMakeFiles/terraria.dir/src/core/input.cpp.o.d"
   "/Users/shauntemellor/Documents/comsci/Projects/Terraria/src/core/main.cpp" "CMakeFiles/terraria.dir/src/core/main.cpp.o" "gcc" "CMakeFiles/terraria.dir/src/core/main.cpp.o.d"
+  "/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx" "CMakeFiles/terraria.dir/src/core/main.cpp.o" "gcc" "CMakeFiles/terraria.dir/src/core/main.cpp.o.d"
   "/Users/shauntemellor/Documents/comsci/Projects/Terraria/src/core/window.cpp" "CMakeFiles/terraria.dir/src/core/window.cpp.o" "gcc" "CMakeFiles/terraria.dir/src/core/window.cpp.o.d"
+  "/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx" "CMakeFiles/terraria.dir/src/core/window.cpp.o" "gcc" "CMakeFiles/terraria.dir/src/core/window.cpp.o.d"
   "/Users/shauntemellor/Documents/comsci/Projects/Terraria/src/renderer/VAO.cpp" "CMakeFiles/terraria.dir/src/renderer/VAO.cpp.o" "gcc" "CMakeFiles/terraria.dir/src/renderer/VAO.cpp.o.d"
+  "/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx" "CMakeFiles/terraria.dir/src/renderer/VAO.cpp.o" "gcc" "CMakeFiles/terraria.dir/src/renderer/VAO.cpp.o.d"
   "/Users/shauntemellor/Documents/comsci/Projects/Terraria/src/renderer/shader.cpp" "CMakeFiles/terraria.dir/src/renderer/shader.cpp.o" "gcc" "CMakeFiles/terraria.dir/src/renderer/shader.cpp.o.d"
+  "/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx" "CMakeFiles/terraria.dir/src/renderer/shader.cpp.o" "gcc" "CMakeFiles/terraria.dir/src/renderer/shader.cpp.o.d"
   "/Users/shauntemellor/Documents/comsci/Projects/Terraria/src/renderer/texture.cpp" "CMakeFiles/terraria.dir/src/renderer/texture.cpp.o" "gcc" "CMakeFiles/terraria.dir/src/renderer/texture.cpp.o.d"
+  "/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx" "CMakeFiles/terraria.dir/src/renderer/texture.cpp.o" "gcc" "CMakeFiles/terraria.dir/src/renderer/texture.cpp.o.d"
   "/Users/shauntemellor/Documents/comsci/Projects/Terraria/src/util/assetPool.cpp" "CMakeFiles/terraria.dir/src/util/assetPool.cpp.o" "gcc" "CMakeFiles/terraria.dir/src/util/assetPool.cpp.o.d"
+  "/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx" "CMakeFiles/terraria.dir/src/util/assetPool.cpp.o" "gcc" "CMakeFiles/terraria.dir/src/util/assetPool.cpp.o.d"
   "/Users/shauntemellor/Documents/comsci/Projects/Terraria/src/util/image.cpp" "CMakeFiles/terraria.dir/src/util/image.cpp.o" "gcc" "CMakeFiles/terraria.dir/src/util/image.cpp.o.d"
+  "/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx" "CMakeFiles/terraria.dir/src/util/image.cpp.o" "gcc" "CMakeFiles/terraria.dir/src/util/image.cpp.o.d"
   )
 
 # Targets to which this target links.
