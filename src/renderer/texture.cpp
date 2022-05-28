@@ -6,6 +6,10 @@ Texture::Texture(const char* assetPath, TexParams params, bool generateMipMaps){
         std::cerr << "ERROR: In Texture constructor. Texture generation was unsuccessful!\n";
 }
 
+Texture::~Texture(){
+    glDeleteTextures(1, &ID);
+}
+
 bool Texture::generate(const char* assetPath, TexParams params, bool generateMipmaps){
     glGenTextures(1, &ID);
     glBindTexture(GL_TEXTURE_2D, ID);

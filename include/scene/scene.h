@@ -12,8 +12,6 @@ class Scene{
         void update();
         void render();
 
-        Entity createEntity();
-        void deleteEntity(Entity e);
 
         inline Registry* getRegistry(){ return registry; }
     private:

@@ -12,10 +12,13 @@ class Texture{
         Texture(Texture& other) = delete;
         Texture(const Texture& other) = delete;
         Texture(Texture&& other) = delete;
+        ~Texture();
 
         inline void bind() { glBindTexture(GL_TEXTURE_2D, ID); }
         inline void unBind() { glBindTexture(GL_TEXTURE_2D, ID); }
         inline unsigned int getID(){ return ID; }
+        inline uint32_t getWidth(){ return width; }
+        inline uint32_t getHeight(){ return height; }
 
     private:
         bool generate(const char* assetPath, TexParams params, bool generateMipMaps);
