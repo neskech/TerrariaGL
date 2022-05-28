@@ -5,9 +5,13 @@
 #endif
 #include <GLFW/glfw3.h>
 
-
-
+#include <iostream>
 #include <memory>
+#include <stdlib.h>
+#include <glm/glm.hpp>
+#include <stdlib.h>
+#include <cassert>
+#include <unordered_map>
 
 
 template<typename T>

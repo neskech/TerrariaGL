@@ -579,6 +579,30 @@ src/renderer/VAO.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/renderer/VAO.cpp.s
 .PHONY : src/renderer/VAO.cpp.s
 
+src/renderer/framebuffer.o: src/renderer/framebuffer.cpp.o
+.PHONY : src/renderer/framebuffer.o
+
+# target to build an object file
+src/renderer/framebuffer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/renderer/framebuffer.cpp.o
+.PHONY : src/renderer/framebuffer.cpp.o
+
+src/renderer/framebuffer.i: src/renderer/framebuffer.cpp.i
+.PHONY : src/renderer/framebuffer.i
+
+# target to preprocess a source file
+src/renderer/framebuffer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/renderer/framebuffer.cpp.i
+.PHONY : src/renderer/framebuffer.cpp.i
+
+src/renderer/framebuffer.s: src/renderer/framebuffer.cpp.s
+.PHONY : src/renderer/framebuffer.s
+
+# target to generate assembly for a file
+src/renderer/framebuffer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/renderer/framebuffer.cpp.s
+.PHONY : src/renderer/framebuffer.cpp.s
+
 src/renderer/shader.o: src/renderer/shader.cpp.o
 .PHONY : src/renderer/shader.o
 
@@ -736,6 +760,9 @@ help:
 	@echo "... src/renderer/VAO.o"
 	@echo "... src/renderer/VAO.i"
 	@echo "... src/renderer/VAO.s"
+	@echo "... src/renderer/framebuffer.o"
+	@echo "... src/renderer/framebuffer.i"
+	@echo "... src/renderer/framebuffer.s"
 	@echo "... src/renderer/shader.o"
 	@echo "... src/renderer/shader.i"
 	@echo "... src/renderer/shader.s"

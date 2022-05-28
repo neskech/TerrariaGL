@@ -11,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/terraria.dir/src/core/window.cpp.o.d"
   "CMakeFiles/terraria.dir/src/renderer/VAO.cpp.o"
   "CMakeFiles/terraria.dir/src/renderer/VAO.cpp.o.d"
+  "CMakeFiles/terraria.dir/src/renderer/framebuffer.cpp.o"
+  "CMakeFiles/terraria.dir/src/renderer/framebuffer.cpp.o.d"
   "CMakeFiles/terraria.dir/src/renderer/shader.cpp.o"
   "CMakeFiles/terraria.dir/src/renderer/shader.cpp.o.d"
   "CMakeFiles/terraria.dir/src/renderer/texture.cpp.o"

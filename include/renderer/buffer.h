@@ -1,6 +1,5 @@
 #pragma once
 #include "pch.h"
-#include <iostream>
 
 enum class BufferType{
     VBO = GL_ARRAY_BUFFER,

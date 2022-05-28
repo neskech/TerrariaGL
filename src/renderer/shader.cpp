@@ -1,6 +1,5 @@
 #include "renderer/shader.h"
 #include <fstream>
-#include <iostream>
 #include <sstream>
 #include "pch.h"
 

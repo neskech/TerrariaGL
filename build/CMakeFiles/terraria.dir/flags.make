@@ -22,6 +22,8 @@ CXX_FLAGS =  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Pl
 
 # PCH options: CMakeFiles/terraria.dir/src/renderer/VAO.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx
 
+# PCH options: CMakeFiles/terraria.dir/src/renderer/framebuffer.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx
+
 # PCH options: CMakeFiles/terraria.dir/src/renderer/shader.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx
 
 # PCH options: CMakeFiles/terraria.dir/src/renderer/texture.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx

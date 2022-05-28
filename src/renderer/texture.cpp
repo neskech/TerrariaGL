@@ -1,6 +1,5 @@
 #include "renderer/texture.h"
 #include "util/image.h"
-#include <iostream>
 
 Texture::Texture(const char* assetPath, TexParams params, bool generateMipMaps){
     if (!generate(assetPath, params, generateMipMaps))

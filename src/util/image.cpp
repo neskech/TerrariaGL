@@ -1,7 +1,7 @@
 
 #include "util/image.h"
 #define STB_IMAGE_IMPLEMENTATION
-#include "stb_image.h"
+#include <stb_image.h>
 
 Ref<Image> loadImage(const char* path, int reqComps){
     Ref<Image> img = std::make_shared<Image>();

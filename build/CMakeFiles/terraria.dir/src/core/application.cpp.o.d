@@ -38,15 +38,8 @@ CMakeFiles/terraria.dir/src/core/application.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include/__stddef_max_align_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__nullptr \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/memory \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__availability \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/type_traits \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/cstddef \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/version \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/typeinfo \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/exception \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__memory/base.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__debug \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/iostream \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/ios \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/iosfwd \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/wchar.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/wchar.h \
@@ -81,6 +74,30 @@ CMakeFiles/terraria.dir/src/core/application.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/ctype.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/_ctype.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/runetype.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__locale \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__availability \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/string \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/string_view \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__string \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/algorithm \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/initializer_list \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/cstddef \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/version \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/type_traits \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/cstring \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/string.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/string.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_rsize_t.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_errno_t.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/strings.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/utility \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__tuple \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/cstdint \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__debug \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/memory \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/typeinfo \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/exception \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__memory/base.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__undef_macros \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/cstdlib \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/stdlib.h \
@@ -113,17 +130,7 @@ CMakeFiles/terraria.dir/src/core/application.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/malloc/_malloc.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_dev_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_mode_t.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/cstdint \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/new \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/utility \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__tuple \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/initializer_list \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/cstring \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/string.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/string.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_rsize_t.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_errno_t.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/strings.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/limits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/iterator \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__functional_base \
@@ -165,16 +172,6 @@ CMakeFiles/terraria.dir/src/core/application.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_mach_port_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/cassert \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/assert.h \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/src/core/application.cpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/include/core/application.h \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/include/core/window.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/iostream \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/ios \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__locale \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/string \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/string_view \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__string \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/algorithm \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/functional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/bit \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__bits \
@@ -237,17 +234,12 @@ CMakeFiles/terraria.dir/src/core/application.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__bsd_locale_defaults.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/bitset \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__bit_reference \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/include/core/input.h \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/include/util/image.h \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/include/util/assetPool.h \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/include/renderer/texture.h \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/include/renderer/shader.h \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/glm.hpp \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/_fixes.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/cmath \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/math.h \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/setup.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/../detail/setup.hpp \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/../simd/platform.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/cfloat \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/float.h \
@@ -256,151 +248,143 @@ CMakeFiles/terraria.dir/src/core/application.cpp.o: \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/fwd.hpp \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/qualifier.hpp \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/vec2.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/vector_bool2.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/../detail/type_vec2.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/type_vec2.inl \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/./compute_vector_relational.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/vector_bool2_precision.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/vector_float2.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/vector_float2_precision.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/vector_double2.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/vector_double2_precision.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/vector_int2.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/vector_int2_sized.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/../ext/vector_int2.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/../ext/scalar_int_sized.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/../detail/setup.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/vector_uint2.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/vector_uint2_sized.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/../ext/vector_uint2.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/../ext/scalar_uint_sized.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/vec3.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/vector_bool3.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/../detail/type_vec3.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/type_vec3.inl \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/compute_vector_relational.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/vector_bool3_precision.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/vector_float3.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/vector_float3_precision.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/vector_double3.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/vector_double3_precision.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/vector_int3.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/vector_int3_sized.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/../ext/vector_int3.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/vector_uint3.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/vector_uint3_sized.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/../ext/vector_uint3.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/vec4.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/vector_bool4.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/../detail/type_vec4.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/type_vec4.inl \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/vector_bool4_precision.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/vector_float4.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/vector_float4_precision.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/vector_double4.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/vector_double4_precision.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/vector_int4.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/vector_int4_sized.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/../ext/vector_int4.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/vector_uint4.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/vector_uint4_sized.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/../ext/vector_uint4.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/mat2x2.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/matrix_double2x2.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/../detail/type_mat2x2.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/vector_bool2.hpp \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/type_vec2.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/type_mat2x2.inl \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/../matrix.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/mat2x3.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/matrix_double2x3.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/../detail/type_mat2x3.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/type_vec2.inl \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/compute_vector_relational.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/vector_bool2_precision.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/vector_float2.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/vector_float2_precision.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/vector_double2.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/vector_double2_precision.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/../ext/vector_int2.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/vector_int2_sized.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/../ext/scalar_int_sized.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/../ext/vector_uint2.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/vector_uint2_sized.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/../ext/scalar_uint_sized.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/vec3.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/vector_bool3.hpp \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/type_vec3.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/type_mat2x3.inl \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/matrix_double2x3_precision.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/matrix_float2x3.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/matrix_float2x3_precision.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/mat2x4.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/matrix_double2x4.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/../detail/type_mat2x4.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/type_vec3.inl \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/vector_bool3_precision.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/vector_float3.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/vector_float3_precision.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/vector_double3.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/vector_double3_precision.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/../ext/vector_int3.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/vector_int3_sized.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/../ext/vector_uint3.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/vector_uint3_sized.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/vec4.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/vector_bool4.hpp \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/type_vec4.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/type_vec4.inl \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/vector_bool4_precision.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/vector_float4.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/vector_float4_precision.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/vector_double4.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/vector_double4_precision.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/../ext/vector_int4.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/vector_int4_sized.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/../ext/vector_uint4.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/vector_uint4_sized.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/mat2x2.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/matrix_double2x2.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/../detail/type_mat2x2.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/type_mat2x2.inl \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/matrix.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/mat2x3.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/matrix_double2x3.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/../detail/type_mat2x3.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/type_mat2x3.inl \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/matrix_double2x3_precision.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/matrix_float2x3.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/matrix_float2x3_precision.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/mat2x4.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/matrix_double2x4.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/../detail/type_mat2x4.hpp \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/type_mat2x4.inl \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/matrix_double2x4_precision.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/matrix_float2x4.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/matrix_float2x4_precision.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/matrix_double2x4_precision.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/matrix_float2x4.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/matrix_float2x4_precision.hpp \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/mat3x2.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/matrix_double3x2.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/../detail/type_mat3x2.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/matrix_double3x2.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/../detail/type_mat3x2.hpp \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/type_mat3x2.inl \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/matrix_double3x2_precision.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/matrix_float3x2.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/matrix_float3x2_precision.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/matrix_double3x2_precision.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/matrix_float3x2.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/matrix_float3x2_precision.hpp \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/mat3x3.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/matrix_double3x3.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/../detail/type_mat3x3.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/matrix_double3x3.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/../detail/type_mat3x3.hpp \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/type_mat3x3.inl \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/matrix_double3x3_precision.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/matrix_float3x3.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/matrix_float3x3_precision.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/matrix_double3x3_precision.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/matrix_float3x3.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/matrix_float3x3_precision.hpp \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/mat3x4.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/matrix_double3x4.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/../detail/type_mat3x4.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/matrix_double3x4.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/../detail/type_mat3x4.hpp \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/type_mat3x4.inl \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/matrix_double3x4_precision.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/matrix_float3x4.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/matrix_float3x4_precision.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/matrix_double3x4_precision.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/matrix_float3x4.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/matrix_float3x4_precision.hpp \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/mat4x2.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/matrix_double4x2.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/../detail/type_mat4x2.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/matrix_double4x2.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/../detail/type_mat4x2.hpp \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/type_mat4x2.inl \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/matrix_double4x2_precision.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/matrix_float4x2.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/matrix_float4x2_precision.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/matrix_double4x2_precision.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/matrix_float4x2.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/matrix_float4x2_precision.hpp \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/mat4x3.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/matrix_double4x3.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/../detail/type_mat4x3.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/matrix_double4x3.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/../detail/type_mat4x3.hpp \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/type_mat4x3.inl \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/matrix_double4x3_precision.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/matrix_float4x3.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/matrix_float4x3_precision.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/matrix_double4x3_precision.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/matrix_float4x3.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/matrix_float4x3_precision.hpp \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/mat4x4.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/matrix_double4x4.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/../detail/type_mat4x4.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/matrix_double4x4.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/../detail/type_mat4x4.hpp \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/type_mat4x4.inl \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/matrix_double4x4_precision.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/matrix_float4x4.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/matrix_float4x4_precision.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/matrix_double4x4_precision.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/matrix_float4x4.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/matrix_float4x4_precision.hpp \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/func_matrix.inl \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/../geometric.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/geometric.hpp \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/func_geometric.inl \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/../exponential.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/exponential.hpp \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/type_vec1.hpp \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/type_vec1.inl \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/func_exponential.inl \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/../vector_relational.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/vector_relational.hpp \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/func_vector_relational.inl \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/_vectorize.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/../common.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/common.hpp \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/func_common.inl \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/compute_common.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/matrix_double2x2_precision.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/matrix_float2x2.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/./ext/matrix_float2x2_precision.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/matrix_double2x2_precision.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/matrix_float2x2.hpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/ext/matrix_float2x2_precision.hpp \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/trigonometric.hpp \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/func_trigonometric.inl \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/exponential.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/common.hpp \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/packing.hpp \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/func_packing.inl \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/type_half.hpp \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/type_half.inl \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/geometric.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/matrix.hpp \
-  /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/vector_relational.hpp \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/integer.hpp \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm/glm/detail/func_integer.inl \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/unordered_map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__hash_table \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__node_handle \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/optional \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/src/core/application.cpp \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/include/core/application.h \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/include/core/window.h \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/include/core/input.h \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/include/util/image.h \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/include/util/assetPool.h \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/include/renderer/texture.h \
+  /Users/shauntemellor/Documents/comsci/Projects/Terraria/include/renderer/shader.h \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/include/renderer/buffer.h \
   /Users/shauntemellor/Documents/comsci/Projects/Terraria/include/renderer/VAO.h

@@ -1,6 +1,5 @@
 #include "renderer/VAO.h"
 #include "glm/glm.hpp"
-#include <iostream>
 
 VertexArrayObject::VertexArrayObject(int vertexSizeBytes_): vertexSizeBytes(vertexSizeBytes_){
     glGenVertexArrays(1, &ID);

@@ -166,12 +166,12 @@ CMakeFiles/terraria.dir/all: libs/glfw/src/CMakeFiles/glfw.dir/all
 CMakeFiles/terraria.dir/all: libs/Glad/CMakeFiles/glad.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles --progress-num=35,36,37,38,39,40,41,42,43,44,45 "Built target terraria"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles --progress-num=35,36,37,38,39,40,41,42,43,44,45,46 "Built target terraria"
 .PHONY : CMakeFiles/terraria.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/terraria.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles 45
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles 46
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/terraria.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles 0
 .PHONY : CMakeFiles/terraria.dir/rule
@@ -296,7 +296,7 @@ libs/glfw/src/CMakeFiles/glfw.dir/clean:
 libs/glfw/src/CMakeFiles/update_mappings.dir/all:
 	$(MAKE) $(MAKESILENT) -f libs/glfw/src/CMakeFiles/update_mappings.dir/build.make libs/glfw/src/CMakeFiles/update_mappings.dir/depend
 	$(MAKE) $(MAKESILENT) -f libs/glfw/src/CMakeFiles/update_mappings.dir/build.make libs/glfw/src/CMakeFiles/update_mappings.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles --progress-num=46 "Built target update_mappings"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles --progress-num=47 "Built target update_mappings"
 .PHONY : libs/glfw/src/CMakeFiles/update_mappings.dir/all
 
 # Build rule for subdir invocation for target.

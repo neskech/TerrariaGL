@@ -1,5 +1,4 @@
 #include "core/application.h"
-#include <cassert>
 
 #include "renderer/buffer.h"
 #include "renderer/shader.h"

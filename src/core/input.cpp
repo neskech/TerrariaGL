@@ -1,6 +1,6 @@
 #include "core/input.h"
 #include <string.h>
-#include <cassert>  
+
 
 KeyListener* KeyListener::instance = nullptr;
 
