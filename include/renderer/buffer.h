@@ -23,6 +23,7 @@ class Buffer{
             glDeleteBuffers(1, &ID);
         }
 
+        Buffer() = delete;
         Buffer(Buffer& other) = delete;
         Buffer(const Buffer& other) = delete;
         Buffer(Buffer&& other) = delete;

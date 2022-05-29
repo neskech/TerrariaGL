@@ -12,14 +12,16 @@ class Shader{
         void use();
         void deActivate();
 
-        void setBool(const std::string &name, bool value) const;
-        void setInt(const std::string &name, int value) const;
-        void setFloat(const std::string &name, float value) const;
-        void setVec2(const std::string &name, glm::vec2 vec) const;
-        void setVec3(const std::string &name, glm::vec3 vec) const;
-        void setVec4(const std::string &name, glm::vec4 vec) const;
-        void setmat3(const std::string &name, glm::mat3x3 vec) const;
-        void setmat4(const std::string &name, glm::mat4x4 vec) const;
+        void setBool(const std::string& name, bool value) const;
+        void setInt(const std::string& name, int value) const;
+        void setFloat(const std::string& name, float value) const;
+        void setVec2(const std::string& name, glm::vec2 vec) const;
+        void setVec3(const std::string& name, glm::vec3 vec) const;
+        void setVec4(const std::string& name, glm::vec4 vec) const;
+        void setmat3(const std::string& name, glm::mat3x3 vec) const;
+        void setmat4(const std::string& name, glm::mat4x4 vec) const;
+        void uploadTexture(const std::string& variableName, int slot) const;
+        void uploadTextures(const std::string& variableName, int* slots) const;
 
         inline int getID(){ return programID; }
     private:

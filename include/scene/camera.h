@@ -1,8 +1,8 @@
 #pragma once
 #include "pch.h"
 
-constexpr int CAM_WIDTH = 128;
-constexpr int CAM_HEIGHT = 100;
+constexpr float CAM_WIDTH = 128;
+constexpr float CAM_HEIGHT = 100;
 
 class Camera{
     public:
@@ -10,14 +10,15 @@ class Camera{
         ~Camera();
         
 
-        glm::mat4 getProjectionMatrix();
-        glm::mat4 getViewMatrix();
+        static glm::mat4 getProjectionMatrix();
+        static glm::mat4 getViewMatrix();
+        static void changeLookDirection(const glm::vec3& look);
+        static void changePosition(const glm::vec3& position);
 
-        void changeLookDirection(glm::vec3 look);
-        void changePosition(glm::vec3 position);
+        static void updateVectors();
 
-        inline glm::vec3 getPosition(){ return pos; }
-        inline glm::vec3 getForwardDirection(){ return forward; }
+        static inline glm::vec3 getPosition(){ return instance->pos; }
+        static inline glm::vec3 getForwardDirection(){ return instance->forward; }
     private:
         glm::vec3 pos;
         glm::vec3 worldUp;
@@ -25,5 +26,5 @@ class Camera{
         glm::vec3 up;
         glm::vec3 forward;
 
-        void updateVectors();
+        static Camera* instance;
 };

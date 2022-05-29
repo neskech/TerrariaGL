@@ -1,8 +1,8 @@
 #pragma once
 
+#include "pch.h"
 #include "core/window.h"
 #include "util/image.h"
-#include "pch.h"
 
 class KeyListener{
     public:

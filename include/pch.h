@@ -5,6 +5,7 @@
 #endif
 #include <GLFW/glfw3.h>
 
+#include "include/entt/entt.hpp"
 #include <iostream>
 #include <memory>
 #include <stdlib.h>

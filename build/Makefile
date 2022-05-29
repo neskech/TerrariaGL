@@ -603,6 +603,54 @@ src/renderer/framebuffer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/renderer/framebuffer.cpp.s
 .PHONY : src/renderer/framebuffer.cpp.s
 
+src/renderer/renderBatch.o: src/renderer/renderBatch.cpp.o
+.PHONY : src/renderer/renderBatch.o
+
+# target to build an object file
+src/renderer/renderBatch.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/renderer/renderBatch.cpp.o
+.PHONY : src/renderer/renderBatch.cpp.o
+
+src/renderer/renderBatch.i: src/renderer/renderBatch.cpp.i
+.PHONY : src/renderer/renderBatch.i
+
+# target to preprocess a source file
+src/renderer/renderBatch.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/renderer/renderBatch.cpp.i
+.PHONY : src/renderer/renderBatch.cpp.i
+
+src/renderer/renderBatch.s: src/renderer/renderBatch.cpp.s
+.PHONY : src/renderer/renderBatch.s
+
+# target to generate assembly for a file
+src/renderer/renderBatch.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/renderer/renderBatch.cpp.s
+.PHONY : src/renderer/renderBatch.cpp.s
+
+src/renderer/renderer.o: src/renderer/renderer.cpp.o
+.PHONY : src/renderer/renderer.o
+
+# target to build an object file
+src/renderer/renderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/renderer/renderer.cpp.o
+.PHONY : src/renderer/renderer.cpp.o
+
+src/renderer/renderer.i: src/renderer/renderer.cpp.i
+.PHONY : src/renderer/renderer.i
+
+# target to preprocess a source file
+src/renderer/renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/renderer/renderer.cpp.i
+.PHONY : src/renderer/renderer.cpp.i
+
+src/renderer/renderer.s: src/renderer/renderer.cpp.s
+.PHONY : src/renderer/renderer.s
+
+# target to generate assembly for a file
+src/renderer/renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/renderer/renderer.cpp.s
+.PHONY : src/renderer/renderer.cpp.s
+
 src/renderer/shader.o: src/renderer/shader.cpp.o
 .PHONY : src/renderer/shader.o
 
@@ -650,6 +698,54 @@ src/renderer/texture.s: src/renderer/texture.cpp.s
 src/renderer/texture.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/renderer/texture.cpp.s
 .PHONY : src/renderer/texture.cpp.s
+
+src/scene/camera.o: src/scene/camera.cpp.o
+.PHONY : src/scene/camera.o
+
+# target to build an object file
+src/scene/camera.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/scene/camera.cpp.o
+.PHONY : src/scene/camera.cpp.o
+
+src/scene/camera.i: src/scene/camera.cpp.i
+.PHONY : src/scene/camera.i
+
+# target to preprocess a source file
+src/scene/camera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/scene/camera.cpp.i
+.PHONY : src/scene/camera.cpp.i
+
+src/scene/camera.s: src/scene/camera.cpp.s
+.PHONY : src/scene/camera.s
+
+# target to generate assembly for a file
+src/scene/camera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/scene/camera.cpp.s
+.PHONY : src/scene/camera.cpp.s
+
+src/scene/scene.o: src/scene/scene.cpp.o
+.PHONY : src/scene/scene.o
+
+# target to build an object file
+src/scene/scene.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/scene/scene.cpp.o
+.PHONY : src/scene/scene.cpp.o
+
+src/scene/scene.i: src/scene/scene.cpp.i
+.PHONY : src/scene/scene.i
+
+# target to preprocess a source file
+src/scene/scene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/scene/scene.cpp.i
+.PHONY : src/scene/scene.cpp.i
+
+src/scene/scene.s: src/scene/scene.cpp.s
+.PHONY : src/scene/scene.s
+
+# target to generate assembly for a file
+src/scene/scene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/scene/scene.cpp.s
+.PHONY : src/scene/scene.cpp.s
 
 src/util/assetPool.o: src/util/assetPool.cpp.o
 .PHONY : src/util/assetPool.o
@@ -763,12 +859,24 @@ help:
 	@echo "... src/renderer/framebuffer.o"
 	@echo "... src/renderer/framebuffer.i"
 	@echo "... src/renderer/framebuffer.s"
+	@echo "... src/renderer/renderBatch.o"
+	@echo "... src/renderer/renderBatch.i"
+	@echo "... src/renderer/renderBatch.s"
+	@echo "... src/renderer/renderer.o"
+	@echo "... src/renderer/renderer.i"
+	@echo "... src/renderer/renderer.s"
 	@echo "... src/renderer/shader.o"
 	@echo "... src/renderer/shader.i"
 	@echo "... src/renderer/shader.s"
 	@echo "... src/renderer/texture.o"
 	@echo "... src/renderer/texture.i"
 	@echo "... src/renderer/texture.s"
+	@echo "... src/scene/camera.o"
+	@echo "... src/scene/camera.i"
+	@echo "... src/scene/camera.s"
+	@echo "... src/scene/scene.o"
+	@echo "... src/scene/scene.i"
+	@echo "... src/scene/scene.s"
 	@echo "... src/util/assetPool.o"
 	@echo "... src/util/assetPool.i"
 	@echo "... src/util/assetPool.s"

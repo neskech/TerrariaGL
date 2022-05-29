@@ -46,6 +46,7 @@ add_library(
 
 
 include_directories(imgui libs/imgui libs/imgui/backends)
+include_directories(entt libs/entt)
 include_directories(Glad libs/Glad/include)
 
 
