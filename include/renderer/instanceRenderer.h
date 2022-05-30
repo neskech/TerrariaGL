@@ -4,38 +4,42 @@
 #include "renderer/shader.h"
 #include "renderer/buffer.h"
 #include "renderer/VAO.h"
-#include <unordered_map>
+#include <unordered_set>
 
 #include "constants.h"
-static constexpr int VERTEX_SIZE = 19;
 
 class InstanceRenderer{
     public:
         InstanceRenderer();
+        InstanceRenderer(InstanceRenderer& other) = delete;
+        InstanceRenderer(const InstanceRenderer& other) = delete;
+        InstanceRenderer(InstanceRenderer&& other) = delete;
         ~InstanceRenderer();
 
         void init();
         void render();
-        void addSpriteRenderer(Component::SpriteRenderer* spr);
-        void removeSpriteRenderer(Component::SpriteRenderer* spr);
-        void updateDirtyFlags();
-        void configureSpriteVertexData(Component::SpriteRenderer* spr, int16_t texID);
-        bool containsTexture(const Ref<Texture>& tex);
+        void addSpriteRenderer(Component::SpriteRenderer& spr);
+        void removeSpriteRenderer(Component::SpriteRenderer& spr);
+        void updateTransformData(const Component::SpriteRenderer& spr) const;
+        void updateUVData(const Component::SpriteRenderer& spr) const;
+        void updateTexIDData(const Component::SpriteRenderer& spr, int16_t texID) const;
+        bool containsTexture(const Ref<Texture>& tex) const;
 
-        inline int getCurrentSize(){ return numSprites; }
-        inline int getnumTextures(){ return numTextures; }
-        inline std::unordered_map<Component::SpriteRenderer*, uint16_t>& getRenderers(){ return spriteRends; }
+        inline int getCurrentSize() const { return numSprites; }
+        inline int getnumTextures() const { return numTextures; }
     private:
-        std::unordered_map<Component::SpriteRenderer*, uint16_t> spriteRends;
+        Component::SpriteRenderer* renderers[MAX_INSTANCES];
         Texture* textures[MAX_TEXTURES];
 
-        int numTextures;
-        std::size_t numSprites;
+        uint32_t numTextures;
+        uint32_t numSprites;
 
-        Buffer* instance_transform_VBO;
-        Buffer* instance_uv_VBO;
-        Buffer* instance_texID_VBO;
-        Buffer* templateVBO;
-        VertexArrayObject* VAO;
+        Buffer instance_transform_VBO;
+        Buffer instance_uv_VBO;
+        Buffer instance_texID_VBO;
+        Buffer templateVBO;
+        Buffer EBO;
+        VertexArrayObject VAO;
+
         Ref<Shader> shader;
 };

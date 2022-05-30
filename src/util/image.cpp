@@ -4,13 +4,15 @@
 #include <stb_image.h>
 
 Ref<Image> loadImage(const char* path, int reqComps){
+    stbi_set_flip_vertically_on_load(true);
     Ref<Image> img = std::make_shared<Image>();
     img->pixels = stbi_load(path, &img->width, &img->height, &img->channels, reqComps);
     return img;
 }
 
-Scoped<Image> loadImageAsRaw(const char* path, int reqComps){
-    Scoped<Image> img = std::make_unique<Image>();
+Image* loadImageAsRaw(const char* path, int reqComps){
+    stbi_set_flip_vertically_on_load(true);
+    Image* img = new Image{};
     img->pixels = stbi_load(path, &img->width, &img->height, &img->channels, reqComps);
     return img;
 }

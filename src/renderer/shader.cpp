@@ -132,48 +132,55 @@ int Shader::createProgram(int vShader, int fShader){
     return ID;
 }
 
-void Shader::setBool(const std::string &name, bool value) const
+void Shader::setBool(const std::string& name, bool value) const
 {         
     glUniform1i(glGetUniformLocation(programID, name.c_str()), (int)value); 
 }
-void Shader::setInt(const std::string &name, int value) const
+void Shader::setInt(const std::string& name, int value) const
 { 
     glUniform1i(glGetUniformLocation(programID, name.c_str()), value); 
 }
-void Shader::setFloat(const std::string &name, float value) const
+void Shader::setFloat(const std::string& name, float value) const
 { 
     glUniform1f(glGetUniformLocation(programID, name.c_str()), value); 
 } 
-void Shader::setVec2(const std::string &name, const glm::vec2& vec) const
+
+void Shader::setVec2(const std::string& name, const glm::vec2& vec) const
 { 
     glUniform2fv(glGetUniformLocation(programID, name.c_str()), 2,  (GLfloat*) &vec); 
 } 
-void Shader::setVec3(const std::string &name, const glm::vec3& vec) const
+
+void Shader::setVec3(const std::string& name, const glm::vec3& vec) const
 { 
     glUniform3fv(glGetUniformLocation(programID, name.c_str()), 3,  (GLfloat*) &vec); 
 } 
-void Shader::setVec4(const std::string &name, const glm::vec4& vec) const
+
+void Shader::setVec4(const std::string& name, const glm::vec4& vec) const
 { 
     glUniform4fv(glGetUniformLocation(programID, name.c_str()), 4,  (GLfloat*) &vec); 
 } 
-void Shader::setmat3(const std::string &name, const glm::mat3x3& mat) const
+
+void Shader::setmat3(const std::string& name, const glm::mat3x3& mat) const
 { 
     glUniformMatrix3fv(glGetUniformLocation(programID, name.c_str()), 1, GL_FALSE, &mat[0][0]); 
 } 
-void Shader::setmat4(const std::string &name, const glm::mat4& mat) const
+
+void Shader::setmat4(const std::string& name, const glm::mat4& mat) const
 { 
     glUniformMatrix4fv(glGetUniformLocation(programID, name.c_str()), 1, GL_FALSE, &mat[0][0]); 
 } 
+
 void Shader::uploadTexture(const std::string& name, int slot) const
 {
     glUniform1i(glGetUniformLocation(programID, name.c_str()), slot);
 }
+
 void Shader::uploadTextures(const std::string& name, int* slots) const
 {
     glUniform1iv(glGetUniformLocation(programID, name.c_str()), 8, slots);
 }
 
-void Shader::use(){
+void Shader::activate(){
     glUseProgram(programID);
 }
 

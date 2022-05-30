@@ -15,15 +15,13 @@ uniform mat4 view;
 void main(){
     uv = auv;
     ftexID = texID;
-    gl_Position = vec4(aPos.x, aPos.y, 0.0, 1.0);
+    gl_Position = ortho * view * model * vec4(aPos.x, aPos.y, 0.0, 1.0);
 }
 
 #type fragment
 #version 410 core
 
 uniform sampler2D uTextures[8];
-// uniform sampler2D tex1;
-// uniform sampler2D tex2;
 
 in vec2 uv;
 in float ftexID;
@@ -31,6 +29,7 @@ out vec4 Color;
 
 void main(){
        Color = texture(uTextures[int(ftexID)], uv);
-       //Color = vec4(1.0f, 1.0f, 1.0f, 1.0f);
+
+
        
 }

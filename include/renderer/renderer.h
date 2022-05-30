@@ -13,12 +13,11 @@ class Renderer{
 
         static void render();
         static void init();
-        static void deleteFromBatch(Component::SpriteRenderer& spr);
-        static void addToBatch(Component::SpriteRenderer& sprite);
+        static void remove(Component::SpriteRenderer& spr);
+        static void submit(Component::SpriteRenderer& spr);
 
     private:
-        InstanceRenderer* instanceBatches;
-        int numBatches;
+        InstanceRenderer* instanceRenderer;
         static Renderer* instance;
         friend class InstanceRenderer;
 

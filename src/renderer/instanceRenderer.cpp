@@ -2,173 +2,135 @@
 #include "renderer/renderer.h"
 #include "scene/camera.h"
 
-static int TEX_SLOTS[9] = {0, 1, 2, 3, 4, 5, 6, 7};
 static constexpr int TRANSFORM_VBO_VERT_SIZE = 16;
 static constexpr int UV_VBO_VERT_SIZE = 2;
 static constexpr int TEXID_VBO_VERT_SIZE = 1;
 
-InstanceRenderer::InstanceRenderer(){
-    spriteRends.reserve(MAX_INSTANCES);
-    numTextures = 0;
-    numSprites = 0;
+InstanceRenderer::InstanceRenderer():
+    instance_transform_VBO(BufferType::VBO), instance_uv_VBO(BufferType::VBO), instance_texID_VBO(BufferType::VBO),
+    EBO(BufferType::EBO), VAO(sizeof(float) * 2), numSprites(0), numTextures(0)
+{
 }
 
 InstanceRenderer::~InstanceRenderer(){
-    delete instance_transform_VBO;
-    delete instance_uv_VBO;
-    delete instance_texID_VBO;
-    delete templateVBO;
-    delete VAO;
 }
 
 void InstanceRenderer::init(){
     shader = AssetPool::getShader("../assets/shaders/test.glsl");
-
-    instance_transform_VBO = new Buffer(BufferType::VBO);
-    instance_uv_VBO = new Buffer(BufferType::VBO);
-    instance_texID_VBO = new Buffer(BufferType::VBO);
-    templateVBO = new Buffer(BufferType::VBO);
-    VAO = new VertexArrayObject(sizeof(float) * 2);
-
-    //////////////////////////////////////////////////
-    VAO->bind();
+    VAO.bind();
     
-
     float quad[] = {
-        -0.5f, 0.5f, //top left
-        -0.5f, -0.5f, //bottom left
-         0.5f, -0.5f, //bottom right
-
-         0.5f, 0.5f, //top right
-        -0.5f, 0.5f, //top left
-         0.5f, -0.5f, //bottom right
-
+        -0.5f, -0.5f, //bottom left 0
+         0.5f, -0.5f, //bottom right 1
+        -0.5f, 0.5f, //top left 2
+         0.5f, 0.5f, //top right 3
     };
 
-    templateVBO->bind();
-    templateVBO->addData(quad, 12, 0, GL_STATIC_DRAW);
+    unsigned int indices[] = {
+            0, 1, 3,
+            0, 3, 2,
+    };
+    
+    EBO.bind();
+    EBO.addData(indices, 6, 0, GL_STATIC_DRAW);
 
-    //pos -- template QUAD
-    VAO->addAtribute(2, GL_FLOAT, sizeof(float));
+    templateVBO.bind();
+    templateVBO.addData(quad, 8, 0, GL_STATIC_DRAW);
 
-    instance_uv_VBO->bind();
-    instance_uv_VBO->allocateData<float>(MAX_INSTANCES * UV_VBO_VERT_SIZE);
+    //Pos -- template QUAD
+    VAO.addAtribute(2, GL_FLOAT, sizeof(float));
 
-    //uv -- passed every vertex
-    VAO->resetByteCount();
-    VAO->addAtribute(2, GL_FLOAT, sizeof(float), 0);
+    instance_uv_VBO.bind();
+    instance_uv_VBO.allocateData<float>(MAX_INSTANCES * UV_VBO_VERT_SIZE);
 
-    instance_texID_VBO->bind();
-    instance_texID_VBO->allocateData<float>(MAX_INSTANCES * TEXID_VBO_VERT_SIZE);
+    //UVs -- passed every vertex
+    VAO.resetByteCount();
+    VAO.addAtribute(2, GL_FLOAT, sizeof(float), 0);
+
+    instance_texID_VBO.bind();
+    instance_texID_VBO.allocateData<float>(MAX_INSTANCES * TEXID_VBO_VERT_SIZE);
 
     //TexID -- passed every instance
-    VAO->resetByteCount();
-    VAO->addAtribute(1, GL_FLOAT, sizeof(float), 1);
+    VAO.resetByteCount();
+    VAO.addAtribute(1, GL_FLOAT, sizeof(float), 1);
 
-    instance_transform_VBO->bind();
-    instance_transform_VBO->allocateData<float>(MAX_INSTANCES * TRANSFORM_VBO_VERT_SIZE);
+    instance_transform_VBO.bind();
+    instance_transform_VBO.allocateData<float>(MAX_INSTANCES * TRANSFORM_VBO_VERT_SIZE);
 
     //Transform -- passed every instance
-    VAO->resetByteCount();
-    VAO->addMatrixAttribute(4, 4, true);
+    VAO.resetByteCount();
+    VAO.addMatrixAttribute(4, 4, 1);
 
-    templateVBO->unBind();
-    instance_transform_VBO->unBind();
-    instance_uv_VBO->unBind();
-    instance_texID_VBO->unBind();
-    VAO->unBind();
+    templateVBO.unBind();
+    instance_transform_VBO.unBind();
+    instance_uv_VBO.unBind();
+    instance_texID_VBO.unBind();
+    EBO.unBind();
+    VAO.unBind();
 }
 
+
 void InstanceRenderer::render(){
-    VAO->bind();
+    VAO.bind();
 
     shader->use();
-   ////// shader->uploadTextures("uTextures", TEX_SLOTS);
     shader->setmat4("ortho", Camera::getProjectionMatrix());
     shader->setmat4("view", Camera::getViewMatrix());
-
 
     for (int i = 0; i < numTextures; i++){
           glActiveTexture(GL_TEXTURE0 + i);
           textures[i]->bind();
-          shader->uploadTexture("uTextures", i);
+          shader->uploadTexture(std::string("uTextures"), i);
     }
 
-    glDrawArraysInstanced(GL_TRIANGLES, 0, 6, numSprites);
-
+    EBO.bind();
+    glDrawElementsInstanced(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0, numSprites);
 
     shader->deActivate();
     for (int i = 0; i < numTextures; i++){
           textures[i]->unBind();
     }
 
-    VAO->unBind();
+    VAO.unBind();
  
 }
 
-void InstanceRenderer::addSpriteRenderer(Component::SpriteRenderer* spr){ 
+void InstanceRenderer::addSpriteRenderer(Component::SpriteRenderer& spr){ 
     int16_t texID = -1;
     for (int i = 0; i < numTextures; i++){
 
-        if (spr->sheet.tex.get() == textures[i]){
+        if (spr;=.sheet.tex.get() == textures[i]){
             texID = i;
             break;
         }
     }
     
     if (texID == -1){
-        textures[numTextures] = spr->sheet.tex.get();
+        textures[numTextures] = spr.sheet.tex.get();
         texID = numTextures++;
     }
-    std::cout << "About to add! " << numSprites << " " << texID << std::endl;
-    configureSpriteVertexData(spr, texID);
+   
+    spr.index = numSprites;
+    updateTransformData(spr);
+    updateTexIDData(spr, texID);
+    updateUVData(spr);
 
-    spriteRends[spr] = numSprites;
+    spr.dirtyCallback = updateUVData();
+    renderers[numSprites] = &spr;
     numSprites++;
 
 }
 
-void InstanceRenderer::configureSpriteVertexData(Component::SpriteRenderer* spr, int16_t texID){
-    instance_uv_VBO->bind();
 
-    //uvs
-    float* buffer_ptr = instance_uv_VBO->mapBuffer<float>();
-
-    glm::vec2 uvs(spr->sheet.cellWidth * spr->sprite.col, spr->sheet.cellHeight * spr->sprite.row);
-
-    int row, col;
-    int offset = numSprites * UV_VBO_VERT_SIZE * 4;
-    for (int i = 0; i < 4; i++){
-        row = i / 2;
-        col = i % 2;
-
-        buffer_ptr[offset + i * UV_VBO_VERT_SIZE + 0] = (uvs.x + spr->sheet.cellWidth * col) / spr->sheet.tex->getWidth();
-        buffer_ptr[offset + i * UV_VBO_VERT_SIZE + 1] = (uvs.y + spr->sheet.cellHeight * row) / spr->sheet.tex->getHeight();
-
-    }
-
-    instance_uv_VBO->unMapBuffer();
-
-    //////   //////   //////   //////   //////   //////   //////   //////   //////   //////   //////
-
-    instance_texID_VBO->bind();
-
-    //texID
-    buffer_ptr = instance_texID_VBO->mapBuffer<float>();
-    offset = numSprites * UV_VBO_VERT_SIZE;
-    buffer_ptr[offset] = texID;
-    instance_texID_VBO->unMapBuffer();
-
-    ///////////////////////////////////////////////////////////////////////////////////////////////
-
-    instance_transform_VBO->bind();
+void InstanceRenderer::updateTransformData(const Component::SpriteRenderer& spr) const{
+    instance_transform_VBO.bind();
+    int index = spr.index;
     //transform
-    const glm::mat4& trans = spr->parent.getComponent<Component::Transform>().getTransform();
+    const glm::mat4& trans = spr.parent.getComponent<Component::Transform>().getTransform();
 
-    buffer_ptr = instance_transform_VBO->mapBuffer<float>();
+    buffer_ptr = instance_transform_VBO.mapBuffer<float>();
 
-    offset = numSprites * TRANSFORM_VBO_VERT_SIZE;
-
+    offset = index * TRANSFORM_VBO_VERT_SIZE;
     for (int r = 0; r < 4; r++){
         for (int c = 0; c < 4; c++){
             int index = r * 4 + c;
@@ -176,51 +138,86 @@ void InstanceRenderer::configureSpriteVertexData(Component::SpriteRenderer* spr,
         }
     }
 
-    instance_transform_VBO->unMapBuffer();
-    //TODO unbind all three so they dont get accidently modified by another method
+    instance_transform_VBO.unMapBuffer();
+    instance_transform_VBO.unBind();
+}
+
+void InstanceRenderer::updateUVData(const Component::SpriteRenderer& spr) const{
+    instance_uv_VBO.bind();
     
-}
+    uint32_t index = spr.index;
+    float* buffer_ptr = instance_uv_VBO.mapBuffer<float>();
 
-void InstanceRenderer::removeSpriteRenderer(Component::SpriteRenderer* spr){
-    //  uint16_t index = spriteRends[spr];
-    //  instance_texture_VBO->bind();
+    glm::vec2 uvs(spr.sheet.cellWidth * spr.sprite.col, spr.sheet.cellHeight * spr.sprite.row);
 
-    //  uint16_t start = index * TEXTURE_VBO_VERT_SIZE * 4;
-    //  float* buffer_ptr = instance_texture_VBO->mapBuffer<float>();
-    //  for (uint16_t i = start; i < numSprites * TEXTURE_VBO_VERT_SIZE * 4 - TEXTURE_VBO_VERT_SIZE; i++){
-    //      buffer_ptr[i] = buffer_ptr[i + TEXTURE_VBO_VERT_SIZE];
-    //  }
-    //  instance_texture_VBO->unMapBuffer();
+    int row, col;
+    int offset = index * UV_VBO_VERT_SIZE * 4;
+    for (int i = 0; i < 4; i++){
+        row = i / 2;
+        col = i % 2;
 
-    //  start = index * TRANSFORM_VBO_VERT_SIZE;
-    //  buffer_ptr = instance_transform_VBO->mapBuffer<float>();
-    //  for (uint16_t i = start; i < numSprites * TRANSFORM_VBO_VERT_SIZE - TRANSFORM_VBO_VERT_SIZE; i++){
-    //      buffer_ptr[i] = buffer_ptr[i + TRANSFORM_VBO_VERT_SIZE];
-    //  }
-    //  instance_transform_VBO->unMapBuffer();
+        buffer_ptr[offset + i * UV_VBO_VERT_SIZE + 0] = (uvs.x + spr.sheet.cellWidth * col) / spr.sheet.tex->getWidth() ;
+        buffer_ptr[offset + i * UV_VBO_VERT_SIZE + 1] = ( (uvs.y + spr.sheet.cellHeight * row) / spr.sheet.tex->getHeight() );
 
-    //  spriteRends.erase(spr);
-    //  numSprites--;
-
-}
-
-void InstanceRenderer::updateDirtyFlags(){
-    for (auto it : spriteRends){
-        if (it.first->dirty || it.first->parent.getComponent<Component::Transform>().dirty){
-            int16_t texID;
-            for (int i = 0; i < MAX_TEXTURES; i++){
-                if (it.first->sheet.tex.get() == textures[i]){
-                    texID = i;
-                    break;
-                }
-            }
-            configureSpriteVertexData(it.first, texID);
-        }
     }
 
+    instance_uv_VBO.unMapBuffer();
+    instance_uv_VBO.unBind();
 }
 
-bool InstanceRenderer::containsTexture(const Ref<Texture>& tex){
+void InstanceRenderer::updateTexIDData(const Component::SpriteRenderer& spr, int16_t texID) const{
+    instance_texID_VBO.bind();
+    uint32_t index = spr.index;
+
+    buffer_ptr = instance_texID_VBO.mapBuffer<float>();
+    offset = index * UV_VBO_VERT_SIZE;
+    buffer_ptr[offset] = texID;
+
+    instance_texID_VBO.unBind();
+    instance_texID_VBO.unMapBuffer();
+}
+
+void InstanceRenderer::removeSpriteRenderer(Component::SpriteRenderer& spr){
+     uint32_t index = spr.index;
+
+     instance_transform_VBO.bind();
+     uint32_t start = index * TRANSFORM_VBO_VERT_SIZE;
+
+     float* buffer_ptr = instance_transform_VBO.mapBuffer<float>();
+     for (uint32_t i = start; i < numSprites * TRANSFORM_VBO_VERT_SIZE - TRANSFORM_VBO_VERT_SIZE; i++){
+         buffer_ptr[i] = buffer_ptr[i + TRANSFORM_VBO_VERT_SIZE];
+     }
+     instance_transform_VBO>unMapBuffer();
+     instance_transform_VBO.unBind();
+    
+     instance_uv_VBO.bind();
+     start = index * UV_VBO_VERT_SIZE * 4;
+     buffer_ptr = instance_uv_VBO.mapBuffer<float>();
+     for (uint32_t i = start; i < numSprites * UV_VBO_VERT_SIZE * 4 - UV_VBO_VERT_SIZE * 4; i++){
+         buffer_ptr[i] = buffer_ptr[i + UV_VBO_VERT_SIZE * 4];
+     }
+     instance_uv_VBO.unMapBuffer();
+     instance_uv_VBO.unBind();
+
+     instance_texID_VBO.bind();
+     start = index * TEXID_VBO_VERT_SIZE;
+     buffer_ptr = instance_texID_VBO.mapBuffer<float>();
+     for (uint32_t i = start; i < numSprites * TEXID_VBO_VERT_SIZE - TEXID_VBO_VERT_SIZE; i++){
+         buffer_ptr[i] = buffer_ptr[i + TEXID_VBO_VERT_SIZE];
+     }
+     instance_texID_VBO.unMapBuffer();
+     instance_texID_VBO.unBind();
+
+     for (uint32_t i = index; i < numSprites - 1; i++){
+         renderers[i + 1].index -= 1;
+         renderers[i] = renderers[i + 1];
+     }
+
+     numSprites--;
+
+}
+
+bool InstanceRenderer::containsTexture(const Ref<Texture>& tex) const{
     for (auto& text : textures){
         if (tex.get() == text)
             return true;

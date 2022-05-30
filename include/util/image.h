@@ -13,4 +13,4 @@ struct Image{
 };
 
 Ref<Image> loadImage(const char* path, int reqComps = 0);
-Scoped<Image> loadImageAsRaw(const char* path, int reqComps = 0);
+Image* loadImageAsRaw(const char* path, int reqComps = 0);

@@ -5470,7 +5470,10 @@ CMakeFiles/terraria.dir/src/scene/scene.cpp.o: CMakeFiles/terraria.dir/cmake_pch
   ../include/renderer/instanceRenderer.h \
   ../include/renderer/buffer.h \
   ../include/renderer/VAO.h \
-  ../include/constants.h
+  ../include/constants.h \
+  ../include/core/input.h \
+  ../include/core/window.h \
+  ../include/util/image.h
 
 CMakeFiles/terraria.dir/src/util/assetPool.cpp.o: CMakeFiles/terraria.dir/cmake_pch_arm64.hxx \
   CMakeFiles/terraria.dir/cmake_pch_arm64.hxx.cxx \

@@ -8,7 +8,7 @@ struct TexParams{
 
 class Texture{
     public:
-        Texture(const char* assetPath, TexParams params, bool generateMipMaps);
+        Texture(const char* assetPath, const TexParams& params);
         Texture(Texture& other) = delete;
         Texture(const Texture& other) = delete;
         Texture(Texture&& other) = delete;
@@ -21,7 +21,7 @@ class Texture{
         inline uint32_t getHeight(){ return height; }
 
     private:
-        bool generate(const char* assetPath, TexParams params, bool generateMipMaps);
+        bool generate(const char* assetPath, const TexParams& params);
 
         unsigned int ID;
         uint32_t width, height;

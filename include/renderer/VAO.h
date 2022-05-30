@@ -10,7 +10,7 @@ class VertexArrayObject{
         ~VertexArrayObject();
 
         void addAtribute(int stride, int dataType, int typeSize, int divisor = -1);
-        void addMatrixAttribute(int rows, int cols, bool divisor = false);
+        void addMatrixAttribute(int rows, int cols, int divisor = -1);
 
         inline void bind(){ glBindVertexArray(ID); }
         inline void unBind(){ glBindVertexArray(0); }

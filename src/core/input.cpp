@@ -44,7 +44,7 @@ bool KeyListener::isKeyModdedBy(uint16_t keyCode, int mod){
 //////////////////////////////////////////////////////////////////////
 */
 
-//constructor implicitly called on instance at start of program
+
 MouseListener* MouseListener::instance = nullptr;
 
 MouseListener::MouseListener(Window* windowRef){
@@ -108,12 +108,13 @@ bool MouseListener::setCursorImage(const char* path){
     if (instance->window == nullptr)
         return false;
 
-    Scoped<Image> raw = loadImageAsRaw(path);
+    Image* raw = loadImageAsRaw(path);
     GLFWimage img;
     img.width = raw->width;
     img.height = raw->height;
     img.pixels = raw->pixels;
     raw->pixels = nullptr;
+    delete raw;
     
     if (instance->cursor != nullptr)
         glfwDestroyCursor(instance->cursor);

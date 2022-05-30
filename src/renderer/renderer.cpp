@@ -10,16 +10,13 @@ Renderer::Renderer(){
 }
 
 Renderer::~Renderer(){
-    //TODO Find out if this accounts for the extra batches allocated by realloc
-    delete[] instance->instanceBatches;
-    // or just do
-    // for (int i = 0; i < instance->numBatches; i++) free(instance->instanceBatches + i);
+    delete instanceRenderer;
 }
 
 void Renderer::init(){
-    instance->instanceBatches = new InstanceRenderer[1];
-    instance->instanceBatches[0].init();
-    instance->numBatches = 1;
+    //must be called after window initialization
+    instance->instanceRenderer = new InstanceRenderer();
+    instance->instanceRenderer->init();
 }
 
 void Renderer::render(){
@@ -28,38 +25,14 @@ void Renderer::render(){
     }
 }
 
-//make sure the batch isnt full (batch size and textures). If full, make a new one 
-//Otherwise add the spr to the batch
-void Renderer::addToBatch(Component::SpriteRenderer& spr){
-    for (int i = 0; i < instance->numBatches; i++){
-        if (instance->instanceBatches[i].getCurrentSize() < MAX_INSTANCES && (instance->instanceBatches[i].getnumTextures() < MAX_TEXTURES || instance->instanceBatches[i].containsTexture(spr.sheet.tex))){
-            instance->instanceBatches[i].addSpriteRenderer(&spr);
-            return;
-        }
-    }
-    //resize manually to avoid too much padding
-
-    instance->instanceBatches = (InstanceRenderer*) realloc(instance->instanceBatches, sizeof(InstanceRenderer) * (instance->numBatches + 1));
-    //placement new so that elements are placed in continous memory
-    //InstanceRenderer* b = new (&instance->instanceBatches[0] + instance->instanceBatches.size()) InstanceRenderer();
-    InstanceRenderer* b = new (instance->instanceBatches + instance->numBatches) InstanceRenderer();
-
-    instance->instanceBatches[instance->numBatches].init();
-    instance->instanceBatches[instance->numBatches].addSpriteRenderer(&spr);
-    instance->numBatches++;
-
-    //instance->instanceBatches[instance->instanceBatches.size() - 1]->init();
-
+void Renderer::submit(Component::SpriteRenderer& spr){
+    assert(instance->instanceRenderer->numSprites <= MAX_INSTANCES);
+    instance->instanceBatches[instance->numBatches].addSpriteRenderer(spr);
 }
 
-void Renderer::deleteFromBatch(Component::SpriteRenderer& spr){
-    using map = std::unordered_map<Component::SpriteRenderer*, uint16_t>;
+void Renderer::remove(Component::SpriteRenderer& spr){
+    //assert that the renderer actually contains the given Sprite
+    assert(instance->instanceRenderer->renderers[spr.index] == &spr);
+    instance->instanceRenderer->removeSpriteRenderer(spr);
 
-    for (int i = 0; i < instance->numBatches; i++){
-        map& m = instance->instanceBatches[i].getRenderers();
-        if (m.find(&spr) != m.end()){
-            instance->instanceBatches[i].removeSpriteRenderer(&spr);
-            return;
-        }
-    }
 }

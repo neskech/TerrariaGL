@@ -12,11 +12,7 @@ struct SpriteSheet{
     int numCols;
     float cellWidth, cellHeight;
 
-    SpriteSheet(const char* path, int rows = 1, int cols = 1, TexParams* params = nullptr, bool mipMaps = false) : numRows(rows), numCols(cols){
-        if (params != nullptr)
-             tex = AssetPool::getTexture(path, *params, mipMaps);
-        tex = AssetPool::getTexture(path);
-
+    SpriteSheet(Ref<Texture>& tex_, int rows_, int cols_) : tex(tex_), numRows(rows_), numCols(cols_){
         cellWidth = tex->getWidth() / numCols;
         cellHeight = tex->getHeight() / numRows;
     }

@@ -9,7 +9,7 @@ class Shader{
         Shader(const Shader&& other) = delete;
         ~Shader();
 
-        void use();
+        void activate();
         void deActivate();
 
         void setBool(const std::string& name, bool value) const;
@@ -20,8 +20,8 @@ class Shader{
         void setVec4(const std::string& name, const glm::vec4& vec) const;
         void setmat3(const std::string& name, const glm::mat3x3& vec) const;
         void setmat4(const std::string& name, const glm::mat4x4& vec) const;
-        void uploadTexture(const std::string& variableName, int slot) const;
-        void uploadTextures(const std::string& variableName, int* slots) const;
+        void uploadTexture(const std::string& name, int slot) const;
+        void uploadTextures(const std::string& name, int* slots) const;
 
         inline int getID(){ return programID; }
     private:

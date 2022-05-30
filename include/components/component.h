@@ -48,15 +48,23 @@ namespace Component{
     struct SpriteRenderer{
         SpriteSheet sheet;
         Sprite sprite;
+
         glm::vec3 color;
         Terra::Entity parent;
-        bool dirty;
+        void (*dirtyCallback)(SpriteRenderer* spr);
+        uint32_t renderer_index; //very very messy solution ):
 
         SpriteRenderer(const Terra::Entity& ent_, const SpriteSheet& sheet_, Sprite spr_ = {0, 0})
         : parent(ent_), sheet(sheet_), sprite(spr_) {}
         
-        void changeColor(const glm::vec3& c){ color = c; dirty = true; }
-        void changeSprite(Sprite spr){ sprite = spr; dirty = true; }
+        void changeColor(const glm::vec3& c){ color = c; dirty(); }
+
+        void changeSprite(Sprite spr){ sprite = spr; dirty(); }
+
+        void dirty(){ 
+            if (dirtyCallback != nullptr) 
+                dirtyCallback(this);
+        }
     };
 
     //keep track of the current animation
