@@ -54,10 +54,10 @@ RM = /opt/homebrew/Cellar/cmake/3.23.1_1/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/shauntemellor/Documents/comsci/Projects/Terraria
+CMAKE_SOURCE_DIR = "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/shauntemellor/Documents/comsci/Projects/Terraria/build
+CMAKE_BINARY_DIR = "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build"
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -166,14 +166,14 @@ CMakeFiles/terraria.dir/all: libs/glfw/src/CMakeFiles/glfw.dir/all
 CMakeFiles/terraria.dir/all: libs/Glad/CMakeFiles/glad.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles --progress-num=35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50 "Built target terraria"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" --progress-num=35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50 "Built target terraria"
 .PHONY : CMakeFiles/terraria.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/terraria.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles 50
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" 50
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/terraria.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" 0
 .PHONY : CMakeFiles/terraria.dir/rule
 
 # Convenience name for target.
@@ -192,14 +192,14 @@ CMakeFiles/terraria.dir/clean:
 CMakeFiles/imgui.dir/all: libs/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles --progress-num=25,26,27,28,29,30,31,32 "Built target imgui"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" --progress-num=25,26,27,28,29,30,31,32 "Built target imgui"
 .PHONY : CMakeFiles/imgui.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/imgui.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles 30
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" 30
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/imgui.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" 0
 .PHONY : CMakeFiles/imgui.dir/rule
 
 # Convenience name for target.
@@ -218,14 +218,14 @@ CMakeFiles/imgui.dir/clean:
 CMakeFiles/stb_image.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/stb_image.dir/build.make CMakeFiles/stb_image.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/stb_image.dir/build.make CMakeFiles/stb_image.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles --progress-num=33,34 "Built target stb_image"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" --progress-num=33,34 "Built target stb_image"
 .PHONY : CMakeFiles/stb_image.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/stb_image.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/stb_image.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" 0
 .PHONY : CMakeFiles/stb_image.dir/rule
 
 # Convenience name for target.
@@ -244,14 +244,14 @@ CMakeFiles/stb_image.dir/clean:
 libs/glfw/CMakeFiles/uninstall.dir/all:
 	$(MAKE) $(MAKESILENT) -f libs/glfw/CMakeFiles/uninstall.dir/build.make libs/glfw/CMakeFiles/uninstall.dir/depend
 	$(MAKE) $(MAKESILENT) -f libs/glfw/CMakeFiles/uninstall.dir/build.make libs/glfw/CMakeFiles/uninstall.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles --progress-num= "Built target uninstall"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" --progress-num= "Built target uninstall"
 .PHONY : libs/glfw/CMakeFiles/uninstall.dir/all
 
 # Build rule for subdir invocation for target.
 libs/glfw/CMakeFiles/uninstall.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libs/glfw/CMakeFiles/uninstall.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" 0
 .PHONY : libs/glfw/CMakeFiles/uninstall.dir/rule
 
 # Convenience name for target.
@@ -270,14 +270,14 @@ libs/glfw/CMakeFiles/uninstall.dir/clean:
 libs/glfw/src/CMakeFiles/glfw.dir/all:
 	$(MAKE) $(MAKESILENT) -f libs/glfw/src/CMakeFiles/glfw.dir/build.make libs/glfw/src/CMakeFiles/glfw.dir/depend
 	$(MAKE) $(MAKESILENT) -f libs/glfw/src/CMakeFiles/glfw.dir/build.make libs/glfw/src/CMakeFiles/glfw.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles --progress-num=3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24 "Built target glfw"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" --progress-num=3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24 "Built target glfw"
 .PHONY : libs/glfw/src/CMakeFiles/glfw.dir/all
 
 # Build rule for subdir invocation for target.
 libs/glfw/src/CMakeFiles/glfw.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles 22
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" 22
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libs/glfw/src/CMakeFiles/glfw.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" 0
 .PHONY : libs/glfw/src/CMakeFiles/glfw.dir/rule
 
 # Convenience name for target.
@@ -296,14 +296,14 @@ libs/glfw/src/CMakeFiles/glfw.dir/clean:
 libs/glfw/src/CMakeFiles/update_mappings.dir/all:
 	$(MAKE) $(MAKESILENT) -f libs/glfw/src/CMakeFiles/update_mappings.dir/build.make libs/glfw/src/CMakeFiles/update_mappings.dir/depend
 	$(MAKE) $(MAKESILENT) -f libs/glfw/src/CMakeFiles/update_mappings.dir/build.make libs/glfw/src/CMakeFiles/update_mappings.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles --progress-num=51 "Built target update_mappings"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" --progress-num=51 "Built target update_mappings"
 .PHONY : libs/glfw/src/CMakeFiles/update_mappings.dir/all
 
 # Build rule for subdir invocation for target.
 libs/glfw/src/CMakeFiles/update_mappings.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" 1
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libs/glfw/src/CMakeFiles/update_mappings.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" 0
 .PHONY : libs/glfw/src/CMakeFiles/update_mappings.dir/rule
 
 # Convenience name for target.
@@ -322,14 +322,14 @@ libs/glfw/src/CMakeFiles/update_mappings.dir/clean:
 libs/Glad/CMakeFiles/glad.dir/all:
 	$(MAKE) $(MAKESILENT) -f libs/Glad/CMakeFiles/glad.dir/build.make libs/Glad/CMakeFiles/glad.dir/depend
 	$(MAKE) $(MAKESILENT) -f libs/Glad/CMakeFiles/glad.dir/build.make libs/Glad/CMakeFiles/glad.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles --progress-num=1,2 "Built target glad"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" --progress-num=1,2 "Built target glad"
 .PHONY : libs/Glad/CMakeFiles/glad.dir/all
 
 # Build rule for subdir invocation for target.
 libs/Glad/CMakeFiles/glad.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libs/Glad/CMakeFiles/glad.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" 0
 .PHONY : libs/Glad/CMakeFiles/glad.dir/rule
 
 # Convenience name for target.

@@ -42,7 +42,7 @@ class Buffer{
 
         template <class T>
         void allocateData(int length){
-            glBufferData(bufferType, length * sizeof(T), nullptr, GL_STATIC_DRAW);
+            glBufferData(bufferType, length * sizeof(T), NULL, GL_STATIC_DRAW);
         }
 
         template <class T>

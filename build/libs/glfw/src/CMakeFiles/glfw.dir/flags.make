@@ -4,7 +4,7 @@
 # compile C with /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc
 C_DEFINES = -D_GLFW_COCOA
 
-C_INCLUDES = -I/Users/shauntemellor/Documents/comsci/Projects/Terraria/terraria -I/Users/shauntemellor/Documents/comsci/Projects/Terraria/include -I/Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glfw/include -I/Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glfw/src -I/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/libs/glfw/src
+C_INCLUDES = -I"/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/terraria" -I"/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/include" -I"/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/include" -I"/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src" -I"/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src"
 
 C_FLAGSarm64 =  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -fPIC -Wall -std=c99
 

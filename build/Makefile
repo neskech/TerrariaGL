@@ -57,10 +57,10 @@ RM = /opt/homebrew/Cellar/cmake/3.23.1_1/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/shauntemellor/Documents/comsci/Projects/Terraria
+CMAKE_SOURCE_DIR = "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/shauntemellor/Documents/comsci/Projects/Terraria/build
+CMAKE_BINARY_DIR = "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,9 +132,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles /Users/shauntemellor/Documents/comsci/Projects/Terraria/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build//CMakeFiles/progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -603,29 +603,29 @@ src/renderer/framebuffer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/renderer/framebuffer.cpp.s
 .PHONY : src/renderer/framebuffer.cpp.s
 
-src/renderer/renderBatch.o: src/renderer/renderBatch.cpp.o
-.PHONY : src/renderer/renderBatch.o
+src/renderer/instanceRenderer.o: src/renderer/instanceRenderer.cpp.o
+.PHONY : src/renderer/instanceRenderer.o
 
 # target to build an object file
-src/renderer/renderBatch.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/renderer/renderBatch.cpp.o
-.PHONY : src/renderer/renderBatch.cpp.o
+src/renderer/instanceRenderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/renderer/instanceRenderer.cpp.o
+.PHONY : src/renderer/instanceRenderer.cpp.o
 
-src/renderer/renderBatch.i: src/renderer/renderBatch.cpp.i
-.PHONY : src/renderer/renderBatch.i
+src/renderer/instanceRenderer.i: src/renderer/instanceRenderer.cpp.i
+.PHONY : src/renderer/instanceRenderer.i
 
 # target to preprocess a source file
-src/renderer/renderBatch.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/renderer/renderBatch.cpp.i
-.PHONY : src/renderer/renderBatch.cpp.i
+src/renderer/instanceRenderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/renderer/instanceRenderer.cpp.i
+.PHONY : src/renderer/instanceRenderer.cpp.i
 
-src/renderer/renderBatch.s: src/renderer/renderBatch.cpp.s
-.PHONY : src/renderer/renderBatch.s
+src/renderer/instanceRenderer.s: src/renderer/instanceRenderer.cpp.s
+.PHONY : src/renderer/instanceRenderer.s
 
 # target to generate assembly for a file
-src/renderer/renderBatch.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/renderer/renderBatch.cpp.s
-.PHONY : src/renderer/renderBatch.cpp.s
+src/renderer/instanceRenderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/renderer/instanceRenderer.cpp.s
+.PHONY : src/renderer/instanceRenderer.cpp.s
 
 src/renderer/renderer.o: src/renderer/renderer.cpp.o
 .PHONY : src/renderer/renderer.o
@@ -859,9 +859,9 @@ help:
 	@echo "... src/renderer/framebuffer.o"
 	@echo "... src/renderer/framebuffer.i"
 	@echo "... src/renderer/framebuffer.s"
-	@echo "... src/renderer/renderBatch.o"
-	@echo "... src/renderer/renderBatch.i"
-	@echo "... src/renderer/renderBatch.s"
+	@echo "... src/renderer/instanceRenderer.o"
+	@echo "... src/renderer/instanceRenderer.i"
+	@echo "... src/renderer/instanceRenderer.s"
 	@echo "... src/renderer/renderer.o"
 	@echo "... src/renderer/renderer.i"
 	@echo "... src/renderer/renderer.s"

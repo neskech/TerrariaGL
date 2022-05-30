@@ -6,18 +6,18 @@
 #include "renderer/VAO.h"
 #include <unordered_map>
 
-static constexpr int VERTEX_SIZE = 5;
+#include "constants.h"
+static constexpr int VERTEX_SIZE = 19;
 
-class RenderBatch{
+class InstanceRenderer{
     public:
-        RenderBatch();
-        ~RenderBatch();
+        InstanceRenderer();
+        ~InstanceRenderer();
 
         void init();
         void render();
         void addSpriteRenderer(Component::SpriteRenderer* spr);
         void removeSpriteRenderer(Component::SpriteRenderer* spr);
-        void generateIndices();
         void updateDirtyFlags();
         void configureSpriteVertexData(Component::SpriteRenderer* spr, int16_t texID);
         bool containsTexture(const Ref<Texture>& tex);
@@ -27,13 +27,15 @@ class RenderBatch{
         inline std::unordered_map<Component::SpriteRenderer*, uint16_t>& getRenderers(){ return spriteRends; }
     private:
         std::unordered_map<Component::SpriteRenderer*, uint16_t> spriteRends;
-        Ref<Texture> textures[MAX_TEXTURES];
+        Texture* textures[MAX_TEXTURES];
 
         int numTextures;
         std::size_t numSprites;
 
-        Buffer VBO{BufferType::VBO};
-        Buffer EBO{BufferType::EBO};
-        VertexArrayObject VAO{sizeof(float) * 4};
+        Buffer* instance_transform_VBO;
+        Buffer* instance_uv_VBO;
+        Buffer* instance_texID_VBO;
+        Buffer* templateVBO;
+        VertexArrayObject* VAO;
         Ref<Shader> shader;
 };

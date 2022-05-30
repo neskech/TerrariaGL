@@ -52,6 +52,9 @@ namespace Component{
         Terra::Entity parent;
         bool dirty;
 
+        SpriteRenderer(const Terra::Entity& ent_, const SpriteSheet& sheet_, Sprite spr_ = {0, 0})
+        : parent(ent_), sheet(sheet_), sprite(spr_) {}
+        
         void changeColor(const glm::vec3& c){ color = c; dirty = true; }
         void changeSprite(Sprite spr){ sprite = spr; dirty = true; }
     };

@@ -1,22 +1,36 @@
 #type vertex
 #version 410 core
 
-layout (location=0) in vec3 aPos;
-layout (location=1) in vec3 aColor;
+layout (location=0) in vec2 aPos;
+layout (location=1) in vec2 auv;
+layout (location=2) in float texID;
+layout (location=3) in mat4 model;
 
-out vec4 fColor;
+out vec2 uv;
+out float ftexID;
+
+uniform mat4 ortho;
+uniform mat4 view;
 
 void main(){
-    fColor = vec4(aColor, 1.0);
-    gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);
+    uv = auv;
+    ftexID = texID;
+    gl_Position = vec4(aPos.x, aPos.y, 0.0, 1.0);
 }
 
 #type fragment
 #version 410 core
 
-in vec4 fColor;
+uniform sampler2D uTextures[8];
+// uniform sampler2D tex1;
+// uniform sampler2D tex2;
+
+in vec2 uv;
+in float ftexID;
 out vec4 Color;
 
 void main(){
-       Color = fColor;
+       Color = texture(uTextures[int(ftexID)], uv);
+       //Color = vec4(1.0f, 1.0f, 1.0f, 1.0f);
+       
 }

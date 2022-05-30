@@ -1,4 +1,4 @@
-# Install script for directory: /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glm
+# Install script for directory: /Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glm
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/libs/glm/glm/cmake_install.cmake")
+  include("/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glm/glm/cmake_install.cmake")
 
 endif()
 

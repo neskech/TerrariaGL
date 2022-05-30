@@ -15,7 +15,7 @@ class Texture{
         ~Texture();
 
         inline void bind() { glBindTexture(GL_TEXTURE_2D, ID); }
-        inline void unBind() { glBindTexture(GL_TEXTURE_2D, ID); }
+        inline void unBind() { glBindTexture(GL_TEXTURE_2D, 0); }
         inline unsigned int getID(){ return ID; }
         inline uint32_t getWidth(){ return width; }
         inline uint32_t getHeight(){ return height; }

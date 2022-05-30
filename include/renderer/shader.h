@@ -1,6 +1,6 @@
 #pragma once
-#include <string>
 #include "pch.h"
+#include <string>
 
 class Shader{
     public:
@@ -15,11 +15,11 @@ class Shader{
         void setBool(const std::string& name, bool value) const;
         void setInt(const std::string& name, int value) const;
         void setFloat(const std::string& name, float value) const;
-        void setVec2(const std::string& name, glm::vec2 vec) const;
-        void setVec3(const std::string& name, glm::vec3 vec) const;
-        void setVec4(const std::string& name, glm::vec4 vec) const;
-        void setmat3(const std::string& name, glm::mat3x3 vec) const;
-        void setmat4(const std::string& name, glm::mat4x4 vec) const;
+        void setVec2(const std::string& name, const glm::vec2& vec) const;
+        void setVec3(const std::string& name, const glm::vec3& vec) const;
+        void setVec4(const std::string& name, const glm::vec4& vec) const;
+        void setmat3(const std::string& name, const glm::mat3x3& vec) const;
+        void setmat4(const std::string& name, const glm::mat4x4& vec) const;
         void uploadTexture(const std::string& variableName, int slot) const;
         void uploadTextures(const std::string& variableName, int* slots) const;
 

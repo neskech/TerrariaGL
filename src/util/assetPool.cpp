@@ -7,6 +7,9 @@ AssetPool::AssetPool(){
         assert(false);
 
     instance = this;
+    std::cout << "ABOUT TO RESERVE\n";
+    instance->shaders.reserve(1);
+    std::cout << "ABOUT TO RESERVE\n";
 }
 
 AssetPool::~AssetPool(){

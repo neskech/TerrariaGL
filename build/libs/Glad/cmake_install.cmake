@@ -1,4 +1,4 @@
-# Install script for directory: /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/Glad
+# Install script for directory: /Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/Glad
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

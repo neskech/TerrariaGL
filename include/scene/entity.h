@@ -1,7 +1,5 @@
 #pragma once
 
-#ifndef HEHHE
-#define HEHHE
 
 #include "scene/scene.h"
 #include "include/entt/entt.hpp"
@@ -11,7 +9,7 @@ namespace Terra{
 class Entity{
     public:
 
-        Entity(Scene* scene_): scene(scene_){}
+        Entity(entt::entity ent_, Scene* scene_): ent(ent_), scene(scene_){}
 
         template <class T>
         T& getComponent() {
@@ -48,6 +46,7 @@ class Entity{
              scene->getRegistry().remove<T>(ent);
         }
 
+        inline entt::entity getInnerEntity(){ return ent; }
     private:
         friend class Scene;
         entt::entity ent;
@@ -56,4 +55,3 @@ class Entity{
 
 }
 
-#endif

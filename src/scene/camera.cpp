@@ -1,12 +1,14 @@
-#include "camera.h"
+#include "scene/camera.h"
 #include <glm/gtc/matrix_transform.hpp>
 
 Camera* Camera::instance = nullptr;
 
-Camera::Camera(glm::vec3 pos_, glm::vec3 worldUp_){
+Camera::Camera(const glm::vec3& pos_, const glm::vec3& worldUp_, const glm::vec3& forward_): pos(pos_), worldUp(worldUp_), forward(forward_){
      if (instance != nullptr)
         assert(false);
+
      instance = this;
+     updateVectors();
 }
 
 Camera::~Camera(){
@@ -18,7 +20,7 @@ glm::mat4 Camera::getProjectionMatrix() {
 }
 
 glm::mat4 Camera::getViewMatrix() { 
-    return glm::lookAt(instance->pos, instance->pos + instance->forward, instance->up);
+    return glm::lookAt(instance->pos, instance->pos + instance->forward, glm::vec3(0.0f, 1.0f, 0.0f));
 }
 
 void Camera::changeLookDirection(const glm::vec3& look){ 

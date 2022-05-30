@@ -52,6 +52,7 @@ bool Window::init(){
     }
 
     glfwSwapInterval(1);
+    glDisable(GL_CULL_FACE);
 
     return true;
 }

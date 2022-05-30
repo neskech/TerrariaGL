@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/stb_image/stb_image.cpp" "CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.o" "gcc" "CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.o.d"
+  "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/stb_image/stb_image.cpp" "CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.o" "gcc" "CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.o.d"
   )
 
 # Targets to which this target links.

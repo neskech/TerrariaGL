@@ -53,10 +53,10 @@ RM = /opt/homebrew/Cellar/cmake/3.23.1_1/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/shauntemellor/Documents/comsci/Projects/Terraria
+CMAKE_SOURCE_DIR = "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/shauntemellor/Documents/comsci/Projects/Terraria/build
+CMAKE_BINARY_DIR = "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build"
 
 # Utility rule file for update_mappings.
 
@@ -67,8 +67,8 @@ include libs/glfw/src/CMakeFiles/update_mappings.dir/compiler_depend.make
 include libs/glfw/src/CMakeFiles/update_mappings.dir/progress.make
 
 libs/glfw/src/CMakeFiles/update_mappings:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Updating gamepad mappings from upstream repository"
-	cd /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glfw/src && /opt/homebrew/Cellar/cmake/3.23.1_1/bin/cmake -P /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glfw/CMake/GenerateMappings.cmake mappings.h.in mappings.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir="/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Updating gamepad mappings from upstream repository"
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src" && /opt/homebrew/Cellar/cmake/3.23.1_1/bin/cmake -P "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/CMake/GenerateMappings.cmake" mappings.h.in mappings.h
 
 update_mappings: libs/glfw/src/CMakeFiles/update_mappings
 update_mappings: libs/glfw/src/CMakeFiles/update_mappings.dir/build.make
@@ -79,10 +79,10 @@ libs/glfw/src/CMakeFiles/update_mappings.dir/build: update_mappings
 .PHONY : libs/glfw/src/CMakeFiles/update_mappings.dir/build
 
 libs/glfw/src/CMakeFiles/update_mappings.dir/clean:
-	cd /Users/shauntemellor/Documents/comsci/Projects/Terraria/build/libs/glfw/src && $(CMAKE_COMMAND) -P CMakeFiles/update_mappings.dir/cmake_clean.cmake
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && $(CMAKE_COMMAND) -P CMakeFiles/update_mappings.dir/cmake_clean.cmake
 .PHONY : libs/glfw/src/CMakeFiles/update_mappings.dir/clean
 
 libs/glfw/src/CMakeFiles/update_mappings.dir/depend:
-	cd /Users/shauntemellor/Documents/comsci/Projects/Terraria/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/shauntemellor/Documents/comsci/Projects/Terraria /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/glfw/src /Users/shauntemellor/Documents/comsci/Projects/Terraria/build /Users/shauntemellor/Documents/comsci/Projects/Terraria/build/libs/glfw/src /Users/shauntemellor/Documents/comsci/Projects/Terraria/build/libs/glfw/src/CMakeFiles/update_mappings.dir/DependInfo.cmake --color=$(COLOR)
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria" "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src" "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build" "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src/CMakeFiles/update_mappings.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : libs/glfw/src/CMakeFiles/update_mappings.dir/depend
 

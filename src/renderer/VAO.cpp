@@ -12,13 +12,13 @@ VertexArrayObject::~VertexArrayObject(){
 }
 
 
-void VertexArrayObject::addAtribute(int stride, int dataType, int typeSize, bool divisor){
+void VertexArrayObject::addAtribute(int stride, int dataType, int typeSize, int divisor){
     std::cout << "numAttrs " << numAttributes << " byteLength " << byteLength << "\n";
     glVertexAttribPointer(numAttributes, stride, dataType, GL_FALSE, vertexSizeBytes, (void*)byteLength);
     glEnableVertexAttribArray(numAttributes);  
 
-    if (divisor)
-        glVertexAttribDivisor(numAttributes, 1);
+    if (divisor >= 0)
+        glVertexAttribDivisor(numAttributes, divisor);
 
     numAttributes++;
     byteLength += stride * typeSize;
@@ -43,16 +43,15 @@ void VertexArrayObject::addMatrixAttribute(int rows, int cols, bool divisor){
             return; 
     }
 
-    glm::vec4 vec;
     for (int i = 0; i  < rows; i++){
         glEnableVertexAttribArray(numAttributes);  
-        glVertexAttribPointer(numAttributes, cols, GL_FLOAT, GL_FALSE, cols * size, (void*)byteLength);
+        glVertexAttribPointer(numAttributes, cols, GL_FLOAT, GL_FALSE, rows * size, (void*)byteLength);
 
         if (divisor)
              glVertexAttribDivisor(numAttributes, 1);
 
         numAttributes++;
-        byteLength++;
+        byteLength += size;
     }
 
 }

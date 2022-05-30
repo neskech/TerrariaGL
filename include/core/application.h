@@ -2,6 +2,7 @@
 #include "window.h"
 #include "core/input.h"
 #include "util/assetPool.h"
+#include "scene/scene.h"
 
 class Application{
 
@@ -20,6 +21,7 @@ class Application{
     private:
         static Application* instance;
         
+        Scene* scene;
         Window* window;
         KeyListener* keyListener;
         MouseListener* mouseListener;

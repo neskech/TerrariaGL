@@ -53,10 +53,10 @@ RM = /opt/homebrew/Cellar/cmake/3.23.1_1/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/shauntemellor/Documents/comsci/Projects/Terraria
+CMAKE_SOURCE_DIR = "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/shauntemellor/Documents/comsci/Projects/Terraria/build
+CMAKE_BINARY_DIR = "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/stb_image.dir/depend.make
@@ -72,16 +72,16 @@ include CMakeFiles/stb_image.dir/flags.make
 CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.o: CMakeFiles/stb_image.dir/flags.make
 CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.o: ../libs/stb_image/stb_image.cpp
 CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.o: CMakeFiles/stb_image.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.o -MF CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.o.d -o CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.o -c /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/stb_image/stb_image.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.o -MF CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.o.d -o CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/stb_image/stb_image.cpp"
 
 CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/stb_image/stb_image.cpp > CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/stb_image/stb_image.cpp" > CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.i
 
 CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/shauntemellor/Documents/comsci/Projects/Terraria/libs/stb_image/stb_image.cpp -o CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/stb_image/stb_image.cpp" -o CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.s
 
 # Object files for target stb_image
 stb_image_OBJECTS = \
@@ -93,7 +93,7 @@ stb_image_EXTERNAL_OBJECTS =
 libstb_image.a: CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.o
 libstb_image.a: CMakeFiles/stb_image.dir/build.make
 libstb_image.a: CMakeFiles/stb_image.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libstb_image.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libstb_image.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/stb_image.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/stb_image.dir/link.txt --verbose=$(VERBOSE)
 
@@ -106,6 +106,6 @@ CMakeFiles/stb_image.dir/clean:
 .PHONY : CMakeFiles/stb_image.dir/clean
 
 CMakeFiles/stb_image.dir/depend:
-	cd /Users/shauntemellor/Documents/comsci/Projects/Terraria/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/shauntemellor/Documents/comsci/Projects/Terraria /Users/shauntemellor/Documents/comsci/Projects/Terraria /Users/shauntemellor/Documents/comsci/Projects/Terraria/build /Users/shauntemellor/Documents/comsci/Projects/Terraria/build /Users/shauntemellor/Documents/comsci/Projects/Terraria/build/CMakeFiles/stb_image.dir/DependInfo.cmake --color=$(COLOR)
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria" "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria" "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build" "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build" "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles/stb_image.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/stb_image.dir/depend
 
