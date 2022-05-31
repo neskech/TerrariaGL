@@ -48,23 +48,17 @@ namespace Component{
     struct SpriteRenderer{
         SpriteSheet sheet;
         Sprite sprite;
+        glm::vec4 color;
 
-        glm::vec3 color;
-        Terra::Entity parent;
-        void (*dirtyCallback)(SpriteRenderer* spr);
-        uint32_t renderer_index; //very very messy solution ):
+        bool dirty;
 
-        SpriteRenderer(const Terra::Entity& ent_, const SpriteSheet& sheet_, Sprite spr_ = {0, 0})
-        : parent(ent_), sheet(sheet_), sprite(spr_) {}
+        SpriteRenderer(const SpriteSheet& sheet_, Sprite spr_ = {0, 0}) : sheet(sheet_), sprite(spr_) {}
         
-        void changeColor(const glm::vec3& c){ color = c; dirty(); }
+        void changeColor(const glm::vec4& c){ color = c; dirty = true; }
 
-        void changeSprite(Sprite spr){ sprite = spr; dirty(); }
+        void changeSprite(Sprite spr){ sprite = spr; dirty = true; }
 
-        void dirty(){ 
-            if (dirtyCallback != nullptr) 
-                dirtyCallback(this);
-        }
+  
     };
 
     //keep track of the current animation
@@ -85,6 +79,10 @@ namespace Component{
                 currentAnimation = aniType;
             }
 
+            const Animation& getCurrentAnimation(){
+                return animations[currentAnimation];
+            }
+
             void advance(float timeStep){
                 animations[currentAnimation].advance(timeStep);
             }
@@ -96,9 +94,13 @@ namespace Component{
 
     class ScriptableObject{
         public:
+            ScriptableObject(Terra::Entity& entity_): entity(entity_) {}
             virtual void start();
             virtual void update(float timeStep);
             virtual void destroy();
+            virtual ~ScriptableObject();
+        protected:
+           Terra::Entity& entity;
     };
 
 }

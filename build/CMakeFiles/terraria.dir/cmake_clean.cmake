@@ -25,6 +25,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/terraria.dir/src/scene/camera.cpp.o.d"
   "CMakeFiles/terraria.dir/src/scene/scene.cpp.o"
   "CMakeFiles/terraria.dir/src/scene/scene.cpp.o.d"
+  "CMakeFiles/terraria.dir/src/scripts/Animation.cpp.o"
+  "CMakeFiles/terraria.dir/src/scripts/Animation.cpp.o.d"
   "CMakeFiles/terraria.dir/src/util/assetPool.cpp.o"
   "CMakeFiles/terraria.dir/src/util/assetPool.cpp.o.d"
   "CMakeFiles/terraria.dir/src/util/image.cpp.o"

@@ -13,12 +13,11 @@ class Renderer{
 
         static void render();
         static void init();
-        static void remove(Component::SpriteRenderer& spr);
-        static void submit(Component::SpriteRenderer& spr);
+        static void remove(Terra::Entity& ent);
+        static void submit(Terra::Entity& ent);
 
     private:
         InstanceRenderer* instanceRenderer;
         static Renderer* instance;
-        friend class InstanceRenderer;
 
 };

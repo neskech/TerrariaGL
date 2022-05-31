@@ -1,6 +1,7 @@
 #pragma once
 #include "pch.h"
 #include "scene/camera.h"
+#include <vector>
 
 //forward declarations
 class Renderer;
@@ -18,13 +19,16 @@ class Scene{
         void update(float timeStep);
         void render();
 
-        void addToRenderer(entt::entity ent);
-        Terra::Entity createEntity();
+        void addToRenderer(Terra::Entity& ent);
+        Terra::Entity& createEntity(const char* name = nullptr);
         void deleteEntity(Terra::Entity& ent);
+        void deleteEntityByTagName(const std::string& tagName);
 
         inline entt::registry& getRegistry(){ return registry; }
     private:
         entt::registry registry;
+        std::vector<Terra::Entity> entites;
         Renderer* renderer;
         Camera* camera;
+
 };

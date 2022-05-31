@@ -276,12 +276,28 @@ CMakeFiles/terraria.dir/src/scene/scene.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/terraria.dir/src/scene/scene.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 "-include/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx" -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/src/scene/scene.cpp" -o CMakeFiles/terraria.dir/src/scene/scene.cpp.s
 
+CMakeFiles/terraria.dir/src/scripts/Animation.cpp.o: CMakeFiles/terraria.dir/flags.make
+CMakeFiles/terraria.dir/src/scripts/Animation.cpp.o: ../src/scripts/Animation.cpp
+CMakeFiles/terraria.dir/src/scripts/Animation.cpp.o: CMakeFiles/terraria.dir/cmake_pch_arm64.hxx
+CMakeFiles/terraria.dir/src/scripts/Animation.cpp.o: CMakeFiles/terraria.dir/cmake_pch_arm64.hxx.pch
+CMakeFiles/terraria.dir/src/scripts/Animation.cpp.o: CMakeFiles/terraria.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/terraria.dir/src/scripts/Animation.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 "-include/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx" -MD -MT CMakeFiles/terraria.dir/src/scripts/Animation.cpp.o -MF CMakeFiles/terraria.dir/src/scripts/Animation.cpp.o.d -o CMakeFiles/terraria.dir/src/scripts/Animation.cpp.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/src/scripts/Animation.cpp"
+
+CMakeFiles/terraria.dir/src/scripts/Animation.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/terraria.dir/src/scripts/Animation.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 "-include/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx" -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/src/scripts/Animation.cpp" > CMakeFiles/terraria.dir/src/scripts/Animation.cpp.i
+
+CMakeFiles/terraria.dir/src/scripts/Animation.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/terraria.dir/src/scripts/Animation.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 "-include/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx" -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/src/scripts/Animation.cpp" -o CMakeFiles/terraria.dir/src/scripts/Animation.cpp.s
+
 CMakeFiles/terraria.dir/src/util/assetPool.cpp.o: CMakeFiles/terraria.dir/flags.make
 CMakeFiles/terraria.dir/src/util/assetPool.cpp.o: ../src/util/assetPool.cpp
 CMakeFiles/terraria.dir/src/util/assetPool.cpp.o: CMakeFiles/terraria.dir/cmake_pch_arm64.hxx
 CMakeFiles/terraria.dir/src/util/assetPool.cpp.o: CMakeFiles/terraria.dir/cmake_pch_arm64.hxx.pch
 CMakeFiles/terraria.dir/src/util/assetPool.cpp.o: CMakeFiles/terraria.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/terraria.dir/src/util/assetPool.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/terraria.dir/src/util/assetPool.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 "-include/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx" -MD -MT CMakeFiles/terraria.dir/src/util/assetPool.cpp.o -MF CMakeFiles/terraria.dir/src/util/assetPool.cpp.o.d -o CMakeFiles/terraria.dir/src/util/assetPool.cpp.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/src/util/assetPool.cpp"
 
 CMakeFiles/terraria.dir/src/util/assetPool.cpp.i: cmake_force
@@ -297,7 +313,7 @@ CMakeFiles/terraria.dir/src/util/image.cpp.o: ../src/util/image.cpp
 CMakeFiles/terraria.dir/src/util/image.cpp.o: CMakeFiles/terraria.dir/cmake_pch_arm64.hxx
 CMakeFiles/terraria.dir/src/util/image.cpp.o: CMakeFiles/terraria.dir/cmake_pch_arm64.hxx.pch
 CMakeFiles/terraria.dir/src/util/image.cpp.o: CMakeFiles/terraria.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/terraria.dir/src/util/image.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/terraria.dir/src/util/image.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -Xarch_arm64 "-include/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx" -MD -MT CMakeFiles/terraria.dir/src/util/image.cpp.o -MF CMakeFiles/terraria.dir/src/util/image.cpp.o.d -o CMakeFiles/terraria.dir/src/util/image.cpp.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/src/util/image.cpp"
 
 CMakeFiles/terraria.dir/src/util/image.cpp.i: cmake_force
@@ -322,6 +338,7 @@ terraria_OBJECTS = \
 "CMakeFiles/terraria.dir/src/renderer/texture.cpp.o" \
 "CMakeFiles/terraria.dir/src/scene/camera.cpp.o" \
 "CMakeFiles/terraria.dir/src/scene/scene.cpp.o" \
+"CMakeFiles/terraria.dir/src/scripts/Animation.cpp.o" \
 "CMakeFiles/terraria.dir/src/util/assetPool.cpp.o" \
 "CMakeFiles/terraria.dir/src/util/image.cpp.o"
 
@@ -341,6 +358,7 @@ terraria: CMakeFiles/terraria.dir/src/renderer/shader.cpp.o
 terraria: CMakeFiles/terraria.dir/src/renderer/texture.cpp.o
 terraria: CMakeFiles/terraria.dir/src/scene/camera.cpp.o
 terraria: CMakeFiles/terraria.dir/src/scene/scene.cpp.o
+terraria: CMakeFiles/terraria.dir/src/scripts/Animation.cpp.o
 terraria: CMakeFiles/terraria.dir/src/util/assetPool.cpp.o
 terraria: CMakeFiles/terraria.dir/src/util/image.cpp.o
 terraria: CMakeFiles/terraria.dir/build.make
@@ -350,7 +368,7 @@ terraria: libimgui.a
 terraria: libstb_image.a
 terraria: libs/glfw/src/libglfw3.a
 terraria: CMakeFiles/terraria.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable terraria"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable terraria"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/terraria.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

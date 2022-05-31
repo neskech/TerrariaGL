@@ -3,57 +3,46 @@
 #include "scene/entity.h"
 #include "renderer/renderer.h"
 #include "core/input.h"
+#include "scripts/Animation.h"
 
 using namespace Terra;
 
 
 Scene::Scene(){
    renderer = new Renderer();
-   camera = new Camera(glm::vec3(0.0f, 0.0f, 10.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec3(0.0f, 0.0f, -1.0f));
+   camera = new Camera();
 }
 
 Scene::~Scene(){
     delete renderer;
     delete camera;
+
+    for (auto& entity : entites)
+        deleteEntity(entity);
 }
+
 
 void Scene::init(){
    renderer->init();
    
-   Entity sprite = createEntity();
+   Entity& sprite = createEntity();
    auto& trans = sprite.getComponent<Component::Transform>();
    trans.scale = glm::vec2(30, 30);
    trans.position = glm::vec2(-0.5f, -0.5f);
-   trans.rotation.x = glm::radians(45.0f);
 
-   Component::SpriteRenderer& spr = sprite.addComponent<Component::SpriteRenderer>(sprite, SpriteSheet{"/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/assets/img/kanan.png"});
-   Renderer::addToBatch(spr);
+   sprite.addComponent<AnimationScript>(sprite);
+   sprite.getComponent<AnimationScript>().start();
 
-    Entity spritee = createEntity();
-   auto& transs = spritee.getComponent<Component::Transform>();
-   transs.scale = glm::vec2(20, 30);
-   transs.position = glm::vec2(20.9f, -30.3f);
-
-   Component::SpriteRenderer& sprr = spritee.addComponent<Component::SpriteRenderer>(spritee, SpriteSheet{"/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/assets/img/kanan.png"});
-   Renderer::addToBatch(sprr);
+ 
 }
 
 void Scene::update(float timeStep){
-    auto view = registry.view<Component::AnimationController>();
-    for (auto entity : view){
-        auto& animationController = view.get<Component::AnimationController>(entity);
-        animationController.advance(timeStep);
+    auto view = registry.view<AnimationScript>();
+    for (auto& entity : view){
+        auto& ani = view.get<AnimationScript>(entity);
+        ani.update(timeStep);
     }
 
-    float speed = 80.0f * timeStep;
-    if (KeyListener::isKeyPressed(GLFW_KEY_S))
-        Camera::changePosition(camera->getPosition() + glm::vec3(0.0f, 1.0f, 0.0f) * speed);
-    else if (KeyListener::isKeyPressed(GLFW_KEY_W))
-        Camera::changePosition(camera->getPosition() - glm::vec3(0.0f, 1.0f, 0.0f)* speed);
-    else if (KeyListener::isKeyPressed(GLFW_KEY_A))
-         Camera::changePosition(camera->getPosition() + glm::vec3(1.0f, 0.0f, 0.0f) * speed);
-    else if (KeyListener::isKeyPressed(GLFW_KEY_D))
-         Camera::changePosition(camera->getPosition() - glm::vec3(1.0f, 0.0f, 0.0f) * speed);
 
 }
 
@@ -61,20 +50,35 @@ void Scene::render(){
     Renderer::render();
 }
 
-void Scene::addToRenderer(entt::entity ent){
-    //Renderer::addToBatch(ent.getComponent<Component::SpriteRenderer>());
+void Scene::addToRenderer(Entity& ent){
+    Renderer::submit(ent);
 }
 
-Terra::Entity Scene::createEntity(){
+Terra::Entity& Scene::createEntity(const char* name){
     Terra::Entity ent(registry.create(), this);
-    ent.addComponent<Component::Tag>(std::string("Object #") + std::to_string((int)ent.getInnerEntity()));
+
+    if (name != nullptr)
+        ent.addComponent<Component::Tag>(std::string(name));
+    else
+        ent.addComponent<Component::Tag>(std::string("Object #") + std::to_string((int)ent.getInnerEntity()));
+
     ent.addComponent<Component::Transform>();
-    return ent;
+    entites.push_back(ent);
+    return entites.back();
 }
 
 void Scene::deleteEntity(Terra::Entity& ent){
     if (ent.hasComponent<Component::SpriteRenderer>())
-        Renderer::deleteFromBatch(ent.getComponent<Component::SpriteRenderer>());
+        Renderer::remove(ent);
     registry.destroy(ent.getInnerEntity());
+}
+
+void Scene::deleteEntityByTagName(const std::string& tagName){
+    for (auto& entity : entites){
+        if (entity.getComponent<Component::Tag>().name == tagName){
+            deleteEntity(entity);
+            return;
+        }
+    }
 }
 

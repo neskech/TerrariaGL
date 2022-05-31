@@ -4,7 +4,7 @@
 #include "renderer/shader.h"
 #include "renderer/buffer.h"
 #include "renderer/VAO.h"
-#include <unordered_set>
+#include <unordered_map>
 
 #include "constants.h"
 
@@ -18,17 +18,19 @@ class InstanceRenderer{
 
         void init();
         void render();
-        void addSpriteRenderer(Component::SpriteRenderer& spr);
-        void removeSpriteRenderer(Component::SpriteRenderer& spr);
-        void updateTransformData(const Component::SpriteRenderer& spr) const;
-        void updateUVData(const Component::SpriteRenderer& spr) const;
-        void updateTexIDData(const Component::SpriteRenderer& spr, int16_t texID) const;
+        void addEntity(Terra::Entity& spr);
+        void removeEntity(Terra::Entity& spr);
+        void updateTransformData(Component::Transform& trans, uint32_t index) const;
+        void updateUVData(Component::SpriteRenderer& spr, uint32_t index) const;
+        void updateTexIDData(int16_t texID, uint32_t index) const;
         bool containsTexture(const Ref<Texture>& tex) const;
+        void updateDirtyFlags();
 
         inline int getCurrentSize() const { return numSprites; }
         inline int getnumTextures() const { return numTextures; }
     private:
-        Component::SpriteRenderer* renderers[MAX_INSTANCES];
+        Terra::Entity* entities[MAX_INSTANCES];
+        std::unordered_map<Terra::Entity*, uint16_t> index_map;
         Texture* textures[MAX_TEXTURES];
 
         uint32_t numTextures;
@@ -42,4 +44,6 @@ class InstanceRenderer{
         VertexArrayObject VAO;
 
         Ref<Shader> shader;
+
+        friend class Renderer;
 };

@@ -747,6 +747,30 @@ src/scene/scene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/scene/scene.cpp.s
 .PHONY : src/scene/scene.cpp.s
 
+src/scripts/Animation.o: src/scripts/Animation.cpp.o
+.PHONY : src/scripts/Animation.o
+
+# target to build an object file
+src/scripts/Animation.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/scripts/Animation.cpp.o
+.PHONY : src/scripts/Animation.cpp.o
+
+src/scripts/Animation.i: src/scripts/Animation.cpp.i
+.PHONY : src/scripts/Animation.i
+
+# target to preprocess a source file
+src/scripts/Animation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/scripts/Animation.cpp.i
+.PHONY : src/scripts/Animation.cpp.i
+
+src/scripts/Animation.s: src/scripts/Animation.cpp.s
+.PHONY : src/scripts/Animation.s
+
+# target to generate assembly for a file
+src/scripts/Animation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/scripts/Animation.cpp.s
+.PHONY : src/scripts/Animation.cpp.s
+
 src/util/assetPool.o: src/util/assetPool.cpp.o
 .PHONY : src/util/assetPool.o
 
@@ -877,6 +901,9 @@ help:
 	@echo "... src/scene/scene.o"
 	@echo "... src/scene/scene.i"
 	@echo "... src/scene/scene.s"
+	@echo "... src/scripts/Animation.o"
+	@echo "... src/scripts/Animation.i"
+	@echo "... src/scripts/Animation.s"
 	@echo "... src/util/assetPool.o"
 	@echo "... src/util/assetPool.i"
 	@echo "... src/util/assetPool.s"

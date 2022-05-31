@@ -3,7 +3,7 @@
 
 Camera* Camera::instance = nullptr;
 
-Camera::Camera(const glm::vec3& pos_): pos(pos_){
+Camera::Camera(const glm::vec2& pos_): pos(pos_){
      if (instance != nullptr)
         assert(false);
 
@@ -19,10 +19,10 @@ glm::mat4 Camera::getProjectionMatrix() {
 }
 
 glm::mat4 Camera::getViewMatrix() { 
-    return glm::lookAt(instance->pos, instance->pos + glm::vec3(0.0f, 0.0f, -1.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+    glm::vec3 tempPos = glm::vec3(instance->pos, 10.0f);
+    return glm::lookAt(tempPos, tempPos + glm::vec3(0.0f, 0.0f, -1.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 }
 
-void Camera::changePosition(const glm::vec3& position){ 
+void Camera::changePosition(const glm::vec2& position){ 
     instance->pos = position; 
-    updateVectors(); 
 }

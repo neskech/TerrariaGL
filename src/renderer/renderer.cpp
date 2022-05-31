@@ -20,19 +20,18 @@ void Renderer::init(){
 }
 
 void Renderer::render(){
-    for (int i = 0; i < instance->numBatches; i++){
-        instance->instanceBatches[i].render();
-    }
+    instance->instanceRenderer->render();
 }
 
-void Renderer::submit(Component::SpriteRenderer& spr){
+void Renderer::submit(Terra::Entity& ent){
     assert(instance->instanceRenderer->numSprites <= MAX_INSTANCES);
-    instance->instanceBatches[instance->numBatches].addSpriteRenderer(spr);
+    instance->instanceRenderer->addEntity(ent);
 }
 
-void Renderer::remove(Component::SpriteRenderer& spr){
-    //assert that the renderer actually contains the given Sprite
-    assert(instance->instanceRenderer->renderers[spr.index] == &spr);
-    instance->instanceRenderer->removeSpriteRenderer(spr);
+void Renderer::remove(Terra::Entity& ent){
+    //assert that the renderer actually contains the given entite
+    Component::SpriteRenderer& spr = ent.getComponent<Component::SpriteRenderer>();
+    assert(instance->instanceRenderer->index_map.find(&ent) != instance->instanceRenderer->index_map.end());
+    instance->instanceRenderer->removeEntity(ent);
 
 }

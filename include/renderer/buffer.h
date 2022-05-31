@@ -46,17 +46,17 @@ class Buffer{
         }
 
         template <class T>
-        T* mapBuffer(){ return (T*)glMapBuffer(bufferType, GL_WRITE_ONLY); }
-        bool unMapBuffer(){ return glUnmapBuffer(bufferType); }
+        T* mapBuffer() const { return (T*)glMapBuffer(bufferType, GL_WRITE_ONLY); }
+        bool unMapBuffer() const{ return glUnmapBuffer(bufferType); }
 
 
-        inline void bind(){ glBindBuffer(bufferType, ID); }
-        inline void unBind(){ glBindBuffer(bufferType, 0); }
-        bool isValid(){ return ID != 0; }
+        inline void bind() const { glBindBuffer(bufferType, ID); }
+        inline void unBind() const { glBindBuffer(bufferType, 0); }
+        bool isValid() const{ return ID != 0; }
 
-        inline BufferType getBufferType() const{ return static_cast<BufferType>(bufferType); }
-        inline uint32_t getLength() const{ return length; }
-        inline unsigned int getID() const{ return ID; }
+        inline BufferType getBufferType() { return static_cast<BufferType>(bufferType); }
+        inline uint32_t getLength(){ return length; }
+        inline unsigned int getID(){ return ID; }
     private:
         unsigned int ID;
         int bufferType;
