@@ -73,295 +73,295 @@ libs/glfw/src/CMakeFiles/glfw.dir/context.c.o: libs/glfw/src/CMakeFiles/glfw.dir
 libs/glfw/src/CMakeFiles/glfw.dir/context.c.o: ../libs/glfw/src/context.c
 libs/glfw/src/CMakeFiles/glfw.dir/context.c.o: libs/glfw/src/CMakeFiles/glfw.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object libs/glfw/src/CMakeFiles/glfw.dir/context.c.o"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/context.c.o -MF CMakeFiles/glfw.dir/context.c.o.d -o CMakeFiles/glfw.dir/context.c.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/context.c"
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/context.c.o -MF CMakeFiles/glfw.dir/context.c.o.d -o CMakeFiles/glfw.dir/context.c.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/context.c"
 
 libs/glfw/src/CMakeFiles/glfw.dir/context.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/context.c.i"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/context.c" > CMakeFiles/glfw.dir/context.c.i
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/context.c" > CMakeFiles/glfw.dir/context.c.i
 
 libs/glfw/src/CMakeFiles/glfw.dir/context.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/context.c.s"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/context.c" -o CMakeFiles/glfw.dir/context.c.s
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/context.c" -o CMakeFiles/glfw.dir/context.c.s
 
 libs/glfw/src/CMakeFiles/glfw.dir/init.c.o: libs/glfw/src/CMakeFiles/glfw.dir/flags.make
 libs/glfw/src/CMakeFiles/glfw.dir/init.c.o: ../libs/glfw/src/init.c
 libs/glfw/src/CMakeFiles/glfw.dir/init.c.o: libs/glfw/src/CMakeFiles/glfw.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object libs/glfw/src/CMakeFiles/glfw.dir/init.c.o"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/init.c.o -MF CMakeFiles/glfw.dir/init.c.o.d -o CMakeFiles/glfw.dir/init.c.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/init.c"
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/init.c.o -MF CMakeFiles/glfw.dir/init.c.o.d -o CMakeFiles/glfw.dir/init.c.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/init.c"
 
 libs/glfw/src/CMakeFiles/glfw.dir/init.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/init.c.i"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/init.c" > CMakeFiles/glfw.dir/init.c.i
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/init.c" > CMakeFiles/glfw.dir/init.c.i
 
 libs/glfw/src/CMakeFiles/glfw.dir/init.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/init.c.s"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/init.c" -o CMakeFiles/glfw.dir/init.c.s
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/init.c" -o CMakeFiles/glfw.dir/init.c.s
 
 libs/glfw/src/CMakeFiles/glfw.dir/input.c.o: libs/glfw/src/CMakeFiles/glfw.dir/flags.make
 libs/glfw/src/CMakeFiles/glfw.dir/input.c.o: ../libs/glfw/src/input.c
 libs/glfw/src/CMakeFiles/glfw.dir/input.c.o: libs/glfw/src/CMakeFiles/glfw.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object libs/glfw/src/CMakeFiles/glfw.dir/input.c.o"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/input.c.o -MF CMakeFiles/glfw.dir/input.c.o.d -o CMakeFiles/glfw.dir/input.c.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/input.c"
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/input.c.o -MF CMakeFiles/glfw.dir/input.c.o.d -o CMakeFiles/glfw.dir/input.c.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/input.c"
 
 libs/glfw/src/CMakeFiles/glfw.dir/input.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/input.c.i"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/input.c" > CMakeFiles/glfw.dir/input.c.i
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/input.c" > CMakeFiles/glfw.dir/input.c.i
 
 libs/glfw/src/CMakeFiles/glfw.dir/input.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/input.c.s"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/input.c" -o CMakeFiles/glfw.dir/input.c.s
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/input.c" -o CMakeFiles/glfw.dir/input.c.s
 
 libs/glfw/src/CMakeFiles/glfw.dir/monitor.c.o: libs/glfw/src/CMakeFiles/glfw.dir/flags.make
 libs/glfw/src/CMakeFiles/glfw.dir/monitor.c.o: ../libs/glfw/src/monitor.c
 libs/glfw/src/CMakeFiles/glfw.dir/monitor.c.o: libs/glfw/src/CMakeFiles/glfw.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building C object libs/glfw/src/CMakeFiles/glfw.dir/monitor.c.o"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/monitor.c.o -MF CMakeFiles/glfw.dir/monitor.c.o.d -o CMakeFiles/glfw.dir/monitor.c.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/monitor.c"
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/monitor.c.o -MF CMakeFiles/glfw.dir/monitor.c.o.d -o CMakeFiles/glfw.dir/monitor.c.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/monitor.c"
 
 libs/glfw/src/CMakeFiles/glfw.dir/monitor.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/monitor.c.i"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/monitor.c" > CMakeFiles/glfw.dir/monitor.c.i
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/monitor.c" > CMakeFiles/glfw.dir/monitor.c.i
 
 libs/glfw/src/CMakeFiles/glfw.dir/monitor.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/monitor.c.s"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/monitor.c" -o CMakeFiles/glfw.dir/monitor.c.s
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/monitor.c" -o CMakeFiles/glfw.dir/monitor.c.s
 
 libs/glfw/src/CMakeFiles/glfw.dir/platform.c.o: libs/glfw/src/CMakeFiles/glfw.dir/flags.make
 libs/glfw/src/CMakeFiles/glfw.dir/platform.c.o: ../libs/glfw/src/platform.c
 libs/glfw/src/CMakeFiles/glfw.dir/platform.c.o: libs/glfw/src/CMakeFiles/glfw.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building C object libs/glfw/src/CMakeFiles/glfw.dir/platform.c.o"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/platform.c.o -MF CMakeFiles/glfw.dir/platform.c.o.d -o CMakeFiles/glfw.dir/platform.c.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/platform.c"
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/platform.c.o -MF CMakeFiles/glfw.dir/platform.c.o.d -o CMakeFiles/glfw.dir/platform.c.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/platform.c"
 
 libs/glfw/src/CMakeFiles/glfw.dir/platform.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/platform.c.i"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/platform.c" > CMakeFiles/glfw.dir/platform.c.i
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/platform.c" > CMakeFiles/glfw.dir/platform.c.i
 
 libs/glfw/src/CMakeFiles/glfw.dir/platform.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/platform.c.s"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/platform.c" -o CMakeFiles/glfw.dir/platform.c.s
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/platform.c" -o CMakeFiles/glfw.dir/platform.c.s
 
 libs/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o: libs/glfw/src/CMakeFiles/glfw.dir/flags.make
 libs/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o: ../libs/glfw/src/vulkan.c
 libs/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o: libs/glfw/src/CMakeFiles/glfw.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building C object libs/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o -MF CMakeFiles/glfw.dir/vulkan.c.o.d -o CMakeFiles/glfw.dir/vulkan.c.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/vulkan.c"
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o -MF CMakeFiles/glfw.dir/vulkan.c.o.d -o CMakeFiles/glfw.dir/vulkan.c.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/vulkan.c"
 
 libs/glfw/src/CMakeFiles/glfw.dir/vulkan.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/vulkan.c.i"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/vulkan.c" > CMakeFiles/glfw.dir/vulkan.c.i
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/vulkan.c" > CMakeFiles/glfw.dir/vulkan.c.i
 
 libs/glfw/src/CMakeFiles/glfw.dir/vulkan.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/vulkan.c.s"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/vulkan.c" -o CMakeFiles/glfw.dir/vulkan.c.s
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/vulkan.c" -o CMakeFiles/glfw.dir/vulkan.c.s
 
 libs/glfw/src/CMakeFiles/glfw.dir/window.c.o: libs/glfw/src/CMakeFiles/glfw.dir/flags.make
 libs/glfw/src/CMakeFiles/glfw.dir/window.c.o: ../libs/glfw/src/window.c
 libs/glfw/src/CMakeFiles/glfw.dir/window.c.o: libs/glfw/src/CMakeFiles/glfw.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building C object libs/glfw/src/CMakeFiles/glfw.dir/window.c.o"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/window.c.o -MF CMakeFiles/glfw.dir/window.c.o.d -o CMakeFiles/glfw.dir/window.c.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/window.c"
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/window.c.o -MF CMakeFiles/glfw.dir/window.c.o.d -o CMakeFiles/glfw.dir/window.c.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/window.c"
 
 libs/glfw/src/CMakeFiles/glfw.dir/window.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/window.c.i"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/window.c" > CMakeFiles/glfw.dir/window.c.i
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/window.c" > CMakeFiles/glfw.dir/window.c.i
 
 libs/glfw/src/CMakeFiles/glfw.dir/window.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/window.c.s"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/window.c" -o CMakeFiles/glfw.dir/window.c.s
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/window.c" -o CMakeFiles/glfw.dir/window.c.s
 
 libs/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o: libs/glfw/src/CMakeFiles/glfw.dir/flags.make
 libs/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o: ../libs/glfw/src/egl_context.c
 libs/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o: libs/glfw/src/CMakeFiles/glfw.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building C object libs/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o -MF CMakeFiles/glfw.dir/egl_context.c.o.d -o CMakeFiles/glfw.dir/egl_context.c.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/egl_context.c"
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o -MF CMakeFiles/glfw.dir/egl_context.c.o.d -o CMakeFiles/glfw.dir/egl_context.c.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/egl_context.c"
 
 libs/glfw/src/CMakeFiles/glfw.dir/egl_context.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/egl_context.c.i"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/egl_context.c" > CMakeFiles/glfw.dir/egl_context.c.i
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/egl_context.c" > CMakeFiles/glfw.dir/egl_context.c.i
 
 libs/glfw/src/CMakeFiles/glfw.dir/egl_context.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/egl_context.c.s"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/egl_context.c" -o CMakeFiles/glfw.dir/egl_context.c.s
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/egl_context.c" -o CMakeFiles/glfw.dir/egl_context.c.s
 
 libs/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o: libs/glfw/src/CMakeFiles/glfw.dir/flags.make
 libs/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o: ../libs/glfw/src/osmesa_context.c
 libs/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o: libs/glfw/src/CMakeFiles/glfw.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building C object libs/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o -MF CMakeFiles/glfw.dir/osmesa_context.c.o.d -o CMakeFiles/glfw.dir/osmesa_context.c.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/osmesa_context.c"
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o -MF CMakeFiles/glfw.dir/osmesa_context.c.o.d -o CMakeFiles/glfw.dir/osmesa_context.c.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/osmesa_context.c"
 
 libs/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/osmesa_context.c.i"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/osmesa_context.c" > CMakeFiles/glfw.dir/osmesa_context.c.i
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/osmesa_context.c" > CMakeFiles/glfw.dir/osmesa_context.c.i
 
 libs/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/osmesa_context.c.s"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/osmesa_context.c" -o CMakeFiles/glfw.dir/osmesa_context.c.s
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/osmesa_context.c" -o CMakeFiles/glfw.dir/osmesa_context.c.s
 
 libs/glfw/src/CMakeFiles/glfw.dir/null_init.c.o: libs/glfw/src/CMakeFiles/glfw.dir/flags.make
 libs/glfw/src/CMakeFiles/glfw.dir/null_init.c.o: ../libs/glfw/src/null_init.c
 libs/glfw/src/CMakeFiles/glfw.dir/null_init.c.o: libs/glfw/src/CMakeFiles/glfw.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building C object libs/glfw/src/CMakeFiles/glfw.dir/null_init.c.o"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/null_init.c.o -MF CMakeFiles/glfw.dir/null_init.c.o.d -o CMakeFiles/glfw.dir/null_init.c.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/null_init.c"
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/null_init.c.o -MF CMakeFiles/glfw.dir/null_init.c.o.d -o CMakeFiles/glfw.dir/null_init.c.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/null_init.c"
 
 libs/glfw/src/CMakeFiles/glfw.dir/null_init.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/null_init.c.i"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/null_init.c" > CMakeFiles/glfw.dir/null_init.c.i
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/null_init.c" > CMakeFiles/glfw.dir/null_init.c.i
 
 libs/glfw/src/CMakeFiles/glfw.dir/null_init.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/null_init.c.s"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/null_init.c" -o CMakeFiles/glfw.dir/null_init.c.s
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/null_init.c" -o CMakeFiles/glfw.dir/null_init.c.s
 
 libs/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.o: libs/glfw/src/CMakeFiles/glfw.dir/flags.make
 libs/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.o: ../libs/glfw/src/null_monitor.c
 libs/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.o: libs/glfw/src/CMakeFiles/glfw.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building C object libs/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.o"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.o -MF CMakeFiles/glfw.dir/null_monitor.c.o.d -o CMakeFiles/glfw.dir/null_monitor.c.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/null_monitor.c"
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.o -MF CMakeFiles/glfw.dir/null_monitor.c.o.d -o CMakeFiles/glfw.dir/null_monitor.c.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/null_monitor.c"
 
 libs/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/null_monitor.c.i"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/null_monitor.c" > CMakeFiles/glfw.dir/null_monitor.c.i
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/null_monitor.c" > CMakeFiles/glfw.dir/null_monitor.c.i
 
 libs/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/null_monitor.c.s"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/null_monitor.c" -o CMakeFiles/glfw.dir/null_monitor.c.s
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/null_monitor.c" -o CMakeFiles/glfw.dir/null_monitor.c.s
 
 libs/glfw/src/CMakeFiles/glfw.dir/null_window.c.o: libs/glfw/src/CMakeFiles/glfw.dir/flags.make
 libs/glfw/src/CMakeFiles/glfw.dir/null_window.c.o: ../libs/glfw/src/null_window.c
 libs/glfw/src/CMakeFiles/glfw.dir/null_window.c.o: libs/glfw/src/CMakeFiles/glfw.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building C object libs/glfw/src/CMakeFiles/glfw.dir/null_window.c.o"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/null_window.c.o -MF CMakeFiles/glfw.dir/null_window.c.o.d -o CMakeFiles/glfw.dir/null_window.c.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/null_window.c"
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/null_window.c.o -MF CMakeFiles/glfw.dir/null_window.c.o.d -o CMakeFiles/glfw.dir/null_window.c.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/null_window.c"
 
 libs/glfw/src/CMakeFiles/glfw.dir/null_window.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/null_window.c.i"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/null_window.c" > CMakeFiles/glfw.dir/null_window.c.i
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/null_window.c" > CMakeFiles/glfw.dir/null_window.c.i
 
 libs/glfw/src/CMakeFiles/glfw.dir/null_window.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/null_window.c.s"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/null_window.c" -o CMakeFiles/glfw.dir/null_window.c.s
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/null_window.c" -o CMakeFiles/glfw.dir/null_window.c.s
 
 libs/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.o: libs/glfw/src/CMakeFiles/glfw.dir/flags.make
 libs/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.o: ../libs/glfw/src/null_joystick.c
 libs/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.o: libs/glfw/src/CMakeFiles/glfw.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Building C object libs/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.o"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.o -MF CMakeFiles/glfw.dir/null_joystick.c.o.d -o CMakeFiles/glfw.dir/null_joystick.c.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/null_joystick.c"
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.o -MF CMakeFiles/glfw.dir/null_joystick.c.o.d -o CMakeFiles/glfw.dir/null_joystick.c.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/null_joystick.c"
 
 libs/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/null_joystick.c.i"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/null_joystick.c" > CMakeFiles/glfw.dir/null_joystick.c.i
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/null_joystick.c" > CMakeFiles/glfw.dir/null_joystick.c.i
 
 libs/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/null_joystick.c.s"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/null_joystick.c" -o CMakeFiles/glfw.dir/null_joystick.c.s
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/null_joystick.c" -o CMakeFiles/glfw.dir/null_joystick.c.s
 
 libs/glfw/src/CMakeFiles/glfw.dir/cocoa_time.c.o: libs/glfw/src/CMakeFiles/glfw.dir/flags.make
 libs/glfw/src/CMakeFiles/glfw.dir/cocoa_time.c.o: ../libs/glfw/src/cocoa_time.c
 libs/glfw/src/CMakeFiles/glfw.dir/cocoa_time.c.o: libs/glfw/src/CMakeFiles/glfw.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Building C object libs/glfw/src/CMakeFiles/glfw.dir/cocoa_time.c.o"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/cocoa_time.c.o -MF CMakeFiles/glfw.dir/cocoa_time.c.o.d -o CMakeFiles/glfw.dir/cocoa_time.c.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/cocoa_time.c"
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/cocoa_time.c.o -MF CMakeFiles/glfw.dir/cocoa_time.c.o.d -o CMakeFiles/glfw.dir/cocoa_time.c.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/cocoa_time.c"
 
 libs/glfw/src/CMakeFiles/glfw.dir/cocoa_time.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/cocoa_time.c.i"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/cocoa_time.c" > CMakeFiles/glfw.dir/cocoa_time.c.i
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/cocoa_time.c" > CMakeFiles/glfw.dir/cocoa_time.c.i
 
 libs/glfw/src/CMakeFiles/glfw.dir/cocoa_time.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/cocoa_time.c.s"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/cocoa_time.c" -o CMakeFiles/glfw.dir/cocoa_time.c.s
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/cocoa_time.c" -o CMakeFiles/glfw.dir/cocoa_time.c.s
 
 libs/glfw/src/CMakeFiles/glfw.dir/posix_module.c.o: libs/glfw/src/CMakeFiles/glfw.dir/flags.make
 libs/glfw/src/CMakeFiles/glfw.dir/posix_module.c.o: ../libs/glfw/src/posix_module.c
 libs/glfw/src/CMakeFiles/glfw.dir/posix_module.c.o: libs/glfw/src/CMakeFiles/glfw.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_15) "Building C object libs/glfw/src/CMakeFiles/glfw.dir/posix_module.c.o"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/posix_module.c.o -MF CMakeFiles/glfw.dir/posix_module.c.o.d -o CMakeFiles/glfw.dir/posix_module.c.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/posix_module.c"
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/posix_module.c.o -MF CMakeFiles/glfw.dir/posix_module.c.o.d -o CMakeFiles/glfw.dir/posix_module.c.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/posix_module.c"
 
 libs/glfw/src/CMakeFiles/glfw.dir/posix_module.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/posix_module.c.i"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/posix_module.c" > CMakeFiles/glfw.dir/posix_module.c.i
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/posix_module.c" > CMakeFiles/glfw.dir/posix_module.c.i
 
 libs/glfw/src/CMakeFiles/glfw.dir/posix_module.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/posix_module.c.s"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/posix_module.c" -o CMakeFiles/glfw.dir/posix_module.c.s
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/posix_module.c" -o CMakeFiles/glfw.dir/posix_module.c.s
 
 libs/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o: libs/glfw/src/CMakeFiles/glfw.dir/flags.make
 libs/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o: ../libs/glfw/src/posix_thread.c
 libs/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o: libs/glfw/src/CMakeFiles/glfw.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_16) "Building C object libs/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o -MF CMakeFiles/glfw.dir/posix_thread.c.o.d -o CMakeFiles/glfw.dir/posix_thread.c.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/posix_thread.c"
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o -MF CMakeFiles/glfw.dir/posix_thread.c.o.d -o CMakeFiles/glfw.dir/posix_thread.c.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/posix_thread.c"
 
 libs/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/posix_thread.c.i"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/posix_thread.c" > CMakeFiles/glfw.dir/posix_thread.c.i
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/posix_thread.c" > CMakeFiles/glfw.dir/posix_thread.c.i
 
 libs/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/posix_thread.c.s"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/posix_thread.c" -o CMakeFiles/glfw.dir/posix_thread.c.s
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/posix_thread.c" -o CMakeFiles/glfw.dir/posix_thread.c.s
 
 libs/glfw/src/CMakeFiles/glfw.dir/cocoa_init.m.o: libs/glfw/src/CMakeFiles/glfw.dir/flags.make
 libs/glfw/src/CMakeFiles/glfw.dir/cocoa_init.m.o: ../libs/glfw/src/cocoa_init.m
 libs/glfw/src/CMakeFiles/glfw.dir/cocoa_init.m.o: libs/glfw/src/CMakeFiles/glfw.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_17) "Building C object libs/glfw/src/CMakeFiles/glfw.dir/cocoa_init.m.o"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/cocoa_init.m.o -MF CMakeFiles/glfw.dir/cocoa_init.m.o.d -o CMakeFiles/glfw.dir/cocoa_init.m.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/cocoa_init.m"
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/cocoa_init.m.o -MF CMakeFiles/glfw.dir/cocoa_init.m.o.d -o CMakeFiles/glfw.dir/cocoa_init.m.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/cocoa_init.m"
 
 libs/glfw/src/CMakeFiles/glfw.dir/cocoa_init.m.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/cocoa_init.m.i"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/cocoa_init.m" > CMakeFiles/glfw.dir/cocoa_init.m.i
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/cocoa_init.m" > CMakeFiles/glfw.dir/cocoa_init.m.i
 
 libs/glfw/src/CMakeFiles/glfw.dir/cocoa_init.m.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/cocoa_init.m.s"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/cocoa_init.m" -o CMakeFiles/glfw.dir/cocoa_init.m.s
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/cocoa_init.m" -o CMakeFiles/glfw.dir/cocoa_init.m.s
 
 libs/glfw/src/CMakeFiles/glfw.dir/cocoa_joystick.m.o: libs/glfw/src/CMakeFiles/glfw.dir/flags.make
 libs/glfw/src/CMakeFiles/glfw.dir/cocoa_joystick.m.o: ../libs/glfw/src/cocoa_joystick.m
 libs/glfw/src/CMakeFiles/glfw.dir/cocoa_joystick.m.o: libs/glfw/src/CMakeFiles/glfw.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_18) "Building C object libs/glfw/src/CMakeFiles/glfw.dir/cocoa_joystick.m.o"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/cocoa_joystick.m.o -MF CMakeFiles/glfw.dir/cocoa_joystick.m.o.d -o CMakeFiles/glfw.dir/cocoa_joystick.m.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/cocoa_joystick.m"
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/cocoa_joystick.m.o -MF CMakeFiles/glfw.dir/cocoa_joystick.m.o.d -o CMakeFiles/glfw.dir/cocoa_joystick.m.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/cocoa_joystick.m"
 
 libs/glfw/src/CMakeFiles/glfw.dir/cocoa_joystick.m.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/cocoa_joystick.m.i"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/cocoa_joystick.m" > CMakeFiles/glfw.dir/cocoa_joystick.m.i
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/cocoa_joystick.m" > CMakeFiles/glfw.dir/cocoa_joystick.m.i
 
 libs/glfw/src/CMakeFiles/glfw.dir/cocoa_joystick.m.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/cocoa_joystick.m.s"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/cocoa_joystick.m" -o CMakeFiles/glfw.dir/cocoa_joystick.m.s
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/cocoa_joystick.m" -o CMakeFiles/glfw.dir/cocoa_joystick.m.s
 
 libs/glfw/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o: libs/glfw/src/CMakeFiles/glfw.dir/flags.make
 libs/glfw/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o: ../libs/glfw/src/cocoa_monitor.m
 libs/glfw/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o: libs/glfw/src/CMakeFiles/glfw.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_19) "Building C object libs/glfw/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o -MF CMakeFiles/glfw.dir/cocoa_monitor.m.o.d -o CMakeFiles/glfw.dir/cocoa_monitor.m.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/cocoa_monitor.m"
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o -MF CMakeFiles/glfw.dir/cocoa_monitor.m.o.d -o CMakeFiles/glfw.dir/cocoa_monitor.m.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/cocoa_monitor.m"
 
 libs/glfw/src/CMakeFiles/glfw.dir/cocoa_monitor.m.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/cocoa_monitor.m.i"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/cocoa_monitor.m" > CMakeFiles/glfw.dir/cocoa_monitor.m.i
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/cocoa_monitor.m" > CMakeFiles/glfw.dir/cocoa_monitor.m.i
 
 libs/glfw/src/CMakeFiles/glfw.dir/cocoa_monitor.m.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/cocoa_monitor.m.s"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/cocoa_monitor.m" -o CMakeFiles/glfw.dir/cocoa_monitor.m.s
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/cocoa_monitor.m" -o CMakeFiles/glfw.dir/cocoa_monitor.m.s
 
 libs/glfw/src/CMakeFiles/glfw.dir/cocoa_window.m.o: libs/glfw/src/CMakeFiles/glfw.dir/flags.make
 libs/glfw/src/CMakeFiles/glfw.dir/cocoa_window.m.o: ../libs/glfw/src/cocoa_window.m
 libs/glfw/src/CMakeFiles/glfw.dir/cocoa_window.m.o: libs/glfw/src/CMakeFiles/glfw.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_20) "Building C object libs/glfw/src/CMakeFiles/glfw.dir/cocoa_window.m.o"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/cocoa_window.m.o -MF CMakeFiles/glfw.dir/cocoa_window.m.o.d -o CMakeFiles/glfw.dir/cocoa_window.m.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/cocoa_window.m"
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/cocoa_window.m.o -MF CMakeFiles/glfw.dir/cocoa_window.m.o.d -o CMakeFiles/glfw.dir/cocoa_window.m.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/cocoa_window.m"
 
 libs/glfw/src/CMakeFiles/glfw.dir/cocoa_window.m.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/cocoa_window.m.i"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/cocoa_window.m" > CMakeFiles/glfw.dir/cocoa_window.m.i
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/cocoa_window.m" > CMakeFiles/glfw.dir/cocoa_window.m.i
 
 libs/glfw/src/CMakeFiles/glfw.dir/cocoa_window.m.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/cocoa_window.m.s"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/cocoa_window.m" -o CMakeFiles/glfw.dir/cocoa_window.m.s
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/cocoa_window.m" -o CMakeFiles/glfw.dir/cocoa_window.m.s
 
 libs/glfw/src/CMakeFiles/glfw.dir/nsgl_context.m.o: libs/glfw/src/CMakeFiles/glfw.dir/flags.make
 libs/glfw/src/CMakeFiles/glfw.dir/nsgl_context.m.o: ../libs/glfw/src/nsgl_context.m
 libs/glfw/src/CMakeFiles/glfw.dir/nsgl_context.m.o: libs/glfw/src/CMakeFiles/glfw.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_21) "Building C object libs/glfw/src/CMakeFiles/glfw.dir/nsgl_context.m.o"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/nsgl_context.m.o -MF CMakeFiles/glfw.dir/nsgl_context.m.o.d -o CMakeFiles/glfw.dir/nsgl_context.m.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/nsgl_context.m"
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libs/glfw/src/CMakeFiles/glfw.dir/nsgl_context.m.o -MF CMakeFiles/glfw.dir/nsgl_context.m.o.d -o CMakeFiles/glfw.dir/nsgl_context.m.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/nsgl_context.m"
 
 libs/glfw/src/CMakeFiles/glfw.dir/nsgl_context.m.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/nsgl_context.m.i"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/nsgl_context.m" > CMakeFiles/glfw.dir/nsgl_context.m.i
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/nsgl_context.m" > CMakeFiles/glfw.dir/nsgl_context.m.i
 
 libs/glfw/src/CMakeFiles/glfw.dir/nsgl_context.m.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/nsgl_context.m.s"
-	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/nsgl_context.m" -o CMakeFiles/glfw.dir/nsgl_context.m.s
+	cd "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src" && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/src/nsgl_context.m" -o CMakeFiles/glfw.dir/nsgl_context.m.s
 
 # Object files for target glfw
 glfw_OBJECTS = \

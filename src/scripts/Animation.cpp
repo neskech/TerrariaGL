@@ -9,7 +9,7 @@ void AnimationScript::start(){
     Ref<Texture> tex = AssetPool::getTexture("/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/assets/img/ani.png");
     sprRend = &entity.addComponent<Component::SpriteRenderer>(SpriteSheet{tex, 4, 12});
 
-    Animation ani{1, 0, 12, 0.01f};
+    Animation ani{1, 0, 12, 0.1f};
     aniController->addAnimation(ANIMATION_TYPE::WALK_LEFT, ani);
     aniController->setCurrentAnimation(ANIMATION_TYPE::WALK_LEFT);
     Renderer::submit(entity);

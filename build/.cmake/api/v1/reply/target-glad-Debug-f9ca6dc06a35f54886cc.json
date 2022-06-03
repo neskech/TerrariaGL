@@ -1,0 +1,128 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "libs/Glad/libglad.a"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"include_directories",
+			"target_include_directories"
+		],
+		"files" : 
+		[
+			"libs/Glad/CMakeLists.txt",
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 6,
+				"parent" : 0
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 14,
+				"parent" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 7,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 3,
+					"path" : "/Users/shauntemellor/Documents/Documents - Shaunte\u2019s MacBook Pro/comsci/Projects/Terraria/terraria"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/Users/shauntemellor/Documents/Documents - Shaunte\u2019s MacBook Pro/comsci/Projects/Terraria/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/Users/shauntemellor/Documents/Documents - Shaunte\u2019s MacBook Pro/comsci/Projects/Terraria/libs/Glad/include"
+				}
+			],
+			"language" : "C",
+			"sourceIndexes" : 
+			[
+				2
+			]
+		}
+	],
+	"id" : "glad::@e69ee641bd69fa31e269",
+	"name" : "glad",
+	"nameOnDisk" : "libglad.a",
+	"paths" : 
+	{
+		"build" : "libs/Glad",
+		"source" : "libs/Glad"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1
+			]
+		},
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				2
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"path" : "libs/Glad/include/glad/glad.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "libs/Glad/include/KHR/khrplatform.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "libs/Glad/src/glad.c",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

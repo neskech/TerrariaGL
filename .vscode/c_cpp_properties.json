@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "${workspaceFolder}/include/**",
+                "${workspaceFolder}/libs/FastNoiseLite/include/**",
+                "${workspaceFolder}/libs/Glad/include/**",
+                "${workspaceFolder}/libs/glfw/include/**",
+                "${workspaceFolder}/libs/entt/include/**",
+                "${workspaceFolder}/libs/glm/**",
+                "${workspaceFolder}/libs/imgui/backends/**",
+                "${workspaceFolder}/libs/stb_image/**"
+            ],
+            "defines": [],
+            "macFrameworkPath": [],
+            "compilerPath": "/opt/homebrew/bin/gcc-11",
+            "cStandard": "c99",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "macos-gcc-arm64",
+            "configurationProvider": "ms-vscode.makefile-tools"
+        }
+    ],
+    "version": 4
+}

@@ -13,6 +13,7 @@
 #include <stdlib.h>
 #include <cassert>
 #include <unordered_map>
+#include <fastNoiseLite.hpp>
 
 
 template<typename T>
@@ -23,3 +24,4 @@ using WeakRef = std::weak_ptr<T>;
 
 template<typename T>
 using Scoped = std::unique_ptr<T>;
+

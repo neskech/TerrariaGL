@@ -31,6 +31,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/terraria.dir/src/util/assetPool.cpp.o.d"
   "CMakeFiles/terraria.dir/src/util/image.cpp.o"
   "CMakeFiles/terraria.dir/src/util/image.cpp.o.d"
+  "CMakeFiles/terraria.dir/src/world/biome.cpp.o"
+  "CMakeFiles/terraria.dir/src/world/biome.cpp.o.d"
+  "CMakeFiles/terraria.dir/src/world/noise.cpp.o"
+  "CMakeFiles/terraria.dir/src/world/noise.cpp.o.d"
   "terraria"
   "terraria.pdb"
 )

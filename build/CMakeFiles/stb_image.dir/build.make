@@ -73,15 +73,15 @@ CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.o: CMakeFiles/stb_image.di
 CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.o: ../libs/stb_image/stb_image.cpp
 CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.o: CMakeFiles/stb_image.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.o -MF CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.o.d -o CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/stb_image/stb_image.cpp"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.o -MF CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.o.d -o CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.o -c "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/stb_image/stb_image.cpp"
 
 CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/stb_image/stb_image.cpp" > CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/stb_image/stb_image.cpp" > CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.i
 
 CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/stb_image/stb_image.cpp" -o CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/stb_image/stb_image.cpp" -o CMakeFiles/stb_image.dir/libs/stb_image/stb_image.cpp.s
 
 # Object files for target stb_image
 stb_image_OBJECTS = \

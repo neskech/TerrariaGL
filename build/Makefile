@@ -819,6 +819,54 @@ src/util/image.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/util/image.cpp.s
 .PHONY : src/util/image.cpp.s
 
+src/world/biome.o: src/world/biome.cpp.o
+.PHONY : src/world/biome.o
+
+# target to build an object file
+src/world/biome.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/world/biome.cpp.o
+.PHONY : src/world/biome.cpp.o
+
+src/world/biome.i: src/world/biome.cpp.i
+.PHONY : src/world/biome.i
+
+# target to preprocess a source file
+src/world/biome.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/world/biome.cpp.i
+.PHONY : src/world/biome.cpp.i
+
+src/world/biome.s: src/world/biome.cpp.s
+.PHONY : src/world/biome.s
+
+# target to generate assembly for a file
+src/world/biome.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/world/biome.cpp.s
+.PHONY : src/world/biome.cpp.s
+
+src/world/noise.o: src/world/noise.cpp.o
+.PHONY : src/world/noise.o
+
+# target to build an object file
+src/world/noise.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/world/noise.cpp.o
+.PHONY : src/world/noise.cpp.o
+
+src/world/noise.i: src/world/noise.cpp.i
+.PHONY : src/world/noise.i
+
+# target to preprocess a source file
+src/world/noise.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/world/noise.cpp.i
+.PHONY : src/world/noise.cpp.i
+
+src/world/noise.s: src/world/noise.cpp.s
+.PHONY : src/world/noise.s
+
+# target to generate assembly for a file
+src/world/noise.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/world/noise.cpp.s
+.PHONY : src/world/noise.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -910,6 +958,12 @@ help:
 	@echo "... src/util/image.o"
 	@echo "... src/util/image.i"
 	@echo "... src/util/image.s"
+	@echo "... src/world/biome.o"
+	@echo "... src/world/biome.i"
+	@echo "... src/world/biome.s"
+	@echo "... src/world/noise.o"
+	@echo "... src/world/noise.i"
+	@echo "... src/world/noise.s"
 .PHONY : help
 
 

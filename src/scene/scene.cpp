@@ -17,8 +17,10 @@ Scene::~Scene(){
     delete renderer;
     delete camera;
 
-    for (auto& entity : entites)
-        deleteEntity(entity);
+    std::cout <<"About to delete these guys!\n";
+    // for (auto& entity : entites)
+    //     deleteEntity(entity);
+     std::cout <<"About to delete these guys!\n";
 }
 
 

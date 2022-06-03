@@ -403,4 +403,5 @@ CMakeFiles/terraria.dir/cmake_pch_arm64.hxx.pch: \
   /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/libs/glm/glm/matrix.hpp \
   /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/libs/glm/glm/vector_relational.hpp \
   /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/libs/glm/glm/integer.hpp \
-  /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/libs/glm/glm/detail/func_integer.inl
+  /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/libs/glm/glm/detail/func_integer.inl \
+  /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/libs/FastNoiseLite/include/fastNoiseLite.hpp

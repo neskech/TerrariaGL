@@ -48,6 +48,7 @@ add_library(
 include_directories(imgui libs/imgui libs/imgui/backends)
 include_directories(entt libs/entt)
 include_directories(Glad libs/Glad/include)
+include_directories(terraria libs/FastNoiseLite/include)
 
 
 
@@ -57,6 +58,7 @@ include_directories(stb_image libs/stb_image)
 
 #find_package(OpenGL REQUIRED)
 #target_include_directories(terraria PUBLIC ${OPENGL_INCLUDE_DIR})
+
 
 # link glfw to imgui and link everything to the main app
 #if (APPLE)
