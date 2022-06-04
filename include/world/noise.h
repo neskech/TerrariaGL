@@ -18,11 +18,10 @@ struct NoiseSettings{
 
     NoiseSettings(bool useDefault_): useDefault(useDefault_)
     {}
-        
-        
+
+    NoiseSettings(){}        
 };
 
-static NoiseSettings* lastAppliedSettings = nullptr;
 
-void setNoiseSettings(const NoiseSettings& settings);
+void setNoiseSettings(NoiseSettings& settings);
 float sampleNoise(float x, float y);

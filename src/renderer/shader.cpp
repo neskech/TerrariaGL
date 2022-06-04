@@ -67,7 +67,7 @@ bool Shader::construct(const char* shaderPath){
 
         char buffer[maxLength];
         glGetShaderInfoLog(vShader, maxLength, &maxLength, &buffer[0]);
-        std::cout << "Vertex shader failed to compile : " << buffer << '\n';
+        std::cout << "Vertex shader failed to compile compile : " << buffer << " || From File || " << shaderPath << "\n|| Shader source || \n" << vertexShader << "\n";
 
         glDeleteShader(vShader); 
         return false;
@@ -85,7 +85,7 @@ bool Shader::construct(const char* shaderPath){
 
         char buffer[maxLength];
         glGetShaderInfoLog(fShader, maxLength, &maxLength, &buffer[0]);
-        std::cout << "Vertex shader failed to compile : " << buffer << '\n';
+        std::cout << "Fragment shader failed to compile : " << buffer << "\n|| From File || " << shaderPath << "\n|| Shader source || \n" << fragmentShader << "\n";
 
         glDeleteShader(fShader); 
         glDeleteShader(vShader); 

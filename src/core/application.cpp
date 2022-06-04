@@ -12,14 +12,14 @@ Application::Application(uint32_t windowWidth, uint32_t windowHeight){
 
     instance = this;
     window = new Window(windowWidth, windowHeight);
+
     keyListener = new KeyListener();
     mouseListener = new MouseListener(window);
     assetPool = new AssetPool();
-    scene = new Scene();
 }
 
 Application::~Application(){
-    delete scene;
+   // delete scene;
     delete assetPool;
     delete keyListener;
     delete mouseListener;
@@ -32,7 +32,10 @@ bool Application::init(){
         return false;
     }
 
+    scene = new Scene();
+
     scene->init();
+    return true;
 }
 
 void Application::run(){
@@ -48,8 +51,8 @@ void Application::run(){
 
         window->update();
 
-        scene->update(delta);
-        scene->render();
+       scene->update(delta);
+       scene->render();
 
 
         window->finishFrame();

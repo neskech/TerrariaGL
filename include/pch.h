@@ -25,3 +25,7 @@ using WeakRef = std::weak_ptr<T>;
 template<typename T>
 using Scoped = std::unique_ptr<T>;
 
+#define MAX(x, y) x > y ? x : y
+#define MIN(x, y) x < y ? x : y
+#define CLAMP(x, min, max) MIN(max, MAX(x, min))
+

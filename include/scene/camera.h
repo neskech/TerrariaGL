@@ -1,8 +1,8 @@
 #pragma once
 #include "pch.h"
 
-constexpr int CAM_WIDTH = 128;
-constexpr int CAM_HEIGHT = 100;
+constexpr int CAM_WIDTH = 64;
+constexpr int CAM_HEIGHT = 32;
 
 class Camera{
     public:

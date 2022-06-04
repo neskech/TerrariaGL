@@ -36,7 +36,7 @@ void Renderer::init(){
     instance->worldVBO.unBind();
     instance->worldEBO.unBind();
 
-    instance->worldShader = AssetPool::getShader("/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/assets/shaders/instance->worldShader.glsl");
+    instance->worldShader = AssetPool::getShader("/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/assets/shaders/worldShader.glsl");
     instance->tileAtlas = AssetPool::getTexture("/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/assets/img/SpriteSheet.png");
     
 }
@@ -68,18 +68,21 @@ void Renderer::renderWorld(){
     instance->worldShader->activate();
     instance->worldShader->setVec2("sprite_dims", glm::vec2(64, 64));
     instance->worldShader->setFloat("cols", 8);
+    instance->worldShader->setmat4("ortho", Camera::getProjectionMatrix());
+    instance->worldShader->setmat4("view", Camera::getViewMatrix());
 
     glActiveTexture(GL_TEXTURE0);
     instance->tileAtlas->bind();
     instance->worldShader->uploadTexture("texture_atlas", 0);
 
     instance->worldEBO.bind();
-    glDrawElements(GL_TRIANGLES, Camera::getCamViewWidth() * Camera::getCamViewHeight() * 6, GL_UNSIGNED_INT, 0);
+    glDrawElements(GL_TRIANGLES, instance->numWorkingTiles * 6, GL_UNSIGNED_INT, 0);
     instance->worldShader->deActivate();
 
     instance->tileAtlas->unBind();
     instance->worldVBO.unBind();
     instance->worldVAO.unBind();
+    instance->numWorkingTiles = 0;
 }
 
 void Renderer::updateWorldData(){
@@ -88,8 +91,13 @@ void Renderer::updateWorldData(){
       const int CAM_HEIGHT = Camera::getCamViewHeight();
 
       glm::vec2 cameraPos = Camera::getPosition();
+      std::cout << cameraPos.x << " " << cameraPos.y << "<- CAMPOS" << std::endl;
+      cameraPos.x -= Camera::getCamViewWidth() / 2;
+      cameraPos.y += Camera::getCamViewHeight() / 2;
+      std::cout << cameraPos.x << " " << cameraPos.y << "<- CAMPOS" << std::endl;
       if (cameraPos.x < 0)
         cameraPos.x -= CHUNK_WIDTH; //To offset negative chunks with an index of -1
+      std::cout << cameraPos.x << " " << cameraPos.y << "<- CAMPOS" << std::endl;
 
       Node<Chunk>* node = instance->world->getCurrentChunkNode();
       int nodeIndex = instance->world->getChunkIndexInArray(instance->world->getCurrentChunkIndex());
@@ -97,6 +105,7 @@ void Renderer::updateWorldData(){
       for (int i = 0; i < CAM_WIDTH; i++){
           int chunkIndex = (int) (cameraPos.x / CHUNK_WIDTH);
           int chunkIndexArray = instance->world->getChunkIndexInArray(chunkIndex);
+          //std::cout << "CHUNK INDICES " << chunkIndex << " " << chunkIndexArray << " I " << i << std::endl;
 
           int tileIndex_x = (int) (cameraPos.x - chunkIndex * CHUNK_WIDTH); //In range 0-CHUNK_WIDTH
           if (tileIndex_x < 0)
@@ -104,14 +113,21 @@ void Renderer::updateWorldData(){
 
           int tileIndex_y = (int) abs(cameraPos.y - CHUNK_HEIGHT / 2); //FIX -- World coordinates have (0.0) as its center
 
-          uint8_t* currentChunk = instance->world->getChunksList().getNodeStartingFrom(node, nodeIndex, chunkIndexArray)->value->tiles;
+          std::array<BlockType, CHUNK_WIDTH * CHUNK_HEIGHT>& currentChunk = instance->world->getChunksList().getNodeStartingFrom(node, nodeIndex, chunkIndexArray)->value->tiles;
 
-          for (int y = 0; y < CAM_HEIGHT; y++){
+          float tempX = cameraPos.x < 0 ? cameraPos.x + CHUNK_WIDTH : cameraPos.x;
+          for (int y = 0; y <= CAM_HEIGHT; y++){
                int index = (y + tileIndex_y) * CHUNK_WIDTH + tileIndex_x;
-               int texID = currentChunk[index];
-               int x_cord = (int) cameraPos.x;
+               BlockType texID = currentChunk.at(index);
+
+               if (texID == BlockType::air)
+                    continue;
+
+               int x_cord = (int) tempX;
                int y_cord = (int) cameraPos.y - y;
-               addTileData(index, x_cord, y_cord, texID);
+               std::cout << x_cord << " <- X " << y_cord <<  " <- Y " << texID << " <- texID" << "\n";
+               addTileData(instance->numWorkingTiles, x_cord, y_cord, texID);
+               instance->numWorkingTiles++;
           }
         
           cameraPos.x += 1; //The width of a single tile

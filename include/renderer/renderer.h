@@ -30,6 +30,7 @@ class Renderer{
         VertexArrayObject worldVAO;
         Ref<Shader> worldShader;
         Ref<Texture> tileAtlas;
+        int numWorkingTiles;
 
         static Renderer* instance;
 

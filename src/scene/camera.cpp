@@ -1,4 +1,5 @@
 #include "scene/camera.h"
+#include "constants.h"
 #include <glm/gtc/matrix_transform.hpp>
 
 Camera* Camera::instance = nullptr;
@@ -24,5 +25,6 @@ glm::mat4 Camera::getViewMatrix() {
 }
 
 void Camera::changePosition(const glm::vec2& position){ 
-    instance->pos = position; 
+    instance->pos.y= CLAMP(position.y, -CHUNK_HEIGHT / 2 + CAM_HEIGHT + 1, CHUNK_HEIGHT / 2 - CAM_HEIGHT);
+    instance->pos.x = position.x; 
 }

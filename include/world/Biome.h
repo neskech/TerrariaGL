@@ -1,9 +1,9 @@
 #pragma once
-#include "pch.h"
-#include "world/noise.h"
 #include "constants.h"
+#include "world/noise.h"
 #define _USE_MATH_DEFINES
 #include <cmath>
+#include <vector>
 
 
 //                                     SETTINGS FOR CREATING BIOMES USING NOISEMAPS                                                     //
@@ -11,15 +11,13 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#define MAX(x, y) x > y ? x : y
-#define MIN(x, y) x < y ? x : y
-#define CLAMP(x, min, max) MIN(max, MAX(x, min))
+
 
 
 enum Biome{
-    Sorest = 0,
+    Forest = 0,
     Snow = 1,
-    Sesert = 2,
+    Desert = 2,
     NONE = 3,
 };
 
@@ -57,6 +55,8 @@ struct HeightModifier{
     float minHeight;
     float maxHeight;
 
+    HeightModifier(){}
+    
     HeightModifier(bool constant_): 
         constant(constant_)
     {}
@@ -78,15 +78,16 @@ struct TileData{
     float proportion;
     HeightModifier modifier;
     TileData(){}
+    TileData(BlockType type_, float proportion_, const HeightModifier& modifier_): type(type_), proportion(proportion_), modifier(modifier_) {}
 };
 
 class BiomeRule{
     public:
         BiomeRule();
         virtual ~BiomeRule(){}
-        virtual void init() = 0;
-        virtual BlockType sampleBlock(int x, int y) = 0;
-        Scoped<int[]> getHeightMap(int startX);
+        virtual void init(){}
+        virtual BlockType sampleBlock(int x, int y){return BlockType::air;};
+        std::vector<float>* getHeightMap(int startX);
 
         inline void setCaveMapSettings(const NoiseSettings& settings){ caveMap = settings; }
         inline void setTileMapSettings(const NoiseSettings& settings){ tileMap = settings; }
@@ -102,41 +103,41 @@ class BiomeRule{
 
         HeightModifier caveModifier;
         const float oreCutoffProportion = 0.9f; //The value of the oreMap must be this to consider placing an ore
-        const float caveCutoffProportion = 0.5f; //The value at which a cave will be activated
+        const float caveCutoffProportion = 0.8f; //The value at which a cave will be activated
         int surfaceAmplitude = 10.0f;
 };
 
 class ForestBiome : public BiomeRule{
     public:
         ForestBiome();
-        ~ForestBiome();
+        ~ForestBiome(){}
         void init() override;
         BlockType sampleBlock(int x, int y) override;
     private:        
-        TileData* baseTiles; //2
-        TileData* ores; //4
+        TileData baseTiles[2]; //2
+        TileData ores[4]; //4
 };
 
 class SandBiome : public BiomeRule{
     public:
         SandBiome();
-        ~SandBiome();
+        ~SandBiome(){}
         void init() override;
         BlockType sampleBlock(int x, int y) override;
     private:
-        TileData* baseTiles;
+        TileData baseTiles[2];
 
 };
 
 class SnowBiome : public BiomeRule{
     public:
         SnowBiome();
-        ~SnowBiome();
+        ~SnowBiome(){}
         void init() override;
         BlockType sampleBlock(int x, int y) override;
     private:
-        TileData* baseTiles; //3
-        TileData* ores; //4
+        TileData baseTiles[3]; //3
+        TileData ores[4]; //4
 
 };
 

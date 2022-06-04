@@ -75,11 +75,13 @@ class LinkedList{
 
          T& addFront(T* data){
             if (front == nullptr && end == nullptr){
+                //std::cout << "Thats so true!!!\n";
                 front = new Node<T>(data);
                 end = front;
             }
 
             else{
+                                //std::cout<<"No way you go here!"<<std::endl;
                 Node<T>* newNode = new Node<T>(data);
 
                 front->before = newNode;
@@ -87,6 +89,7 @@ class LinkedList{
                 front = newNode;
             }
             length++;
+            //std::cout << "About to derefence the " << data << std::endl;
             return *(front->value);
 
         }
@@ -136,8 +139,8 @@ class LinkedList{
         inline T& getEnd(){ return *end; }
 
         Node<T>* getNode(int index){
+            //std::cout<< "GET NODE " << index << " " << length << std::endl;
             if (index < length - index){
-                
                 Node<T>* curr = front;
                 for (int i = 0; i < index; i++)
                     curr = curr->after;
@@ -166,8 +169,8 @@ class LinkedList{
 
         int size(){ return length; }   
     private:
-        Node<T>* front;
-        Node<T>* end;
+        Node<T>* front = nullptr;
+        Node<T>* end = nullptr;
         int length;
 
 };

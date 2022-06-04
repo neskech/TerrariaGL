@@ -9,8 +9,12 @@ using namespace Terra;
 
 
 Scene::Scene(){
+   std::cout << "World Construction!\n";
    world = new World();
+   std::cout << "World Construction!\n";
+   std::cout << "Renderer Construction!\n";
    renderer = new Renderer(world);
+    std::cout << "Renderer Construction!\n";
    camera = new Camera();
 }
 
@@ -27,8 +31,12 @@ Scene::~Scene(){
 
 
 void Scene::init(){
+   std::cout << "Renderer Init!\n";
    renderer->init();
+   std::cout << "Renderer Init!\n";
+   std::cout << "World Init!\n";
    world->init();
+   std::cout << "World Init!\n";
    
    Entity& sprite = createEntity();
    auto& trans = sprite.getComponent<Component::Transform>();
@@ -52,7 +60,9 @@ void Scene::update(float timeStep){
 }
 
 void Scene::render(){
+    //std::cout<<"About to Render!\n";
     Renderer::render();
+    //std::cout<<"Done Rendering!\n";
 }
 
 void Scene::addToRenderer(Entity& ent){
