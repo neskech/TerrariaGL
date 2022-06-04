@@ -1,7 +1,7 @@
 #include "world/noise.h"
 
 void setNoiseSettings(const NoiseSettings& settings){
-    if (&lastAppliedSettings == &settings || settings.useDefault)
+    if (lastAppliedSettings == &settings || settings.useDefault)
         return;
 
     FastNoiseLite::SetNoiseType(settings.type);

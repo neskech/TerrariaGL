@@ -1,6 +1,7 @@
 #pragma once
 #include "pch.h"
 #include "scene/camera.h"
+#include "world/world.h"
 #include <vector>
 
 //forward declarations
@@ -28,6 +29,8 @@ class Scene{
     private:
         entt::registry registry;
         std::vector<Terra::Entity> entites;
+
+        World* world;
         Renderer* renderer;
         Camera* camera;
 

@@ -1,11 +1,11 @@
 #pragma once
 #include "components/component.h"
 #include "renderer/instanceRenderer.h"
-#include <vector>
+#include "world/world.h"
 
 class Renderer{
     public:
-        Renderer();
+        Renderer(World* world_);
         Renderer(Renderer& other) = delete;
         Renderer(const Renderer& other) = delete;
         Renderer(Renderer&& other) = delete;
@@ -17,7 +17,20 @@ class Renderer{
         static void submit(Terra::Entity& ent);
 
     private:
-        InstanceRenderer* instanceRenderer;
+        static void renderWorld();
+        static void updateWorldData();
+        static void addTileData(int indexg, int x, int y, int texID);
+        static void addIndexData();
+
+        InstanceRenderer* instanceRenderer; //TODO rename to spriteRenderer
+
+        World* world;
+        Buffer worldVBO;
+        Buffer worldEBO;
+        VertexArrayObject worldVAO;
+        Ref<Shader> worldShader;
+        Ref<Texture> tileAtlas;
+
         static Renderer* instance;
 
 };

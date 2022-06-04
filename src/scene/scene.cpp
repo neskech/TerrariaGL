@@ -9,11 +9,13 @@ using namespace Terra;
 
 
 Scene::Scene(){
-   renderer = new Renderer();
+   world = new World();
+   renderer = new Renderer(world);
    camera = new Camera();
 }
 
 Scene::~Scene(){
+    delete world;
     delete renderer;
     delete camera;
 
@@ -26,6 +28,7 @@ Scene::~Scene(){
 
 void Scene::init(){
    renderer->init();
+   world->init();
    
    Entity& sprite = createEntity();
    auto& trans = sprite.getComponent<Component::Transform>();

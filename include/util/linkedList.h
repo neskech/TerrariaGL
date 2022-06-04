@@ -21,12 +21,7 @@ struct Node{
 template <typename T>
 class LinkedList{
     public:
-        LinkedList(){
-            Node<T>* node = new Node<T>();
-            front = node;
-            end = node;
-            length = 1;
-        }
+        LinkedList(){}
 
         ~LinkedList(){
             Node<T>* curr = front;
@@ -52,9 +47,9 @@ class LinkedList{
                 end = newNode;
             }
 
-            new (end->value) T(std::forward<Args>(args)...);
+            end->value = new T(std::forward<Args>(args)...);
             length++;
-            return *(end->value)
+            return *(end->value);
         }
 
         template<typename... Args>
@@ -72,7 +67,7 @@ class LinkedList{
                 front = newNode;
             }
 
-            new (front->value) T(std::forward<Args>(args)...);
+            front->value = new T(std::forward<Args>(args)...);
             length++;
             return *(front->value);
 
@@ -85,7 +80,7 @@ class LinkedList{
             }
 
             else{
-                Node<T>* newNode = new Node<T>();
+                Node<T>* newNode = new Node<T>(data);
 
                 front->before = newNode;
                 newNode->after = front;
@@ -96,14 +91,14 @@ class LinkedList{
 
         }
 
-        T& addBackk(T* data){
+        T& addEnd(T* data){
             if (end == nullptr && front == nullptr){
                 end = new Node<T>(data);
                 front = end;
             }
 
             else{
-                Node<T>* newNode = new Node<T>();
+                Node<T>* newNode = new Node<T>(data);
 
                 end->after = newNode;
                 newNode->before = end;
@@ -111,7 +106,7 @@ class LinkedList{
             }
 
             length++;
-            return *(end->value)
+            return *(end->value);
         }
 
         Scoped<Node<T>> popOffEnd(){
@@ -122,7 +117,7 @@ class LinkedList{
             Node<T>* toBeReturned = end;
             end = before;
             length--;
-            return Scoped(toBeReturned);
+            return Scoped<Node<T>>(toBeReturned);
             
         }
 
@@ -134,24 +129,42 @@ class LinkedList{
             Node<T>* toBeReturned = front;
             front = after;
             length--;
-            return Scoped(toBeReturned);
+            return Scoped<Node<T>>(toBeReturned);
         }
 
         inline T& getFront(){ return *front; }
         inline T& getEnd(){ return *end; }
 
         Node<T>* getNode(int index){
-            Node<T>* curr = front;
-            for (int i = 0; i < index; i++)
-                curr = curr->after;
+            if (index < length - index){
+                
+                Node<T>* curr = front;
+                for (int i = 0; i < index; i++)
+                    curr = curr->after;
+                return curr;
+            }
+
+            Node<T>* curr = end;
+            for (int i = 0; i < length - index - 1; i++)
+                curr = curr->before;
             return curr;
+            
+  
         }
 
         Node<T>* getNodeStartingFrom(Node<T>* node, int nodeIndex, int desiredIndex){
-             for (int i = 0; i < desiredIndex - nodeIndex; i++)
-                node = node->after;
+             if (desiredIndex > nodeIndex){
+                for (int i = 0; i < desiredIndex - nodeIndex; i++)
+                        node = node->after;
+             }
+             else{
+                 for (int i = 0; i < nodeIndex - desiredIndex; i++)
+                        node = node->before;
+             }
              return node;
-        }     
+        }  
+
+        int size(){ return length; }   
     private:
         Node<T>* front;
         Node<T>* end;

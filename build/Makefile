@@ -867,6 +867,30 @@ src/world/noise.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/world/noise.cpp.s
 .PHONY : src/world/noise.cpp.s
 
+src/world/world.o: src/world/world.cpp.o
+.PHONY : src/world/world.o
+
+# target to build an object file
+src/world/world.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/world/world.cpp.o
+.PHONY : src/world/world.cpp.o
+
+src/world/world.i: src/world/world.cpp.i
+.PHONY : src/world/world.i
+
+# target to preprocess a source file
+src/world/world.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/world/world.cpp.i
+.PHONY : src/world/world.cpp.i
+
+src/world/world.s: src/world/world.cpp.s
+.PHONY : src/world/world.s
+
+# target to generate assembly for a file
+src/world/world.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/world/world.cpp.s
+.PHONY : src/world/world.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -964,6 +988,9 @@ help:
 	@echo "... src/world/noise.o"
 	@echo "... src/world/noise.i"
 	@echo "... src/world/noise.s"
+	@echo "... src/world/world.o"
+	@echo "... src/world/world.i"
+	@echo "... src/world/world.s"
 .PHONY : help
 
 

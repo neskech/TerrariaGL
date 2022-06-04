@@ -1,8 +1,8 @@
 #pragma once
 #include "pch.h"
 
-constexpr float CAM_WIDTH = 128;
-constexpr float CAM_HEIGHT = 100;
+constexpr int CAM_WIDTH = 128;
+constexpr int CAM_HEIGHT = 100;
 
 class Camera{
     public:
@@ -15,6 +15,8 @@ class Camera{
         static void changePosition(const glm::vec2& position);
 
         static inline glm::vec2 getPosition(){ return instance->pos; }
+        static inline int getCamViewWidth(){ return CAM_WIDTH; }
+        static inline int getCamViewHeight(){ return CAM_HEIGHT; } 
     private:
         glm::vec2 pos;
         static Camera* instance;
