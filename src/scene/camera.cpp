@@ -1,5 +1,6 @@
 #include "scene/camera.h"
 #include "constants.h"
+#include "pch.h"
 #include <glm/gtc/matrix_transform.hpp>
 
 Camera* Camera::instance = nullptr;
@@ -25,6 +26,7 @@ glm::mat4 Camera::getViewMatrix() {
 }
 
 void Camera::changePosition(const glm::vec2& position){ 
-    instance->pos.y= CLAMP(position.y, -CHUNK_HEIGHT / 2 + CAM_HEIGHT + 1, CHUNK_HEIGHT / 2 - CAM_HEIGHT);
+    //Ensuring that the camera does not go out of bounds of the chunks
+    instance->pos.y = std::clamp(position.y, (float) (-CHUNK_HEIGHT / 2  + 1 + CAM_HEIGHT / 2), (float)(CHUNK_HEIGHT / 2 - CAM_HEIGHT / 2));
     instance->pos.x = position.x; 
 }

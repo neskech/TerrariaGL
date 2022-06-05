@@ -14,6 +14,7 @@
 #include <cassert>
 #include <unordered_map>
 #include <fastNoiseLite.hpp>
+#include <algorithm>
 
 
 template<typename T>

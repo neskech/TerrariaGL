@@ -2,15 +2,15 @@
 #version 410 core
 
 layout (location=0) in vec2 aPos;
-layout (location=1) in float aTexID;
+layout (location=1) in vec2 aUVS;
 
-out float fTexID;
+out vec2 fUVS;
 
 uniform mat4 ortho;
 uniform mat4 view;
 
 void main(){
-    fTexID = aTexID;
+    fUVS = aUVS;
     gl_Position = ortho * view * vec4(aPos.x, aPos.y, 0.0, 1.0);
 }
 
@@ -22,14 +22,12 @@ uniform sampler2D texture_atlas;
 uniform vec2 sprite_dims;
 uniform float cols;
 
-in float fTexID;
+in vec2 fUVS;
 out vec4 fColor;
 
 void main(){
-       //integer division
-       vec2 uvs = vec2(fTexID / cols, int(fTexID) % int(cols)) * sprite_dims;
+ 
+      fColor = texture(texture_atlas, fUVS);
 
-       ivec2 textureSize2D = textureSize(texture_atlas, 0);
-       fColor = texture(texture_atlas, uvs / textureSize2D.x);
        
 }

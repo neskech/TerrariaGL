@@ -18,8 +18,8 @@ class Window{
 
         inline GLFWwindow* getGLFWwindow() { return glfw_window; } 
         inline bool windowClosing() { return glfwWindowShouldClose(glfw_window); }
-        inline unsigned int getWidth(){ return width; }
-        inline unsigned int getHeight(){ return height; }
+        inline static unsigned int getWidth(){ return instance->width; }
+        inline static unsigned int getHeight(){ return instance->height; }
 
     private:
         static Window* instance;

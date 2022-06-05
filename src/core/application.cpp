@@ -19,7 +19,7 @@ Application::Application(uint32_t windowWidth, uint32_t windowHeight){
 }
 
 Application::~Application(){
-   // delete scene;
+    delete scene;
     delete assetPool;
     delete keyListener;
     delete mouseListener;
@@ -33,8 +33,8 @@ bool Application::init(){
     }
 
     scene = new Scene();
-
     scene->init();
+    
     return true;
 }
 
@@ -51,8 +51,8 @@ void Application::run(){
 
         window->update();
 
-       scene->update(delta);
-       scene->render();
+        scene->update(delta);
+        scene->render();
 
 
         window->finishFrame();

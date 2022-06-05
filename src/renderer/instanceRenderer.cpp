@@ -115,6 +115,7 @@ void InstanceRenderer::addEntity(Terra::Entity& ent){
    
     index_map[&ent] = numSprites;
     entities[numSprites] = &ent;
+
     
     Component::Transform& trans = ent.getComponent<Component::Transform>();
     updateTransformData(trans, numSprites);
@@ -171,11 +172,11 @@ void InstanceRenderer::updateTexIDData(int16_t texID, uint32_t index) const{
     instance_texID_VBO.bind();
 
     float* buffer_ptr = instance_texID_VBO.mapBuffer<float>();
-    uint32_t offset = index * UV_VBO_VERT_SIZE;
+    uint32_t offset = index * TEXID_VBO_VERT_SIZE;
     buffer_ptr[offset] = texID;
 
-    instance_texID_VBO.unBind();
     instance_texID_VBO.unMapBuffer();
+    instance_texID_VBO.unBind();
 }
 
 void InstanceRenderer::removeEntity(Terra::Entity& ent){

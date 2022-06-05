@@ -4,18 +4,17 @@
 #include "renderer/renderer.h"
 #include "core/input.h"
 #include "scripts/Animation.h"
+#include "constants.h"
 
 using namespace Terra;
 
 
 Scene::Scene(){
-   std::cout << "World Construction!\n";
    world = new World();
-   std::cout << "World Construction!\n";
-   std::cout << "Renderer Construction!\n";
    renderer = new Renderer(world);
-    std::cout << "Renderer Construction!\n";
    camera = new Camera();
+
+   entites.reserve(MAX_INSTANCES);
 }
 
 Scene::~Scene(){
@@ -23,28 +22,30 @@ Scene::~Scene(){
     delete renderer;
     delete camera;
 
-    std::cout <<"About to delete these guys!\n";
-    // for (auto& entity : entites)
-    //     deleteEntity(entity);
-     std::cout <<"About to delete these guys!\n";
 }
 
 
 void Scene::init(){
-   std::cout << "Renderer Init!\n";
-   renderer->init();
-   std::cout << "Renderer Init!\n";
-   std::cout << "World Init!\n";
    world->init();
-   std::cout << "World Init!\n";
+   renderer->init();
    
-   Entity& sprite = createEntity();
-   auto& trans = sprite.getComponent<Component::Transform>();
-   trans.scale = glm::vec2(30, 30);
-   trans.position = glm::vec2(-0.5f, -0.5f);
+//    Entity& s = createEntity("Background");
+//    Ref<Texture> tex = AssetPool::getTexture("/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/assets/img/LALA.png");
+//    s.addComponent<Component::SpriteRenderer>(SpriteSheet(tex, 1, 1));
+//    auto& trans = s.getComponent<Component::Transform>();
+//    trans.position = glm::vec2(0, 0);
+//    trans.scale = glm::vec2(20, 20);
+//    Renderer::submit(s);
 
+
+
+   Entity& sprite = createEntity("hi");
+   auto& transs = sprite.getComponent<Component::Transform>();
+   transs.scale = glm::vec2(30, 30);
    sprite.addComponent<AnimationScript>(sprite);
    sprite.getComponent<AnimationScript>().start();
+
+   
 
  
 }
@@ -60,9 +61,7 @@ void Scene::update(float timeStep){
 }
 
 void Scene::render(){
-    //std::cout<<"About to Render!\n";
     Renderer::render();
-    //std::cout<<"Done Rendering!\n";
 }
 
 void Scene::addToRenderer(Entity& ent){

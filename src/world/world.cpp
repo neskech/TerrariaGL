@@ -27,6 +27,7 @@ static void writeChunk(Chunk* chunk){
 
 }
 
+
 World* World::instance = nullptr;
 
 
@@ -50,10 +51,8 @@ World::~World(){
 
 void World::init(){
    Chunk* base = generateChunk(Biome::Forest, Biome::NONE, 0, Direction::NONE);
-   writeChunk(base);
-   //std::cout<<"About to add to frontz!!\n";
+   //writeChunk(base);
    chunks.addFront(base);
-   //std::cout<<"just added to frontz!!\n";
    currentChunkNode = chunks.getNode(0);
 
    rightGeneration = {Biome::Forest, 5, 0};
@@ -62,7 +61,6 @@ void World::init(){
    Biome prevBiomeLeft = Biome::NONE;
    Biome prevBiomeRight = Biome::NONE;
    for (int i = 1; i <= (MAX_CHUNKS - 1) / 2; i++){
-        //std::cout << "ITERATION " << i << std::endl;
 
         if (rightGeneration.numsChunksGenerated == rightGeneration.biomeLengthChunks){
             prevBiomeRight = rightGeneration.type;
@@ -77,10 +75,8 @@ void World::init(){
         Chunk* right = generateChunk(rightGeneration.type, prevBiomeLeft, i, Direction::RIGHT);
         Chunk* left = generateChunk(leftGeneration.type, prevBiomeRight, -i, Direction::LEFT);
 
-        //std::cout << "About to add to linked list!\n";
         chunks.addFront(left);
         chunks.addEnd(right);
-        //std::cout << "Done adding to linked list!\n";
 
         prevBiomeLeft = Biome::NONE;
         prevBiomeRight = Biome::NONE;
@@ -108,54 +104,43 @@ void World::update(float playerPosX){
 }
 
 Chunk* World::generateChunk(Biome biome, Biome previousBiome, int index, Direction direction){
-     std::vector<float>* heightMap = biomeGenerators[biome]->getHeightMap(index * CHUNK_WIDTH);
-
-
      int offset = index * CHUNK_WIDTH;
+     int* heightMap = biomeGenerators[biome]->getHeightMap(offset);
         
+     //WORLD COORDINATES --> (0,0) is the center of the wolrd, with positive Y going up ^ and negative y going down 
      Chunk* chunk = new Chunk(biome);
-     //std::cout << "Done with HeightMap and allocating Chunk!" << std::endl;
      for (int i = 0; i < CHUNK_WIDTH; i++){
           
-         //Zero out the above
-         for (int j = CHUNK_HEIGHT / 2; j > (*heightMap)[i]; j--)
-            chunk->tiles[abs( j - CHUNK_HEIGHT / 2 ) * CHUNK_WIDTH + i] = BlockType::air;
+         //Zero out above the heightMap
+         for (int j = CHUNK_HEIGHT / 2; j > heightMap[i]; j--)
+            chunk->tiles.at(abs( j - CHUNK_HEIGHT / 2 ) * CHUNK_WIDTH + i) = BlockType::air;
 
-         for (int j = (*heightMap)[i]; j > -CHUNK_HEIGHT / 2; j--){
-             //std::cout << "I " << i << " J "  << j << std::endl;
+         for (int j = heightMap[i]; j > -CHUNK_HEIGHT / 2; j--){
              BlockType block;
 
              bool failed = true;
              if (previousBiome != Biome::NONE){
-                 
                  //Check if we're within the blending distance
                  if ( (direction == Direction::RIGHT && i <= blendDistance) || (direction == Direction::LEFT && CHUNK_WIDTH - 1 - i <= blendDistance) ){
 
                     setNoiseSettings(biomeBlending);
                     float blendValue = sampleNoise(offset + i, 0.0f);
                     if (blendValue >= blendCutoffValue){
-                        //std::cout << "About to get previous biome!!\n";
                         block = biomeGenerators[previousBiome]->sampleBlock(offset + i, abs(j));
-                        //std::cout << "Got previous Biome!!\n";
                         failed = false;
                     }
-
                  }
              }
 
-             if (failed){
-                 //std::cout << "About to get current biome!!\n";
+             if (failed)
                  block = biomeGenerators[biome]->sampleBlock(offset + i, abs(j));
-                 //std::cout << "Got current biome!!\n";
-             }
 
-            //std::cout << "About to access chunk array!!\n";
-            chunk->tiles[ abs( j - CHUNK_HEIGHT / 2 ) * CHUNK_WIDTH + i] = block;
-            //std::cout << "Done accessing chunk array!!\n\n";
+            chunk->tiles.at(abs(j - CHUNK_HEIGHT / 2) * CHUNK_WIDTH + i) = block;
+ 
          }
      }
-     //std::cout << "About to return Chunk!!\n";
-     delete heightMap;
+
+     delete[] heightMap;
      return chunk;
 }
 

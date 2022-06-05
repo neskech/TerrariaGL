@@ -17,7 +17,6 @@ class Entity{
                 std::cerr << "ERROR: In Entity::getComponent. Check hasComponent() before getting a component!\n";
                 assert(false);
             }
-
             return scene->getRegistry().get<T>(ent);
         }
 

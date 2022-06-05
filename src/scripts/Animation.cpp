@@ -18,13 +18,13 @@ void AnimationScript::start(){
 void AnimationScript::update(float timeStep){
     float speed = 80.0f * timeStep;
     if (KeyListener::isKeyPressed(GLFW_KEY_S))
-        Camera::changePosition(Camera::getPosition() + glm::vec2(0.0f, 1.0f) * speed);
+        Camera::changePosition(Camera::getPosition() - glm::vec2(0.0f, 1.0f) * speed);
     else if (KeyListener::isKeyPressed(GLFW_KEY_W))
-        Camera::changePosition(Camera::getPosition() - glm::vec2(0.0f, 1.0f)* speed);
+        Camera::changePosition(Camera::getPosition() + glm::vec2(0.0f, 1.0f)* speed);
     else if (KeyListener::isKeyPressed(GLFW_KEY_A))
-         Camera::changePosition(Camera::getPosition() + glm::vec2(1.0f, 0.0f) * speed);
-    else if (KeyListener::isKeyPressed(GLFW_KEY_D))
          Camera::changePosition(Camera::getPosition() - glm::vec2(1.0f, 0.0f) * speed);
+    else if (KeyListener::isKeyPressed(GLFW_KEY_D))
+         Camera::changePosition(Camera::getPosition() + glm::vec2(1.0f, 0.0f) * speed);
 
     aniController->advance(timeStep);
     const Animation& ani = aniController->getCurrentAnimation();
