@@ -21,23 +21,23 @@ class InstanceRenderer{
         void addEntity(Terra::Entity& spr);
         void removeEntity(Terra::Entity& spr);
         void updateTransformData(Component::Transform& trans, uint32_t index) const;
-        void updateUVData(Component::SpriteRenderer& spr, uint32_t index) const;
+        void updateTexCordData(Component::SpriteRenderer& spr, uint32_t index) const;
         void updateTexIDData(int16_t texID, uint32_t index) const;
         bool containsTexture(const Ref<Texture>& tex) const;
         void updateDirtyFlags();
 
         inline int getCurrentSize() const { return numSprites; }
-        inline int getnumTextures() const { return numTextures; }
+        inline int getnumSpriteSheets() const { return numSpriteSheets; }
     private:
         Terra::Entity* entities[MAX_INSTANCES];
         std::unordered_map<Terra::Entity*, uint16_t> index_map;
-        Texture* textures[MAX_TEXTURES];
+        SpriteSheet* spriteSheets[MAX_TEXTURES]; //Spritesheets can be 1 sprite or multiple
 
-        uint32_t numTextures;
+        uint32_t numSpriteSheets;
         uint32_t numSprites;
 
         Buffer instance_transform_VBO;
-        Buffer instance_uv_VBO;
+        Buffer instance_texCord_VBO;
         Buffer instance_texID_VBO;
         Buffer templateVBO;
         Buffer EBO;

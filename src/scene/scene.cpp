@@ -26,16 +26,17 @@ Scene::~Scene(){
 
 
 void Scene::init(){
+       renderer->init();
    world->init();
-   renderer->init();
    
-//    Entity& s = createEntity("Background");
-//    Ref<Texture> tex = AssetPool::getTexture("/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/assets/img/LALA.png");
-//    s.addComponent<Component::SpriteRenderer>(SpriteSheet(tex, 1, 1));
-//    auto& trans = s.getComponent<Component::Transform>();
-//    trans.position = glm::vec2(0, 0);
-//    trans.scale = glm::vec2(20, 20);
-//    Renderer::submit(s);
+   Entity& s = createEntity("Background");
+   Ref<Texture> tex = AssetPool::getTexture("/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/assets/img/LALA.png");
+   s.addComponent<Component::SpriteRenderer>(SpriteSheet(tex, 1, 1));
+   auto& trans = s.getComponent<Component::Transform>();
+   trans.position = glm::vec2(0, 0);
+   trans.scale = glm::vec2(CAM_WIDTH, CAM_HEIGHT);
+   Renderer::submit(s);
+
 
 
 

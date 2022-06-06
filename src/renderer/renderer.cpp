@@ -7,7 +7,7 @@
 
 Renderer* Renderer::instance = nullptr;
 
-Renderer::Renderer(World* world_): world(world_), worldVBO(BufferType::VBO), worldEBO(BufferType::EBO), worldVAO(sizeof(float) * VERTEX_SIZE)
+Renderer::Renderer(World* world_): world(world_), worldVBO(BufferType::VBO), worldEBO(BufferType::EBO), worldVAO()
 {
     if (instance != nullptr)
         assert(false);
@@ -32,8 +32,8 @@ void Renderer::init(){
     instance->worldEBO.allocateData<unsigned int>((Camera::getCamViewWidth() + 1) * (Camera::getCamViewHeight() + 2) * 6);
     addIndexData();
 
-    instance->worldVAO.addAtribute(2, GL_FLOAT, sizeof(float));
-    instance->worldVAO.addAtribute(2, GL_FLOAT, sizeof(float));
+    instance->worldVAO.addAtribute(2, GL_FLOAT, sizeof(float), sizeof(float) * VERTEX_SIZE);
+    instance->worldVAO.addAtribute(2, GL_FLOAT, sizeof(float), sizeof(float) * VERTEX_SIZE);
 
     instance->worldVAO.unBind();
     instance->worldVBO.unBind();
@@ -46,8 +46,8 @@ void Renderer::init(){
 
 void Renderer::render(){
     instance->instanceRenderer->render();
-    updateWorldData();
-    renderWorld();
+    //updateWorldData();
+    //renderWorld();
 
 
 }
