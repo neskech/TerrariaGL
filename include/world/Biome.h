@@ -14,6 +14,7 @@ enum Biome{
 
 enum BlockType{
     air = 0,
+    grass,
     dirt,
     stone,
     gravel,
@@ -26,9 +27,6 @@ enum BlockType{
     packedSnow,
     ice,
 
-    mud,
-    lava,
-    water,
 
     copper,
     iron,
@@ -57,12 +55,21 @@ struct HeightModifier{
     {}
 
     float sample(float x){
-       if (constant || (maxHeight != -1 && x > maxHeight))
-            return 0.0f;
-       else if (x < minHeight)
+       if (constant || x < minHeight || (maxHeight != -1 && x > maxHeight))
             return -1.0f;
+    //    else if (x < minHeight)
+    //         return -1.0f;
 
        return maxMultiplier * ( M_E / (M_E - 1.0f) ) * ( 1.0f - exp( -x / (heightRange * modifier) ) );
+    }
+
+    float sampleWithRange(float x, float range){
+        if (constant)
+            return 0.0f;
+        else if (x < minHeight  || (maxHeight != -1 && x > maxHeight))
+            return -range * 2.0f; //value to cancle out a range
+
+        return maxMultiplier * ( M_E / (M_E - 1.0f) ) * ( 1.0f - exp( -x / (heightRange * modifier) ) );
     }
 };
 

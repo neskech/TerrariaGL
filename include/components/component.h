@@ -2,6 +2,8 @@
 #include "scene/entity.h"
 #include "components/spriteInfo.h"
 #include "components/animation.h"
+#include "scene/scene.h"
+#include <functional>
 #include <unordered_map>
 #include <string>
 
@@ -17,6 +19,8 @@ enum ANIMATION_TYPE{
     JUMP,
     ATTACK
 };
+
+
 
 namespace Component{
     
@@ -45,6 +49,23 @@ namespace Component{
         void setScale(const glm::vec2& sc){ scale = sc; dirty = true; }
     };
 
+    struct physicsBody{
+        glm::vec2 velocity;
+        glm::vec2 accerlation;
+        float mass;
+
+        physicsBody(float mass_ = 1.0f): mass(mass_) {}
+
+        void addForce(const glm::vec2& force){ accerlation += force / mass; }
+    };
+
+    struct AABB{
+        float extentsX;
+        float extentsY;
+
+        AABB(float extentsX_, float extentsY_): extentsX(extentsX_), extentsY(extentsY_) {}
+    };
+
     struct SpriteRenderer{
         SpriteSheet sheet;
         Sprite sprite;
@@ -57,8 +78,6 @@ namespace Component{
         void changeColor(const glm::vec4& c){ color = c; dirty = true; }
 
         void changeSprite(Sprite spr){ sprite = spr; dirty = true; }
-
-  
     };
 
     //keep track of the current animation
@@ -92,15 +111,44 @@ namespace Component{
             std::unordered_map<ANIMATION_TYPE, Animation> animations;
     };
 
-    class ScriptableObject{
-        public:
-            ScriptableObject(Terra::Entity& entity_): entity(entity_) {}
-            virtual void start();
-            virtual void update(float timeStep);
-            virtual void destroy();
-            virtual ~ScriptableObject();
-        protected:
-           Terra::Entity& entity;
+    struct CollisionData{
+        glm::vec2 pos;
+        Component::AABB collider;
+
+        CollisionData(const glm::vec2& pos_, const Component::AABB& collider_): pos(pos_), collider(collider_) {}
     };
 
+    class ScriptableObject{
+        public:
+            ScriptableObject(Terra::Entity& entity_, Scene* scene_): entity(entity_), scene(scene_) {}
+            virtual void start(){}
+            virtual void update(float timeStep){}
+            virtual void onDestroy(){}
+            virtual void onCollision(const CollisionData& collision){}
+            virtual ~ScriptableObject(){}
+        protected:
+            Terra::Entity& entity;
+            Scene* scene;
+    };
+
+    //When accesing all scripts via a view<> from the registry, each script must share the same type
+    //Cannot use the ScriptableObject base class to accomplish this, so using this instead
+    struct Script{
+        ScriptableObject* script;
+        std::function<void(void)> start;
+        std::function<void(float)> update;
+        std::function<void(void)> onDestroy;
+        std::function<void(const CollisionData& collision)> onCollision;
+
+        Script(ScriptableObject* derivedScript): script(derivedScript)
+        {
+            using namespace std::placeholders;
+            start = std::bind(&ScriptableObject::start, script);
+            update = std::bind(&ScriptableObject::update, script, std::placeholders::_1);
+            onDestroy = std::bind(&ScriptableObject::onDestroy, script);
+            onCollision = std::bind(&ScriptableObject::onCollision, script, std::placeholders::_1);
+        }
+
+        ~Script(){std::cout<<"It was fun!\n";}
+    };
 }

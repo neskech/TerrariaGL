@@ -20,7 +20,11 @@ CXX_FLAGS = -g -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Develop
 
 # PCH options: CMakeFiles/terraria.dir/src/core/window.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx
 
+# PCH options: CMakeFiles/terraria.dir/src/physics/physicsSystem.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx
+
 # PCH options: CMakeFiles/terraria.dir/src/renderer/VAO.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx
+
+# PCH options: CMakeFiles/terraria.dir/src/renderer/debugRenderer.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx
 
 # PCH options: CMakeFiles/terraria.dir/src/renderer/framebuffer.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx
 

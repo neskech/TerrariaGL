@@ -43,7 +43,7 @@ void InstanceRenderer::init(){
     templateVBO.unBind();
 
     instance_texCord_VBO.bind();
-    instance_texCord_VBO.allocateData<float>(MAX_INSTANCES * TEXCORD_VBO_VERT_SIZE);
+    instance_texCord_VBO.allocateData<float>(MAX_INSTANCES * TEXCORD_VBO_VERT_SIZE, GL_DYNAMIC_DRAW);
 
     //1D Texture Coordinate -- passed every instance
     VAO.resetByteCount();
@@ -51,7 +51,7 @@ void InstanceRenderer::init(){
     instance_texCord_VBO.unBind();
 
     instance_texID_VBO.bind();
-    instance_texID_VBO.allocateData<float>(MAX_INSTANCES * TEXID_VBO_VERT_SIZE);
+    instance_texID_VBO.allocateData<float>(MAX_INSTANCES * TEXID_VBO_VERT_SIZE, GL_DYNAMIC_DRAW);
 
     //TexID -- passed every instance
     VAO.resetByteCount();
@@ -59,7 +59,7 @@ void InstanceRenderer::init(){
     instance_texID_VBO.unBind();
 
     instance_transform_VBO.bind();
-    instance_transform_VBO.allocateData<float>(MAX_INSTANCES * TRANSFORM_VBO_VERT_SIZE);
+    instance_transform_VBO.allocateData<float>(MAX_INSTANCES * TRANSFORM_VBO_VERT_SIZE, GL_DYNAMIC_DRAW);
 
     //Transform -- passed every instance
     VAO.resetByteCount();
@@ -169,7 +169,6 @@ void InstanceRenderer::updateTexIDData(int16_t texID, uint32_t index) const{
 
     float* buffer_ptr = instance_texID_VBO.mapBuffer<float>();
     uint32_t offset = index * TEXID_VBO_VERT_SIZE;
-    std::cout << " NUM SPRITES!!! " << numSprites << " OFFSET TEX" << offset << std::endl;
     buffer_ptr[offset] = texID;
 
     instance_texID_VBO.unMapBuffer();

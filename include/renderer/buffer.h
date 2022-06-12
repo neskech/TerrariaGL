@@ -36,13 +36,13 @@ class Buffer{
         }
 
         template <class T>
-        void addSubData(T* elements, int length, int offset, int drawType){
+        void addSubData(T* elements, int length, int offset){
             glBufferSubData(bufferType, offset, length, &elements[offset]);
         }
 
         template <class T>
-        void allocateData(int length){
-            glBufferData(bufferType, length * sizeof(T), NULL, GL_STATIC_DRAW);
+        void allocateData(int length, int drawType){
+            glBufferData(bufferType, length * sizeof(T), NULL, drawType);
         }
 
         template <class T>

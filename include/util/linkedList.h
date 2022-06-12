@@ -21,7 +21,7 @@ struct Node{
 template <typename T>
 class LinkedList{
     public:
-        LinkedList(){}
+        LinkedList(): length(0){}
 
         ~LinkedList(){
             Node<T>* curr = front;

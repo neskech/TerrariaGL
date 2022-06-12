@@ -2,6 +2,7 @@
 #include "components/component.h"
 #include "renderer/instanceRenderer.h"
 #include "world/world.h"
+#include "renderer/debugRenderer.h"
 
 class Renderer{
     public:
@@ -23,6 +24,7 @@ class Renderer{
         static void addIndexData();
 
         InstanceRenderer* instanceRenderer; //TODO rename to spriteRenderer
+        DebugRenderer* debugRenderer;
 
         World* world;
         Buffer worldVBO;

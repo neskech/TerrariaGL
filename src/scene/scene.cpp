@@ -5,6 +5,7 @@
 #include "core/input.h"
 #include "scripts/Animation.h"
 #include "constants.h"
+#include "physics/physicsSystem.h"
 
 using namespace Terra;
 
@@ -26,39 +27,43 @@ Scene::~Scene(){
 
 
 void Scene::init(){
-       renderer->init();
+   renderer->init();
    world->init();
    
    Entity& s = createEntity("Background");
-   Ref<Texture> tex = AssetPool::getTexture("/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/assets/img/LALA.png");
+   Ref<Texture> tex = AssetPool::getTexture("/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/assets/img/Shotty.png");
    s.addComponent<Component::SpriteRenderer>(SpriteSheet(tex, 1, 1));
    auto& trans = s.getComponent<Component::Transform>();
-   trans.position = glm::vec2(0, 0);
-   trans.scale = glm::vec2(CAM_WIDTH, CAM_HEIGHT);
+   trans.position.y = 20.0f;
+   trans.scale = glm::vec2(CAM_WIDTH + 2, CAM_HEIGHT + 2);
    Renderer::submit(s);
 
 
 
-
    Entity& sprite = createEntity("hi");
+   sprite.addComponent<Component::physicsBody>();
+   sprite.addComponent<Component::AABB>(1.0f, 1.3f);
    auto& transs = sprite.getComponent<Component::Transform>();
-   transs.scale = glm::vec2(30, 30);
-   sprite.addComponent<AnimationScript>(sprite);
-   sprite.getComponent<AnimationScript>().start();
-
+   transs.scale = glm::vec2(4, 4);
+   Component::Script& scr = sprite.addComponent<Component::Script>((Component::ScriptableObject*)(new AnimationScript(sprite, this)));
+   scr.start();
    
 
  
 }
 
 void Scene::update(float timeStep){
-    auto view = registry.view<AnimationScript>();
-    for (auto& entity : view){
-        auto& ani = view.get<AnimationScript>(entity);
-        ani.update(timeStep);
+    world->update();
+
+    auto view = registry.view<Component::Script>();
+    for (auto entity : view){
+        auto& scr = view.get<Component::Script>(entity);
+        scr.update(timeStep);
     }
+    
+    simulate(registry, world,timeStep);
 
-
+    
 }
 
 void Scene::render(){
@@ -95,5 +100,13 @@ void Scene::deleteEntityByTagName(const std::string& tagName){
             return;
         }
     }
+}
+
+Terra::Entity* Scene::getEntityByTagName(const std::string& tagName){
+    for (auto& entity : entites){
+        if (entity.getComponent<Component::Tag>().name == tagName)
+            return &entity;  
+    }
+    return nullptr;
 }
 

@@ -10,12 +10,19 @@ static BlockType getType(TileData* baseRanges, int length, float noiseValue, flo
     for (int i = 0; i < length; i++){
         range = baseRanges[i].proportion;  
         //Extend the range by a scalar value equally on both sides 
-        extents = range * baseRanges[i].modifier.sample(heightValue) / 2.0f;
+        extents =  baseRanges[i].modifier.sampleWithRange(heightValue, baseRanges[i].proportion) / 2.0f;
         augRanges[i] = range + extents;
         
+        bool negative = false;
+        if (augRanges[i] < 0){
+            negative = true;
+           // extents += augRanges[i];
+            augRanges[i] = 0;
+        }
+
         //Push the range before us backwards to make room for this current range after its expanded
         int a = i - 1;
-        while (a >= 0 && abs(extents) > 0){
+        while (a >= 0 && ( (negative && extents < 0) || (!negative && extents > 0) ) ){
             float temp = augRanges[a];
             augRanges[a] = MAX(0.0f, augRanges[a] - extents);
             extents += extents < 0 ? temp : -temp;
@@ -24,9 +31,11 @@ static BlockType getType(TileData* baseRanges, int length, float noiseValue, flo
 
     }
     //normalize values between 0 and 1
-    float sum;
+    float sum = 0.0f;
     for (int i = 0; i < length; i++)
         sum += augRanges[i];
+
+    sum += sum == 0.0f ? 1.0f : 0.0f;
     for (int i = 0; i < length; i++)
         augRanges[i] /= sum;
 
@@ -37,6 +46,9 @@ static BlockType getType(TileData* baseRanges, int length, float noiseValue, flo
             return baseRanges[a].type;
         runningSum += augRanges[a];
     }
+
+    for (int i = 0; i < length; i++)
+        std::cout << baseRanges[i].modifier.modifier << " base " << baseRanges[i].proportion << " aug " << augRanges[i] <<  " height " << heightValue <<  " noise "  << noiseValue <<  " sample " << baseRanges[i].modifier.sampleWithRange(heightValue, baseRanges[i].proportion) << " HHAHAHHD" << std::endl;
 
     assert(false);
     return BlockType::air;
@@ -53,7 +65,7 @@ int* BiomeRule::getHeightMap(int startX){
     setNoiseSettings(heightMap);
 
     for (int i = 0; i < CHUNK_WIDTH; i++){
-        float val =  sampleNoise(i + startX, 0.0f);
+        float val =  sampleNoise(i + startX + 0.1f, 0.0f);
         heightM[i] = (int) ( surfaceAmplitude * ( (val + 1.0f) / 2.0f ) );
     }
     return heightM;
@@ -65,27 +77,27 @@ ForestBiome::ForestBiome(): BiomeRule()
 {}
 
 void ForestBiome::init(){
-    baseTiles[0] = TileData(BlockType::dirt, .50f, HeightModifier(true));
-    baseTiles[1] = TileData(BlockType::stone, .30f, HeightModifier(.90f, CHUNK_HEIGHT / 3, 1.0f, 10.0f));
+    baseTiles[0] = TileData(BlockType::dirt, .50f, HeightModifier(.90f, CHUNK_HEIGHT / 3, 0.8f, -1.0f));
+    baseTiles[1] = TileData(BlockType::stone, .30f, HeightModifier(.90f, CHUNK_HEIGHT / 3, 1.2f, 10.0f));
 
-    ores[0] = TileData(BlockType::iron, .40f, HeightModifier(.20f, CHUNK_HEIGHT / 2, 1.2f, 0 + CHUNK_HEIGHT / 10));
+    ores[0] = TileData(BlockType::iron, .40f, HeightModifier(.20f, CHUNK_HEIGHT / 2, 1.2f, 0));
     ores[1] = TileData(BlockType::lead, .30f, HeightModifier(.30f, CHUNK_HEIGHT / 2, 1.2f, 0 + CHUNK_HEIGHT / 8));
     ores[2] = TileData(BlockType::silver, .20f, HeightModifier(.40f, CHUNK_HEIGHT / 2, 1.3f, 0 + CHUNK_HEIGHT / 6));
     ores[3] = TileData(BlockType::gold, .10f, HeightModifier(.40f, CHUNK_HEIGHT / 2, 1.4f, 0 + CHUNK_HEIGHT / 4));
 
-    caveModifier = HeightModifier{.60f, CHUNK_HEIGHT / 2, 0.9f, 10.0f};
+    caveModifier = HeightModifier{.20f, CHUNK_HEIGHT / 2, 0.9f, 20.0f};
 }
 
 BlockType ForestBiome::sampleBlock(int x, int y){
     setNoiseSettings(caveMap);
-    float caveValue = sampleNoise(x, y);
+    float caveValue = sampleNoise(x + 0.1f, y + 0.1f);
     caveValue =  (1.0f + caveModifier.sample(y)) * ((caveValue + 1.0f) / 2.0f);
 
     if (caveValue >= caveCutoffProportion)
         return BlockType::air;
 
     setNoiseSettings(oreMap);
-    float oreValue = sampleNoise(x, y);
+    float oreValue = sampleNoise(x + 0.1f, y + 0.1f);
     oreValue = (oreValue + 1.0f) / 2.0f;
 
     if (oreValue >= oreCutoffProportion){
@@ -94,7 +106,7 @@ BlockType ForestBiome::sampleBlock(int x, int y){
     }
 
     setNoiseSettings(tileMap);
-    float tileValue = sampleNoise(x, y);
+    float tileValue = sampleNoise(x + 0.1f, y + 0.1f);
     return getType(baseTiles, 2, tileValue, y);
 }
 

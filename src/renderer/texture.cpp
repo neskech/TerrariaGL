@@ -37,6 +37,8 @@ bool Texture::generate(const char* assetPath, const TexParams& params){
         return false;
 
     glGenerateMipmap(GL_TEXTURE_2D);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAX_LEVEL, params.mipMapLevels);
+    mipMapLevels = params.mipMapLevels;
 
     img->pixels = nullptr;
     delete img;

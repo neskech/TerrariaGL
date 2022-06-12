@@ -23,9 +23,12 @@ class Scene{
         void addToRenderer(Terra::Entity& ent);
         Terra::Entity& createEntity(const char* name = nullptr);
         void deleteEntity(Terra::Entity& ent);
+
         void deleteEntityByTagName(const std::string& tagName);
+        Terra::Entity* getEntityByTagName(const std::string& tagName);
 
         inline entt::registry& getRegistry(){ return registry; }
+        inline World* getWorld(){ return world; }
     private:
         entt::registry registry;
         std::vector<Terra::Entity> entites;

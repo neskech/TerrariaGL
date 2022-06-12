@@ -318,7 +318,9 @@
 				15,
 				16,
 				17,
-				18
+				18,
+				19,
+				20
 			]
 		}
 	],
@@ -458,14 +460,16 @@
 				15,
 				16,
 				17,
-				18
+				18,
+				19,
+				20
 			]
 		},
 		{
 			"name" : "Precompile Header File",
 			"sourceIndexes" : 
 			[
-				19
+				21
 			]
 		}
 	],
@@ -504,7 +508,19 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 1,
+			"path" : "src/physics/physicsSystem.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
 			"path" : "src/renderer/VAO.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "src/renderer/debugRenderer.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{

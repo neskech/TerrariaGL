@@ -2,12 +2,12 @@
 
 #define VERTEX_SIZE 4
 #define ATLAS_DIMENSIONS 512
-#define SPRITE_DIMENSIONS 64
-#define NUM_CELLS 8
+#define SPRITE_DIMENSIONS 128
+#define NUM_CELLS 4
 
 Renderer* Renderer::instance = nullptr;
 
-Renderer::Renderer(World* world_): world(world_), worldVBO(BufferType::VBO), worldEBO(BufferType::EBO), worldVAO()
+Renderer::Renderer(World* world_): world(world_), worldVBO(BufferType::VBO), worldEBO(BufferType::EBO), worldVAO(), numWorkingTiles(0)
 {
     if (instance != nullptr)
         assert(false);
@@ -17,19 +17,22 @@ Renderer::Renderer(World* world_): world(world_), worldVBO(BufferType::VBO), wor
 
 Renderer::~Renderer(){
     delete instanceRenderer;
+    delete debugRenderer;
 }
 
 void Renderer::init(){
     //must be called after window initialization
     instance->instanceRenderer = new InstanceRenderer();
     instance->instanceRenderer->init();
+    instance->debugRenderer = new DebugRenderer();
+    instance->debugRenderer->init();
 
     instance->worldVAO.bind();
     instance->worldVBO.bind();
     instance->worldEBO.bind();
     //should never go out of bounds
-    instance->worldVBO.allocateData<float>((Camera::getCamViewWidth() + 1) * (Camera::getCamViewHeight() + 2) * 4 * VERTEX_SIZE);
-    instance->worldEBO.allocateData<unsigned int>((Camera::getCamViewWidth() + 1) * (Camera::getCamViewHeight() + 2) * 6);
+    instance->worldVBO.allocateData<float>((Camera::getCamViewWidth() + 1) * (Camera::getCamViewHeight() + 2) * 4 * VERTEX_SIZE, GL_DYNAMIC_DRAW);
+    instance->worldEBO.allocateData<unsigned int>((Camera::getCamViewWidth() + 1) * (Camera::getCamViewHeight() + 2) * 6, GL_STATIC_DRAW);
     addIndexData();
 
     instance->worldVAO.addAtribute(2, GL_FLOAT, sizeof(float), sizeof(float) * VERTEX_SIZE);
@@ -40,14 +43,22 @@ void Renderer::init(){
     instance->worldEBO.unBind();
 
     instance->worldShader = AssetPool::getShader("/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/assets/shaders/worldShader.glsl");
-    instance->tileAtlas = AssetPool::getTexture("/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/assets/img/SpriteSheet.png");
+    TexParams params{
+        .behaviorX = GL_CLAMP_TO_EDGE,
+        .behaviorY = GL_CLAMP_TO_EDGE,
+        .magFilter = GL_LINEAR,
+        .minFilter = GL_LINEAR_MIPMAP_LINEAR,
+        .mipMapLevels = 1
+    };
+    instance->tileAtlas = AssetPool::getTexture("/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/assets/img/SpriteSheet.png", params);
     
 }
 
 void Renderer::render(){
     instance->instanceRenderer->render();
-    //updateWorldData();
-    //renderWorld();
+    updateWorldData();
+    renderWorld();
+    instance->debugRenderer->render();
 
 
 }
@@ -109,11 +120,15 @@ void Renderer::updateWorldData(){
 
           //Find the chunk index in the world and in the array. Negative chunks should start at index -1, while positive start at 0, so add a shift of -1
           int chunkIndex = x_cord / CHUNK_WIDTH;
-          int chunkIndexArray = instance->world->getChunkIndexInArray(chunkIndex < 0 ? chunkIndex - 1 : chunkIndex);
+          if (x_cord < 0 && x_cord % CHUNK_WIDTH == 0)
+             chunkIndex += 1;
+
+          int chunkIndexArray = instance->world->getChunkIndexInArray(x_cord < 0 ? chunkIndex - 1 : chunkIndex);
 
           //Find the chunk-relative index of the x component. Left = 0, right = CHUNK_WIDTH - 1. As such, negative indices must be made positive and inverted
           int tileIndex_x = x_cord - chunkIndex * CHUNK_WIDTH; 
           tileIndex_x += tileIndex_x < 0 ? CHUNK_WIDTH : 0;
+         //tileIndex_x += tileIndex_x < 0 ? CHUNK_WIDTH : 0;
 
           //World coordinates have (0.0) as its center, thus the y index requires a shift from the y cord
           int tileIndex_y = abs(y_cord - CHUNK_HEIGHT / 2); 
@@ -151,11 +166,10 @@ void Renderer::addTileData(int index, int x, int y, int texID){
         int col = i == 1 || i == 3;
 
         buffer_ptr[0 + i * VERTEX_SIZE + offset] = x + col;
-        buffer_ptr[1 + i * VERTEX_SIZE + offset] = y + row;
+        buffer_ptr[1 + i * VERTEX_SIZE + offset] = y - row;
         buffer_ptr[2 + i * VERTEX_SIZE + offset] = ((texID % NUM_CELLS) * SPRITE_DIMENSIONS + SPRITE_DIMENSIONS * col) / (float)ATLAS_DIMENSIONS;
         buffer_ptr[3 + i * VERTEX_SIZE + offset] = 1.0f - ( ((texID / NUM_CELLS) * SPRITE_DIMENSIONS + SPRITE_DIMENSIONS * row) / (float)ATLAS_DIMENSIONS );
     }
-
     instance->worldVBO.unMapBuffer();
     instance->worldVBO.unBind();
 }

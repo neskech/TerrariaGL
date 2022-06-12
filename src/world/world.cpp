@@ -1,4 +1,5 @@
 #include "world/world.h"
+#include "scene/camera.h"
 #include <time.h>  
 
 #include <fstream>
@@ -71,9 +72,9 @@ void World::init(){
             prevBiomeLeft = leftGeneration.type;
             generateNewBiomeData(leftGeneration);
         }
-
-        Chunk* right = generateChunk(rightGeneration.type, prevBiomeLeft, i, Direction::RIGHT);
-        Chunk* left = generateChunk(leftGeneration.type, prevBiomeRight, -i, Direction::LEFT);
+        std::cout << " i for right chunk " << i << " i for left chunk " << -i << std::endl;
+        Chunk* right = generateChunk(rightGeneration.type, prevBiomeRight, i, Direction::RIGHT);
+        Chunk* left = generateChunk(leftGeneration.type, prevBiomeLeft, -i, Direction::LEFT);
 
         chunks.addFront(left);
         chunks.addEnd(right);
@@ -85,26 +86,31 @@ void World::init(){
    }
 }
 
-void World::update(float playerPosX){
+void World::update(){
     //Update the current chunk Node and running index based on the player's position
     //If the player is X distance from the center, call the pop and append functions
-    int chunkCord = (int) (playerPosX - playerPosX < 0 ? CHUNK_WIDTH : 0) / CHUNK_WIDTH; // offset such that left chunk starts at index -1
+    int chunkCord = (int)floor(Camera::getPosition().x / CHUNK_WIDTH); 
+    chunkCord -= chunkCord < 0 ? 1 : 0; // offset such that left chunk starts at index -1
+
     if (chunkCord != currentChunkIndex){
         currentChunkNode = chunks.getNodeStartingFrom(currentChunkNode, getChunkIndexInArray(currentChunkIndex), getChunkIndexInArray(chunkCord));
         currentChunkIndex = chunkCord;
     }
-
-    // if (abs(currentChunkIndex - runningIndex) >= POP_DISTANCE){
-    //     Direction popDir = currentChunkIndex - runningIndex < 0 ? Direction::LEFT : Direction::RIGHT;
-    //     Direction appendDir = popDir == Direction::LEFT ? Direction::RIGHT : Direction::LEFT;
-    //     popChunks(popDir);
-    //     appendChunks(appendDir);
-    //     runningIndex += popDir == Direction::LEFT ? CHUNK_POP_SIZE : -CHUNK_POP_SIZE;
-    // }
+   // std::cout << " CHUNK CORD " << chunkCord << " CURRENT CHUNK INDEDX "  << currentChunkIndex << " RUNNING " << runningIndex << std::endl;
+    if (abs(currentChunkIndex - runningIndex) >= POP_DISTANCE){
+        std::cout<<"YOU OUTTA RANGE BUDDY!! " << chunkCord << " " << runningIndex << "\n";
+        Direction popDir = currentChunkIndex - runningIndex < 0 ? Direction::RIGHT : Direction::LEFT;
+        Direction appendDir = popDir == Direction::LEFT ? Direction::RIGHT : Direction::LEFT;
+        popChunks(popDir);
+        appendChunks(appendDir);
+        runningIndex += popDir == Direction::LEFT ? CHUNK_POP_SIZE : -CHUNK_POP_SIZE;
+        std::cout << "NEW SIZE " << chunks.size() << std::endl;
+    }
 }
 
 Chunk* World::generateChunk(Biome biome, Biome previousBiome, int index, Direction direction){
      int offset = index * CHUNK_WIDTH;
+     std::cout << "offset " << offset << " end " << offset + CHUNK_WIDTH - 1 << std::endl;
      int* heightMap = biomeGenerators[biome]->getHeightMap(offset);
         
      //WORLD COORDINATES --> (0,0) is the center of the wolrd, with positive Y going up ^ and negative y going down 
@@ -135,6 +141,11 @@ Chunk* World::generateChunk(Biome biome, Biome previousBiome, int index, Directi
              if (failed)
                  block = biomeGenerators[biome]->sampleBlock(offset + i, abs(j));
 
+            if (j == heightMap[i] && block == BlockType::dirt){
+                std::cout << "height map " << heightMap[i] << " j " << j << " i " << i << std::endl;
+                block = BlockType::grass;
+            }
+
             chunk->tiles.at(abs(j - CHUNK_HEIGHT / 2) * CHUNK_WIDTH + i) = block;
  
          }
@@ -145,11 +156,47 @@ Chunk* World::generateChunk(Biome biome, Biome previousBiome, int index, Directi
 }
 
 void World::popChunks(Direction direction){
+    std::cout<<"Popping off chunks in direction " << (direction == Direction::LEFT ? "left" : "right") << std::endl;
+    for (int i = 0; i < CHUNK_POP_SIZE; i++){
+        if  (direction == Direction::LEFT){
+            chunks.popOffFront();
+        }
+        else{
+            chunks.popOffEnd();
+        }
+    }
 
 }
 
 void World::appendChunks(Direction direction){
+    std::cout<<"Appending off chunks in direction " << (direction == Direction::LEFT ? "left" : "right") << std::endl;
+    Biome prevBiome = Biome::NONE;
+    for (int i = 0; i < CHUNK_POP_SIZE; i++){
+        if  (direction == Direction::LEFT){
+            Chunk* c = generateChunk(leftGeneration.type, prevBiome, runningIndex - POP_DISTANCE - i, direction);
+            chunks.addFront(c);
+            leftGeneration.numsChunksGenerated += 1;
 
+            if (leftGeneration.numsChunksGenerated == leftGeneration.biomeLengthChunks){
+                prevBiome = leftGeneration.type;
+                generateNewBiomeData(leftGeneration);
+            }
+        }
+        else{
+            std::cout << "About to amke that chunk!!!\n";
+            Chunk* c = generateChunk(rightGeneration.type, prevBiome, runningIndex + POP_DISTANCE + i, direction);
+            std::cout << "I made that chunk!!\n";
+            chunks.addEnd(c);
+            rightGeneration.numsChunksGenerated += 1;
+
+            if (rightGeneration.numsChunksGenerated == rightGeneration.biomeLengthChunks){
+                prevBiome = rightGeneration.type;
+                generateNewBiomeData(rightGeneration);
+            }
+        }
+
+        prevBiome = Biome::NONE;
+    }
 }
 
 void World::generateNewBiomeData(BiomeGenData& data){
@@ -158,4 +205,19 @@ void World::generateNewBiomeData(BiomeGenData& data){
      data.biomeLengthChunks = length + MIN_BIOME_LENGTH;
      data.numsChunksGenerated = 0;
      data.type = static_cast<Biome>(rand() % 3);
+}
+
+BlockType World::blockTypeAtWorldCoordinate(int x, int y){
+    int chunkCord = x / CHUNK_WIDTH;
+    int index = getChunkIndexInArray(x < 0 ? chunkCord - 1 : chunkCord);
+
+    x -= chunkCord * CHUNK_WIDTH;
+    x += x < 0 ? CHUNK_WIDTH : 0;
+    y = abs(y - CHUNK_HEIGHT / 2);
+
+    assert(y < CHUNK_HEIGHT && y >= 0 && x < CHUNK_WIDTH && x >= 0);
+
+    int currentChunkInd = getChunkIndexInArray(currentChunkIndex);
+    auto& chunk = chunks.getNodeStartingFrom(currentChunkNode, currentChunkInd, index)->value->tiles;
+    return chunk[y * CHUNK_WIDTH + x];
 }

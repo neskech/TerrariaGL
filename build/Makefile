@@ -555,6 +555,30 @@ src/core/window.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/core/window.cpp.s
 .PHONY : src/core/window.cpp.s
 
+src/physics/physicsSystem.o: src/physics/physicsSystem.cpp.o
+.PHONY : src/physics/physicsSystem.o
+
+# target to build an object file
+src/physics/physicsSystem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/physics/physicsSystem.cpp.o
+.PHONY : src/physics/physicsSystem.cpp.o
+
+src/physics/physicsSystem.i: src/physics/physicsSystem.cpp.i
+.PHONY : src/physics/physicsSystem.i
+
+# target to preprocess a source file
+src/physics/physicsSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/physics/physicsSystem.cpp.i
+.PHONY : src/physics/physicsSystem.cpp.i
+
+src/physics/physicsSystem.s: src/physics/physicsSystem.cpp.s
+.PHONY : src/physics/physicsSystem.s
+
+# target to generate assembly for a file
+src/physics/physicsSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/physics/physicsSystem.cpp.s
+.PHONY : src/physics/physicsSystem.cpp.s
+
 src/renderer/VAO.o: src/renderer/VAO.cpp.o
 .PHONY : src/renderer/VAO.o
 
@@ -578,6 +602,30 @@ src/renderer/VAO.s: src/renderer/VAO.cpp.s
 src/renderer/VAO.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/renderer/VAO.cpp.s
 .PHONY : src/renderer/VAO.cpp.s
+
+src/renderer/debugRenderer.o: src/renderer/debugRenderer.cpp.o
+.PHONY : src/renderer/debugRenderer.o
+
+# target to build an object file
+src/renderer/debugRenderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/renderer/debugRenderer.cpp.o
+.PHONY : src/renderer/debugRenderer.cpp.o
+
+src/renderer/debugRenderer.i: src/renderer/debugRenderer.cpp.i
+.PHONY : src/renderer/debugRenderer.i
+
+# target to preprocess a source file
+src/renderer/debugRenderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/renderer/debugRenderer.cpp.i
+.PHONY : src/renderer/debugRenderer.cpp.i
+
+src/renderer/debugRenderer.s: src/renderer/debugRenderer.cpp.s
+.PHONY : src/renderer/debugRenderer.s
+
+# target to generate assembly for a file
+src/renderer/debugRenderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/renderer/debugRenderer.cpp.s
+.PHONY : src/renderer/debugRenderer.cpp.s
 
 src/renderer/framebuffer.o: src/renderer/framebuffer.cpp.o
 .PHONY : src/renderer/framebuffer.o
@@ -949,9 +997,15 @@ help:
 	@echo "... src/core/window.o"
 	@echo "... src/core/window.i"
 	@echo "... src/core/window.s"
+	@echo "... src/physics/physicsSystem.o"
+	@echo "... src/physics/physicsSystem.i"
+	@echo "... src/physics/physicsSystem.s"
 	@echo "... src/renderer/VAO.o"
 	@echo "... src/renderer/VAO.i"
 	@echo "... src/renderer/VAO.s"
+	@echo "... src/renderer/debugRenderer.o"
+	@echo "... src/renderer/debugRenderer.i"
+	@echo "... src/renderer/debugRenderer.s"
 	@echo "... src/renderer/framebuffer.o"
 	@echo "... src/renderer/framebuffer.i"
 	@echo "... src/renderer/framebuffer.s"
