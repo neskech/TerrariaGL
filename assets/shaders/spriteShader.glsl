@@ -4,10 +4,12 @@
 layout (location=0) in vec2 aPos;
 layout (location=1) in float atexCord;
 layout (location=2) in float texID;
-layout (location=3) in mat4 model;
+layout (location=3) in vec4 aColor;
+layout (location=4) in mat4 model;
 
 out float ftexCord;
 out float ftexID;
+out vec4 fColor;
 out vec2 offset;
 
 uniform mat4 ortho;
@@ -22,6 +24,7 @@ void main(){
     offset = offsets[gl_VertexID];
     ftexCord = atexCord;
     ftexID = texID;
+    fColor = aColor;
     gl_Position = ortho * view * model * vec4(aPos.x, aPos.y, 0.0, 1.0);
 }
 
@@ -34,7 +37,9 @@ uniform float cols[8];
 
 in float ftexCord;
 in float ftexID;
+in vec4 fColor;
 in vec2 offset;
+
 out vec4 Color;
 
 void main(){
@@ -50,7 +55,7 @@ void main(){
        uv.y /= float(texSize.y);
        uv.y = 1.0 - uv.y;
 
-       Color = texture(uTextures[index], uv);
+       Color = texture(uTextures[index], uv) * fColor;
 
 
        

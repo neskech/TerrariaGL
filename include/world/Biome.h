@@ -6,13 +6,13 @@
 #include <vector>
 
 enum Biome{
-    Forest,
+    Forest = 0,
     Snow,
     Desert,
     NONE
 };
 
-enum BlockType{
+enum TileType{
     air = 0,
     grass,
     dirt,
@@ -22,11 +22,9 @@ enum BlockType{
     sand,
     sandstone,
 
-
     snow,
     packedSnow,
     ice,
-
 
     copper,
     iron,
@@ -57,8 +55,6 @@ struct HeightModifier{
     float sample(float x){
        if (constant || x < minHeight || (maxHeight != -1 && x > maxHeight))
             return -1.0f;
-    //    else if (x < minHeight)
-    //         return -1.0f;
 
        return maxMultiplier * ( M_E / (M_E - 1.0f) ) * ( 1.0f - exp( -x / (heightRange * modifier) ) );
     }
@@ -74,11 +70,11 @@ struct HeightModifier{
 };
 
 struct TileData{
-    BlockType type;
+    TileType type;
     float proportion;
     HeightModifier modifier;
     TileData(){}
-    TileData(BlockType type_, float proportion_, const HeightModifier& modifier_): type(type_), proportion(proportion_), modifier(modifier_) {}
+    TileData(TileType type_, float proportion_, const HeightModifier& modifier_): type(type_), proportion(proportion_), modifier(modifier_) {}
 };
 
 class BiomeRule{
@@ -86,7 +82,7 @@ class BiomeRule{
         BiomeRule();
         virtual ~BiomeRule(){}
         virtual void init(){}
-        virtual BlockType sampleBlock(int x, int y){return BlockType::air;};
+        virtual TileType sampleBlock(int x, int y){return TileType::air;};
         int* getHeightMap(int startX);
 
         inline void setCaveMapSettings(const NoiseSettings& settings){ caveMap = settings; }
@@ -112,7 +108,7 @@ class ForestBiome : public BiomeRule{
         ForestBiome();
         ~ForestBiome(){}
         void init() override;
-        BlockType sampleBlock(int x, int y) override;
+        TileType sampleBlock(int x, int y) override;
     private:        
         TileData baseTiles[2]; 
         TileData ores[4]; 
@@ -123,7 +119,7 @@ class SandBiome : public BiomeRule{
         SandBiome();
         ~SandBiome(){}
         void init() override;
-        BlockType sampleBlock(int x, int y) override;
+        TileType sampleBlock(int x, int y) override;
     private:
         TileData baseTiles[2];
 
@@ -134,7 +130,7 @@ class SnowBiome : public BiomeRule{
         SnowBiome();
         ~SnowBiome(){}
         void init() override;
-        BlockType sampleBlock(int x, int y) override;
+        TileType sampleBlock(int x, int y) override;
     private:
         TileData baseTiles[3]; 
         TileData ores[4]; 

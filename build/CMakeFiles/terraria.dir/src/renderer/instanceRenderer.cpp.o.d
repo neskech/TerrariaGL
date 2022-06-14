@@ -497,4 +497,5 @@ CMakeFiles/terraria.dir/src/renderer/instanceRenderer.cpp.o: \
   /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/renderer/buffer.h \
   /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/renderer/VAO.h \
   /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/renderer/renderer.h \
-  /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/renderer/debugRenderer.h
+  /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/renderer/debugRenderer.h \
+  /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/renderer/tileMapRenderer.h

@@ -46,9 +46,18 @@ bool Window::init(){
 
     glfwMakeContextCurrent(glfw_window);
 
-    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
+    if (!initOPENGL()){
+        std::cout << "failed to initialze OPENGL" << std::endl;
+        return false;
+    }
+
+    return true;
+}
+
+bool Window::initOPENGL(){
+  if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
         std::cout << "failed to initialze glad" << std::endl;
-        return -1;
+        return false;
     }
 
     glfwSwapInterval(1);
@@ -59,7 +68,6 @@ bool Window::init(){
     glDepthFunc(GL_LEQUAL);
     // glEnable(GL_CULL_FACE);
     // glCullFace(GL_FRONT);
-
     return true;
 }
 

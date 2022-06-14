@@ -394,10 +394,10 @@ CMakeFiles/terraria.dir/src/renderer/renderer.cpp.o: \
   /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/scene/entity.h \
   /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/scene/scene.h \
   /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/scene/camera.h \
+  /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/constants.h \
   /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/world/world.h \
   /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/util/linkedList.h \
   /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/world/Biome.h \
-  /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/constants.h \
   /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/world/noise.h \
   /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/components/spriteInfo.h \
   /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/renderer/texture.h \
@@ -494,7 +494,8 @@ CMakeFiles/terraria.dir/src/renderer/renderer.cpp.o: \
   /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/libs/glm/glm/gtx/component_wise.inl \
   /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/libs/glm/glm/gtx/norm.inl \
   /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/libs/glm/glm/gtx/quaternion.inl \
-  /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/renderer/instanceRenderer.h \
+  /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/renderer/spriteRenderer.h \
   /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/renderer/buffer.h \
   /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/renderer/VAO.h \
-  /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/renderer/debugRenderer.h
+  /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/renderer/debugRenderer.h \
+  /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/renderer/tileMapRenderer.h

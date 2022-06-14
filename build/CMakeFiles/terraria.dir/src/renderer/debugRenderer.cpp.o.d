@@ -395,4 +395,5 @@ CMakeFiles/terraria.dir/src/renderer/debugRenderer.cpp.o: \
   /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/renderer/shader.h \
   /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/util/assetPool.h \
   /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/renderer/texture.h \
-  /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/scene/camera.h
+  /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/scene/camera.h \
+  /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/constants.h

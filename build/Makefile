@@ -651,30 +651,6 @@ src/renderer/framebuffer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/renderer/framebuffer.cpp.s
 .PHONY : src/renderer/framebuffer.cpp.s
 
-src/renderer/instanceRenderer.o: src/renderer/instanceRenderer.cpp.o
-.PHONY : src/renderer/instanceRenderer.o
-
-# target to build an object file
-src/renderer/instanceRenderer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/renderer/instanceRenderer.cpp.o
-.PHONY : src/renderer/instanceRenderer.cpp.o
-
-src/renderer/instanceRenderer.i: src/renderer/instanceRenderer.cpp.i
-.PHONY : src/renderer/instanceRenderer.i
-
-# target to preprocess a source file
-src/renderer/instanceRenderer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/renderer/instanceRenderer.cpp.i
-.PHONY : src/renderer/instanceRenderer.cpp.i
-
-src/renderer/instanceRenderer.s: src/renderer/instanceRenderer.cpp.s
-.PHONY : src/renderer/instanceRenderer.s
-
-# target to generate assembly for a file
-src/renderer/instanceRenderer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/renderer/instanceRenderer.cpp.s
-.PHONY : src/renderer/instanceRenderer.cpp.s
-
 src/renderer/renderer.o: src/renderer/renderer.cpp.o
 .PHONY : src/renderer/renderer.o
 
@@ -723,6 +699,30 @@ src/renderer/shader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/renderer/shader.cpp.s
 .PHONY : src/renderer/shader.cpp.s
 
+src/renderer/spriteRenderer.o: src/renderer/spriteRenderer.cpp.o
+.PHONY : src/renderer/spriteRenderer.o
+
+# target to build an object file
+src/renderer/spriteRenderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/renderer/spriteRenderer.cpp.o
+.PHONY : src/renderer/spriteRenderer.cpp.o
+
+src/renderer/spriteRenderer.i: src/renderer/spriteRenderer.cpp.i
+.PHONY : src/renderer/spriteRenderer.i
+
+# target to preprocess a source file
+src/renderer/spriteRenderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/renderer/spriteRenderer.cpp.i
+.PHONY : src/renderer/spriteRenderer.cpp.i
+
+src/renderer/spriteRenderer.s: src/renderer/spriteRenderer.cpp.s
+.PHONY : src/renderer/spriteRenderer.s
+
+# target to generate assembly for a file
+src/renderer/spriteRenderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/renderer/spriteRenderer.cpp.s
+.PHONY : src/renderer/spriteRenderer.cpp.s
+
 src/renderer/texture.o: src/renderer/texture.cpp.o
 .PHONY : src/renderer/texture.o
 
@@ -746,6 +746,30 @@ src/renderer/texture.s: src/renderer/texture.cpp.s
 src/renderer/texture.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/renderer/texture.cpp.s
 .PHONY : src/renderer/texture.cpp.s
+
+src/renderer/tileMapRenderer.o: src/renderer/tileMapRenderer.cpp.o
+.PHONY : src/renderer/tileMapRenderer.o
+
+# target to build an object file
+src/renderer/tileMapRenderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/renderer/tileMapRenderer.cpp.o
+.PHONY : src/renderer/tileMapRenderer.cpp.o
+
+src/renderer/tileMapRenderer.i: src/renderer/tileMapRenderer.cpp.i
+.PHONY : src/renderer/tileMapRenderer.i
+
+# target to preprocess a source file
+src/renderer/tileMapRenderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/renderer/tileMapRenderer.cpp.i
+.PHONY : src/renderer/tileMapRenderer.cpp.i
+
+src/renderer/tileMapRenderer.s: src/renderer/tileMapRenderer.cpp.s
+.PHONY : src/renderer/tileMapRenderer.s
+
+# target to generate assembly for a file
+src/renderer/tileMapRenderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/renderer/tileMapRenderer.cpp.s
+.PHONY : src/renderer/tileMapRenderer.cpp.s
 
 src/scene/camera.o: src/scene/camera.cpp.o
 .PHONY : src/scene/camera.o
@@ -795,29 +819,53 @@ src/scene/scene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/scene/scene.cpp.s
 .PHONY : src/scene/scene.cpp.s
 
-src/scripts/Animation.o: src/scripts/Animation.cpp.o
-.PHONY : src/scripts/Animation.o
+src/scripts/backgroundManager.o: src/scripts/backgroundManager.cpp.o
+.PHONY : src/scripts/backgroundManager.o
 
 # target to build an object file
-src/scripts/Animation.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/scripts/Animation.cpp.o
-.PHONY : src/scripts/Animation.cpp.o
+src/scripts/backgroundManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/scripts/backgroundManager.cpp.o
+.PHONY : src/scripts/backgroundManager.cpp.o
 
-src/scripts/Animation.i: src/scripts/Animation.cpp.i
-.PHONY : src/scripts/Animation.i
+src/scripts/backgroundManager.i: src/scripts/backgroundManager.cpp.i
+.PHONY : src/scripts/backgroundManager.i
 
 # target to preprocess a source file
-src/scripts/Animation.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/scripts/Animation.cpp.i
-.PHONY : src/scripts/Animation.cpp.i
+src/scripts/backgroundManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/scripts/backgroundManager.cpp.i
+.PHONY : src/scripts/backgroundManager.cpp.i
 
-src/scripts/Animation.s: src/scripts/Animation.cpp.s
-.PHONY : src/scripts/Animation.s
+src/scripts/backgroundManager.s: src/scripts/backgroundManager.cpp.s
+.PHONY : src/scripts/backgroundManager.s
 
 # target to generate assembly for a file
-src/scripts/Animation.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/scripts/Animation.cpp.s
-.PHONY : src/scripts/Animation.cpp.s
+src/scripts/backgroundManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/scripts/backgroundManager.cpp.s
+.PHONY : src/scripts/backgroundManager.cpp.s
+
+src/scripts/characterController.o: src/scripts/characterController.cpp.o
+.PHONY : src/scripts/characterController.o
+
+# target to build an object file
+src/scripts/characterController.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/scripts/characterController.cpp.o
+.PHONY : src/scripts/characterController.cpp.o
+
+src/scripts/characterController.i: src/scripts/characterController.cpp.i
+.PHONY : src/scripts/characterController.i
+
+# target to preprocess a source file
+src/scripts/characterController.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/scripts/characterController.cpp.i
+.PHONY : src/scripts/characterController.cpp.i
+
+src/scripts/characterController.s: src/scripts/characterController.cpp.s
+.PHONY : src/scripts/characterController.s
+
+# target to generate assembly for a file
+src/scripts/characterController.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/terraria.dir/build.make CMakeFiles/terraria.dir/src/scripts/characterController.cpp.s
+.PHONY : src/scripts/characterController.cpp.s
 
 src/util/assetPool.o: src/util/assetPool.cpp.o
 .PHONY : src/util/assetPool.o
@@ -1009,27 +1057,33 @@ help:
 	@echo "... src/renderer/framebuffer.o"
 	@echo "... src/renderer/framebuffer.i"
 	@echo "... src/renderer/framebuffer.s"
-	@echo "... src/renderer/instanceRenderer.o"
-	@echo "... src/renderer/instanceRenderer.i"
-	@echo "... src/renderer/instanceRenderer.s"
 	@echo "... src/renderer/renderer.o"
 	@echo "... src/renderer/renderer.i"
 	@echo "... src/renderer/renderer.s"
 	@echo "... src/renderer/shader.o"
 	@echo "... src/renderer/shader.i"
 	@echo "... src/renderer/shader.s"
+	@echo "... src/renderer/spriteRenderer.o"
+	@echo "... src/renderer/spriteRenderer.i"
+	@echo "... src/renderer/spriteRenderer.s"
 	@echo "... src/renderer/texture.o"
 	@echo "... src/renderer/texture.i"
 	@echo "... src/renderer/texture.s"
+	@echo "... src/renderer/tileMapRenderer.o"
+	@echo "... src/renderer/tileMapRenderer.i"
+	@echo "... src/renderer/tileMapRenderer.s"
 	@echo "... src/scene/camera.o"
 	@echo "... src/scene/camera.i"
 	@echo "... src/scene/camera.s"
 	@echo "... src/scene/scene.o"
 	@echo "... src/scene/scene.i"
 	@echo "... src/scene/scene.s"
-	@echo "... src/scripts/Animation.o"
-	@echo "... src/scripts/Animation.i"
-	@echo "... src/scripts/Animation.s"
+	@echo "... src/scripts/backgroundManager.o"
+	@echo "... src/scripts/backgroundManager.i"
+	@echo "... src/scripts/backgroundManager.s"
+	@echo "... src/scripts/characterController.o"
+	@echo "... src/scripts/characterController.i"
+	@echo "... src/scripts/characterController.s"
 	@echo "... src/util/assetPool.o"
 	@echo "... src/util/assetPool.i"
 	@echo "... src/util/assetPool.s"

@@ -11,6 +11,7 @@ class Window{
         Window(Window&& other) = delete;
 
         bool init();
+        bool initOPENGL();
         void setupCallbacks();
         void update();
         void pollEvents();

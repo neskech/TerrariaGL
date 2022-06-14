@@ -3,9 +3,8 @@
 #include "components/spriteInfo.h"
 #include "components/animation.h"
 #include "scene/scene.h"
-#include <functional>
-#include <unordered_map>
-#include <string>
+#include "pch.h"
+
 
 
 #include <glm/gtc/matrix_transform.hpp>
@@ -20,7 +19,20 @@ enum ANIMATION_TYPE{
     ATTACK
 };
 
+struct CollisionData;
 
+class ScriptableObject{
+    public:
+        ScriptableObject(Terra::Entity& entity_, Scene* scene_): entity(entity_), scene(scene_) {}
+        virtual void start(){}
+        virtual void update(float timeStep){}
+        virtual void onDestroy(){}
+        virtual void onCollision(const CollisionData& collision){}
+        virtual ~ScriptableObject(){}
+    protected:
+        Terra::Entity& entity;
+        Scene* scene;
+};
 
 namespace Component{
     
@@ -33,20 +45,23 @@ namespace Component{
         glm::vec2 position;
         glm::vec2 rotation;
         glm::vec2 scale;
+        int zIndex = 0.0;
         bool dirty;
 
         Transform(glm::vec2& translation_): position(translation_) {}
         Transform() = default;
 
         glm::mat4 getTransform(){
-            return  glm::translate(glm::mat4(1.0f), glm::vec3(position, 0.0f)) 
+            return  glm::translate(glm::mat4(1.0f), glm::vec3(position, zIndex)) 
             * glm::toMat4(glm::quat(glm::vec3(rotation, 0.0f))) 
             * glm::scale(glm::mat4(1.0f), glm::vec3(scale, 1.0f));
         }
 
-        void setPos(const glm::vec2& pos){ position = pos; dirty = true; }
-        void setRot(const glm::vec2& rot){ rotation = rot; dirty = true;}
-        void setScale(const glm::vec2& sc){ scale = sc; dirty = true; }
+        inline void setPos(const glm::vec2& pos){ position = pos; dirty = true; }
+        inline void translate(const glm::vec2& translation){ position += translation; dirty = true; }
+        inline void setRot(const glm::vec2& rot){ rotation = rot; dirty = true;}
+        inline void setScale(const glm::vec2& sc){ scale = sc; dirty = true; }
+        inline void setZIndex(int zIndex_){ zIndex = zIndex_; dirty = true; }
     };
 
     struct physicsBody{
@@ -73,7 +88,8 @@ namespace Component{
 
         bool dirty;
 
-        SpriteRenderer(const SpriteSheet& sheet_, Sprite spr_ = {0, 0}) : sheet(sheet_), sprite(spr_) {}
+        SpriteRenderer(const SpriteSheet& sheet_, const glm::vec4& color_ = glm::vec4(1.0f, 1.0f, 1.0f, 1.0f), Sprite spr_ = {0, 0}): 
+            sheet(sheet_), sprite(spr_), color(color_), dirty(false) {}
         
         void changeColor(const glm::vec4& c){ color = c; dirty = true; }
 
@@ -111,26 +127,6 @@ namespace Component{
             std::unordered_map<ANIMATION_TYPE, Animation> animations;
     };
 
-    struct CollisionData{
-        glm::vec2 pos;
-        Component::AABB collider;
-
-        CollisionData(const glm::vec2& pos_, const Component::AABB& collider_): pos(pos_), collider(collider_) {}
-    };
-
-    class ScriptableObject{
-        public:
-            ScriptableObject(Terra::Entity& entity_, Scene* scene_): entity(entity_), scene(scene_) {}
-            virtual void start(){}
-            virtual void update(float timeStep){}
-            virtual void onDestroy(){}
-            virtual void onCollision(const CollisionData& collision){}
-            virtual ~ScriptableObject(){}
-        protected:
-            Terra::Entity& entity;
-            Scene* scene;
-    };
-
     //When accesing all scripts via a view<> from the registry, each script must share the same type
     //Cannot use the ScriptableObject base class to accomplish this, so using this instead
     struct Script{
@@ -148,7 +144,12 @@ namespace Component{
             onDestroy = std::bind(&ScriptableObject::onDestroy, script);
             onCollision = std::bind(&ScriptableObject::onCollision, script, std::placeholders::_1);
         }
-
-        ~Script(){std::cout<<"It was fun!\n";}
     };
 }
+
+struct CollisionData{
+    glm::vec2 pos;
+    Component::AABB collider;
+
+    CollisionData(const glm::vec2& pos_, const Component::AABB& collider_): pos(pos_), collider(collider_) {}
+};

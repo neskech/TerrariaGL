@@ -3,7 +3,8 @@
 #include "scene/entity.h"
 #include "renderer/renderer.h"
 #include "core/input.h"
-#include "scripts/Animation.h"
+#include "scripts/characterController.h"
+#include "scripts/backgroundManager.h"
 #include "constants.h"
 #include "physics/physicsSystem.h"
 
@@ -12,43 +13,37 @@ using namespace Terra;
 
 Scene::Scene(){
    world = new World();
-   renderer = new Renderer(world);
+   renderer = new Renderer();
    camera = new Camera();
 
    entites.reserve(MAX_INSTANCES);
 }
 
 Scene::~Scene(){
+    for (int i = 0; i < entites.size(); i++)
+        deleteEntity(entites[i], false);
+
     delete world;
     delete renderer;
     delete camera;
-
 }
 
 
 void Scene::init(){
-   renderer->init();
+   renderer->init(world);
    world->init();
+
+   Entity& sprite = createEntity("Player");
+   sprite.addComponent<Component::Script>((ScriptableObject*)(new CharacterController(sprite, this)));
+
+   Entity& bm = createEntity("BackgroundManager");
+   bm.addComponent<Component::Script>((ScriptableObject*)(new BackgroundManager(bm, this)));
    
-   Entity& s = createEntity("Background");
-   Ref<Texture> tex = AssetPool::getTexture("/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/assets/img/Shotty.png");
-   s.addComponent<Component::SpriteRenderer>(SpriteSheet(tex, 1, 1));
-   auto& trans = s.getComponent<Component::Transform>();
-   trans.position.y = 20.0f;
-   trans.scale = glm::vec2(CAM_WIDTH + 2, CAM_HEIGHT + 2);
-   Renderer::submit(s);
-
-
-
-   Entity& sprite = createEntity("hi");
-   sprite.addComponent<Component::physicsBody>();
-   sprite.addComponent<Component::AABB>(1.0f, 1.3f);
-   auto& transs = sprite.getComponent<Component::Transform>();
-   transs.scale = glm::vec2(4, 4);
-   Component::Script& scr = sprite.addComponent<Component::Script>((Component::ScriptableObject*)(new AnimationScript(sprite, this)));
-   scr.start();
-   
-
+   auto view = registry.view<Component::Script>();
+   for (auto entity : view){
+       auto& scr = view.get<Component::Script>(entity);
+       scr.start();
+   }
  
 }
 
@@ -67,11 +62,15 @@ void Scene::update(float timeStep){
 }
 
 void Scene::render(){
-    Renderer::render();
+    renderer->render();
 }
 
 void Scene::addToRenderer(Entity& ent){
-    Renderer::submit(ent);
+    renderer->submit(ent);
+}
+
+void Scene::removeFromRenderer(Entity& ent){
+    renderer->remove(ent);
 }
 
 Terra::Entity& Scene::createEntity(const char* name){
@@ -87,9 +86,12 @@ Terra::Entity& Scene::createEntity(const char* name){
     return entites.back();
 }
 
-void Scene::deleteEntity(Terra::Entity& ent){
-    if (ent.hasComponent<Component::SpriteRenderer>())
-        Renderer::remove(ent);
+void Scene::deleteEntity(Terra::Entity& ent, bool removeFromRenderer){
+    if (removeFromRenderer && ent.hasComponent<Component::SpriteRenderer>())
+        renderer->remove(ent);
+
+    if (ent.hasComponent<Component::Script>())
+        ent.getComponent<Component::Script>().onDestroy();
     registry.destroy(ent.getInnerEntity());
 }
 

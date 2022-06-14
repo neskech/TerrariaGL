@@ -5,7 +5,7 @@
 #endif
 #include <GLFW/glfw3.h>
 
-#include "include/entt/entt.hpp"
+#include <include/entt/entt.hpp>
 #include <iostream>
 #include <memory>
 #include <stdlib.h>
@@ -14,6 +14,12 @@
 #include <cassert>
 #include <unordered_map>
 #include <fastNoiseLite.hpp>
+#include <algorithm>
+#include <time.h>  
+#include <array>
+#include <optional>
+#include <string>
+#include <functional>
 #include <algorithm>
 
 

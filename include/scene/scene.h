@@ -21,8 +21,9 @@ class Scene{
         void render();
 
         void addToRenderer(Terra::Entity& ent);
+        void removeFromRenderer(Terra::Entity& ent);
         Terra::Entity& createEntity(const char* name = nullptr);
-        void deleteEntity(Terra::Entity& ent);
+        void deleteEntity(Terra::Entity& ent, bool removeFromRenderer = true);
 
         void deleteEntityByTagName(const std::string& tagName);
         Terra::Entity* getEntityByTagName(const std::string& tagName);

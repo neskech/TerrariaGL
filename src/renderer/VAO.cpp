@@ -24,7 +24,7 @@ void VertexArrayObject::addAtribute(int stride, int dataType, int typeSize, int 
 
 }
 
-void VertexArrayObject::addMatrixAttribute(int rows, int cols, int divisor){
+void VertexArrayObject::addMatrixAttribute(int rows, int cols, int vertexSizeBytes, int divisor){
 
     std::size_t size = 0;
     switch (cols){
@@ -43,7 +43,7 @@ void VertexArrayObject::addMatrixAttribute(int rows, int cols, int divisor){
     }
 
     for (int i = 0; i  < rows; i++){
-        glVertexAttribPointer(numAttributes, cols, GL_FLOAT, GL_FALSE, rows * size, (void*)byteLength);
+        glVertexAttribPointer(numAttributes, cols, GL_FLOAT, GL_FALSE, vertexSizeBytes, (void*)byteLength);
         glEnableVertexAttribArray(numAttributes);  
 
         if (divisor >= 0)
