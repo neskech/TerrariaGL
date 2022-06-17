@@ -66,11 +66,11 @@ class Renderer{
 
     private:
         void renderScene();
-
         void renderWorld();
         void updateWorldData();
         void addTileData(int index, int x, int y, int texID);
         void addIndexData();
+        void interpolateColorAndAmbience(glm::vec3& ambientColor, float& ambientStrength);
 
         std::vector<Scoped<SpriteRenderer>> spriteRenderers; 
         TileMapRenderer* tileMapRenderer;

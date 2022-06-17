@@ -51,6 +51,7 @@ void main(){
     for (int i = 0; i < int(numTorches); i++){
         outp += calcPointLight(torchLocations[i], gl_FragCoord.xy);
     }
+    
     outp += ambience * vec3(texture(screenTexture, fUVs)) + ambientColor * 0.07;
 
     Color = vec4(outp, 1.0);

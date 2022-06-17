@@ -11,10 +11,10 @@ Application* Application::instance = nullptr;
 Application::Application(uint32_t windowWidth, uint32_t windowHeight){
     if (instance != nullptr)
         assert(false);
-
+        
     instance = this;
-    window = new Window(windowWidth, windowHeight);
 
+    window = new Window(windowWidth, windowHeight);
     keyListener = new KeyListener();
     mouseListener = new MouseListener(window);
     assetPool = new AssetPool();
@@ -34,6 +34,7 @@ bool Application::init(){
         return false;
     }
 
+    //scene must be constructed after window init
     scene = new Scene();
     scene->init();
     

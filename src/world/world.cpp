@@ -20,7 +20,13 @@ World* World::instance = nullptr;
 World::World(): biomeBlending(true), currentChunkIndex(0), runningIndex(0){
     if (instance != nullptr)
         assert(false);
+
     instance = this;
+
+    //MAX_CHUNKS must be an odd number > 3
+    assert(MAX_CHUNKS > 3 && MAX_CHUNKS % 2 == 1);
+    //CAM_WIDTH and CAM_HEIGHT must be < CHUNK_WIDTH, CHUNK_HEIGHT
+    assert(CAM_WIDTH < CHUNK_WIDTH && CAM_HEIGHT < CHUNK_HEIGHT);
 
     initNoise();
 

@@ -24,9 +24,11 @@ class TileMapRenderer{
         void addIndexData();
 
         World* world;
+
         Buffer VBO;
         Buffer EBO;
         VertexArrayObject VAO;
+        
         Ref<Shader> shader;
         Ref<Texture> tileAtlas;
         int numWorkingTiles;

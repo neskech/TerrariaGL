@@ -40,16 +40,16 @@ class SpriteRenderer{
         inline bool containsEntity(Terra::Entity& ent) const { return index_map.find(&ent) != index_map.end(); }
         inline int getZIndex() const { return zIndex; }
     private:
-        void updateTransformData(Component::Transform& trans, uint32_t index);
-        void updateColorData(Component::SpriteRenderer& spr, uint32_t index);
-        void updateTexCordData(Component::SpriteRenderer& spr, uint32_t index);
-        void textureChange(Component::SpriteRenderer& spr, uint32_t index);
-        void updateTexIDData(int16_t texID, uint32_t index);
+        void updateTransformData(Component::Transform& trans, int index);
+        void updateColorData(Component::SpriteRenderer& spr, int index);
+        void updateTexCordData(Component::SpriteRenderer& spr, int index);
+        void textureChange(Component::SpriteRenderer& spr, int index);
+        void updateTexIDData(int16_t texID, int index);
         void removeSpriteSheet(int16_t texID);
         void updateDirtyFlags();
 
-        uint32_t numSprites;
-        uint32_t numSpriteSheets;
+        int numSprites;
+        int numSpriteSheets;
 
         int zIndex;
 

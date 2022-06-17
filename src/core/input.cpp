@@ -50,14 +50,15 @@ MouseListener* MouseListener::instance = nullptr;
 MouseListener::MouseListener(Window* windowRef){
     if (instance != nullptr)
         assert(false);
+
     instance = this;
+
     window = windowRef;
 }
 
 MouseListener::~MouseListener(){
     if (cursor != nullptr)
           glfwDestroyCursor(cursor);
-    std::cout << "Destructed the mouse listener!\n";
 }
 
 void MouseListener::cursor_position_callback(GLFWwindow* window, double xpos, double ypos){
@@ -67,7 +68,7 @@ void MouseListener::cursor_position_callback(GLFWwindow* window, double xpos, do
 void MouseListener::mouse_button_callback(GLFWwindow* window, int button, int action, int mods){
     //Only 7 bits required
      if (action == GLFW_PRESS)
-        instance->buttons[button] = ( ( (1 << 6) - 1) & mods ) | (1 << 6);
+         instance->buttons[button] = ( ( (1 << 6) - 1) & mods ) | (1 << 6);
      else
          instance->buttons[button] = 0;
 }

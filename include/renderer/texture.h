@@ -18,14 +18,14 @@ class Texture{
         inline void bind() { glBindTexture(GL_TEXTURE_2D, ID); }
         inline void unBind() { glBindTexture(GL_TEXTURE_2D, 0); }
         inline unsigned int getID(){ return ID; }
-        inline uint32_t getWidth(){ return width; }
-        inline uint32_t getHeight(){ return height; }
-        inline uint32_t getMipMapLevels(){ return mipMapLevels; }
+        inline int getWidth() const{ return width; }
+        inline int getHeight() const{ return height; }
+        inline int getMipMapLevels() const{ return mipMapLevels; }
 
     private:
         bool generate(const char* assetPath, const TexParams& params);
 
         unsigned int ID;
-        uint32_t width, height;
-        uint32_t mipMapLevels;
+        int width, height;
+        int mipMapLevels;
 };

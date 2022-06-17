@@ -54,8 +54,8 @@ void FontRenderer::init(){
         .minFilter = GL_NEAREST,
         .mipMapLevels = 1
     };
-    shader = AssetPool::getShader("../assets/shaders/textShader.glsl");
     fontAtlas = AssetPool::getTexture("../assets/img/font.png", params);
+    shader = AssetPool::getShader("../assets/shaders/textShader.glsl");
 }
 
 void FontRenderer::drawText(const std::string& text, const glm::vec2& pos, float charSize, float gap, const glm::vec3& color){
@@ -101,9 +101,7 @@ void FontRenderer::render(){
     shader->setmat4("ortho", Camera::getProjectionMatrix());
     shader->setmat4("view", Camera::getViewMatrix());
 
-    glActiveTexture(GL_TEXTURE0);
     fontAtlas->bind();
-    shader->uploadTexture("fontAtlas", 0);
     
     VAO.bind();
     EBO.bind();

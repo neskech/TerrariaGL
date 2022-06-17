@@ -132,14 +132,14 @@ void SpriteRenderer::addEntity(Terra::Entity& ent){
 }
 
 
-void SpriteRenderer::updateTransformData(Component::Transform& transform, uint32_t index){
+void SpriteRenderer::updateTransformData(Component::Transform& transform, int index){
     instanceVBO.bind();
 
     const glm::mat4& trans = transform.getTransform();
 
     float* buffer_ptr = instanceVBO.mapBuffer<float>();
 
-    uint32_t offset = index * VERTEX_SIZE + (TEXCORD_VERT_SIZE + TEXID_VERT_SIZE + COLOR_VERT_SIZE);
+    int offset = index * VERTEX_SIZE + (TEXCORD_VERT_SIZE + TEXID_VERT_SIZE + COLOR_VERT_SIZE);
     for (int r = 0; r < 4; r++){
         for (int c = 0; c < 4; c++){
             int ind = r * 4 + c;
@@ -151,12 +151,12 @@ void SpriteRenderer::updateTransformData(Component::Transform& transform, uint32
     instanceVBO.unBind();
 }
 
-void SpriteRenderer::updateColorData(Component::SpriteRenderer& spr, uint32_t index){
+void SpriteRenderer::updateColorData(Component::SpriteRenderer& spr, int index){
     instanceVBO.bind();
 
     float* buffer_ptr = instanceVBO.mapBuffer<float>();
 
-    uint32_t offset = index * VERTEX_SIZE + (TEXCORD_VERT_SIZE + TEXID_VERT_SIZE);
+    int offset = index * VERTEX_SIZE + (TEXCORD_VERT_SIZE + TEXID_VERT_SIZE);
     buffer_ptr[offset + 0] = spr.color.r;
     buffer_ptr[offset + 1] = spr.color.g;
     buffer_ptr[offset + 2] = spr.color.b;
@@ -166,35 +166,35 @@ void SpriteRenderer::updateColorData(Component::SpriteRenderer& spr, uint32_t in
     instanceVBO.unBind();
 }
 
-void SpriteRenderer::updateTexCordData(Component::SpriteRenderer& spr, uint32_t index){
+void SpriteRenderer::updateTexCordData(Component::SpriteRenderer& spr, int index){
     instanceVBO.bind();
     
     float* buffer_ptr = instanceVBO.mapBuffer<float>();
 
-    uint32_t offset = index * VERTEX_SIZE + (0);
+    int offset = index * VERTEX_SIZE + (0);
     buffer_ptr[offset] = spr.sprite.row * spr.sheet.numCols + spr.sprite.col;
 
     instanceVBO.unMapBuffer();
     instanceVBO.unBind();
 }
 
-void SpriteRenderer::updateTexIDData(int16_t texID, uint32_t index){
+void SpriteRenderer::updateTexIDData(int16_t texID, int index){
     instanceVBO.bind();
 
     float* buffer_ptr = instanceVBO.mapBuffer<float>();
-    uint32_t offset = index * VERTEX_SIZE + (TEXCORD_VERT_SIZE);
+    int offset = index * VERTEX_SIZE + (TEXCORD_VERT_SIZE);
     buffer_ptr[offset] = texID;
 
     instanceVBO.unMapBuffer();
     instanceVBO.unBind();
 }
 
- void SpriteRenderer::textureChange(Component::SpriteRenderer& spr, uint32_t index){
+ void SpriteRenderer::textureChange(Component::SpriteRenderer& spr, int index){
      //Find the sprite's previous texture
     instanceVBO.bind();
 
     float* buffer_ptr = instanceVBO.mapBuffer<float>();
-    uint32_t offset = index * VERTEX_SIZE + (TEXCORD_VERT_SIZE);
+    int offset = index * VERTEX_SIZE + (TEXCORD_VERT_SIZE);
     int16_t texID = buffer_ptr[offset];
 
     instanceVBO.unMapBuffer();
@@ -241,7 +241,7 @@ void SpriteRenderer::removeSpriteSheet(int16_t texID){
     instanceVBO.bind();
     float* buffer_ptr = instanceVBO.mapBuffer<float>();
 
-     uint32_t offset;
+     int offset;
      for (int i = 0; i < numSprites; i++){
         offset = i * VERTEX_SIZE + (TEXCORD_VERT_SIZE);
         if (buffer_ptr[offset] >= texID)
@@ -253,20 +253,20 @@ void SpriteRenderer::removeSpriteSheet(int16_t texID){
 }
 
 void SpriteRenderer::removeEntity(Terra::Entity& ent){
-     uint32_t index = index_map[&ent];
+     int index = index_map[&ent];
 
      instanceVBO.bind();
-     uint32_t start = index * VERTEX_SIZE;
+     int start = index * VERTEX_SIZE;
 
      float* buffer_ptr = instanceVBO.mapBuffer<float>();
-     for (uint32_t i = start; i < numSprites * VERTEX_SIZE - VERTEX_SIZE; i++){
+     for (int i = start; i < numSprites * VERTEX_SIZE - VERTEX_SIZE; i++){
          buffer_ptr[i] = buffer_ptr[i + VERTEX_SIZE];
      }
      instanceVBO.unMapBuffer();
      instanceVBO.unBind();
 
      
-     for (uint32_t i = index; i < numSprites - 1; i++){
+     for (int i = index; i < numSprites - 1; i++){
          index_map[entities[i + 1]] -= 1;
          entities[i] = entities[i + 1];
      }

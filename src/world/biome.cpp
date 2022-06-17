@@ -47,8 +47,6 @@ static TileType getType(TileData* baseRanges, int length, float noiseValue, floa
         runningSum += augRanges[a];
     }
 
-    for (int i = 0; i < length; i++)
-        std::cout << baseRanges[i].modifier.modifier << " base " << baseRanges[i].proportion << " aug " << augRanges[i] <<  " height " << heightValue <<  " noise "  << noiseValue <<  " sample " << baseRanges[i].modifier.sampleWithRange(heightValue, baseRanges[i].proportion) <<  std::endl;
 
     assert(false);
     return TileType::air;

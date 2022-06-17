@@ -44,8 +44,8 @@ void Inventory::start(){
         items[i].tile = TileType::planks;
         items[i].count = 99;
     }
-    items[3].tile = TileType::torch;
-    items[3].count = 10;
+    items[2].tile = TileType::torch;
+    items[2].count = 10;
 
     inventorySlots[selectedItem]->getComponent<Component::SpriteRenderer>().changeColor(glm::vec4(0.8f, 0.3f, 0.8f, 1.0f));
     updateInventory();
@@ -174,23 +174,29 @@ void Inventory::breakTile(){
  
 
     TileType t = scene->getWorld()->tileTypeAtWorldCoordinate(x, y);
-    if (t != TileType::air && t < TileType::background){
+    if (t != TileType::air && (t < TileType::background || t == TileType::torch)){
         scene->getWorld()->removeTileAtWorldCoordinate(x, y);
         
     if (t == TileType::torch)
          Renderer::getLightingData().removeTorch(glm::vec2(x, y));
 
         //add to the inventory
+        int freeIndex = -1;
         for (int i = 0; i < 8; i++){
             if (items[i].count < MAX_ITEMS && items[i].tile == t){
                 items[i].count++;
-                break;
+                return;
             }
-            else if (items[i].count == 0){
-                items[i].count = 1;
-                items[i].tile = t;
-                break;
+            //Only fill up an empty spot at the end, once we're sure there are no spots with
+            //Our item already in it
+            else if (items[i].count == 0 && freeIndex == -1){
+                freeIndex = i;
             }
+        }
+
+        if (freeIndex != -1){
+            items[freeIndex].count = 1;
+            items[freeIndex].tile = t;
         }
     }
 

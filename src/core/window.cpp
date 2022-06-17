@@ -78,7 +78,6 @@ void Window::setupCallbacks(){
 }
 
 Window::~Window(){
-    std::cout << "Destroyed the window!\n";
     glfwDestroyWindow(glfw_window);
     glfwTerminate();
 }
@@ -90,7 +89,7 @@ void Window::update(){
 }
 
 void Window::pollEvents(){
-    glfwPollEvents();
+     glfwPollEvents();
 }
 
 void Window::finishFrame(){

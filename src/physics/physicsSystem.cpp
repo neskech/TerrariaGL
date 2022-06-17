@@ -60,15 +60,14 @@ static std::optional<CollisionData> resolveAABBCollision(const Component::AABB& 
 
     trans.dirty = !(oldXComponent == trans.position.x && oldYComponent == trans.position.y);
 
-    body.velocity += body.accerlation * timeStep;
-
     if (collidedX && !collidedY)
         return collidedX;
     return collidedY;
 
 }
 
-static std::optional<CollisionData> resolveTileCollision(const glm::ivec2& dimensions, const Component::AABB& collider, Component::Transform& trans, Component::physicsBody& body, float timeStep, World* world){
+static std::optional<CollisionData> resolveTileCollision(const Component::AABB& collider, Component::Transform& trans, Component::physicsBody& body, float timeStep, World* world){
+    glm::ivec2 dimensions((int) floor(collider.extentsX * 2.0f + 1), (int) floor(collider.extentsY * 2.0f + 1));
 
     float oldXComponent = trans.position.x;
     trans.position.x += body.velocity.x * timeStep + 0.5f * body.accerlation.x * timeStep * timeStep;
@@ -92,8 +91,6 @@ static std::optional<CollisionData> resolveTileCollision(const glm::ivec2& dimen
 
     trans.dirty = !(oldXComponent == trans.position.x && oldYComponent == trans.position.y);
 
-    body.velocity += body.accerlation * timeStep;
-
     if (collidedX && !collidedY)
         return collidedX;
     return collidedY;
@@ -101,18 +98,17 @@ static std::optional<CollisionData> resolveTileCollision(const glm::ivec2& dimen
 
 void simulate(entt::registry& reg, World* world, float timeStep){
 
-    //iterate through non scripts first
+    //iterate through non script entities first
     auto view = reg.view<Component::physicsBody, Component::AABB, Component::Transform>(entt::exclude<Component::Script>);
     for (auto entity : view){
             auto& body = view.get<Component::physicsBody>(entity);
             auto& trans = view.get<Component::Transform>(entity);
             auto& AABB = view.get<Component::AABB>(entity);
 
-            glm::ivec2 dimensions((int) floor(AABB.extentsX * 2.0f + 1), (int) floor(AABB.extentsY * 2.0f + 1));
             for (int i = 0; i < NUM_PHYSICS_STEPS; i++){
                 float STEP = (timeStep / NUM_PHYSICS_STEPS) * (i+1);
-                resolveTileCollision(dimensions, AABB, trans, body, STEP, world);
-            
+                resolveTileCollision(AABB, trans, body, STEP, world);  
+                body.velocity += body.accerlation * STEP;
             }
 
     }  
@@ -125,15 +121,14 @@ void simulate(entt::registry& reg, World* world, float timeStep){
             auto& AABB = view2.get<Component::AABB>(entity);
             auto& script = view2.get<Component::Script>(entity);
 
-            glm::ivec2 dimensions((int) floor(AABB.extentsX * 2.0f + 1), (int) floor(AABB.extentsY * 2.0f + 1));
             for (int i = 0; i < NUM_PHYSICS_STEPS; i++){
                 float STEP = (timeStep / NUM_PHYSICS_STEPS) * (i+1);
-                std::optional<CollisionData> data = resolveTileCollision(dimensions, AABB, trans, body, STEP, world);
+                std::optional<CollisionData> data = resolveTileCollision(AABB, trans, body, STEP, world);
+                
                 if (data)
                     script.onCollision(data.value());
 
-                body.velocity += body.accerlation * timeStep;
-            
+                body.velocity += body.accerlation * STEP;
             }
 
     }  

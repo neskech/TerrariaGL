@@ -18,7 +18,7 @@ class Window{
         void finishFrame();
 
         inline GLFWwindow* getGLFWwindow() { return glfw_window; } 
-        inline bool windowClosing() { return glfwWindowShouldClose(glfw_window); }
+        inline bool windowClosing() const{ return glfwWindowShouldClose(glfw_window); }
         inline static unsigned int getWidth(){ return instance->width; }
         inline static unsigned int getHeight(){ return instance->height; }
 

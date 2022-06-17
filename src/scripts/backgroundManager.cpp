@@ -2,7 +2,7 @@
 #include "renderer/renderer.h"
 #include "core/window.h"
 
-#define DAY_PERIOD 8
+#define DAY_PERIOD 100
 #define Y_POS 15.0f
 #define TRANSITION_DELAY 0.6f
 
@@ -10,7 +10,7 @@
 
 #define SUN_MOON_RADIUS 18.0f
 #define SUN_MOON_SCALE 6.0f
-#define SUN_MOON_SHIFT_RADIANS 0.5f
+#define SUN_MOON_SHIFT_RADIANS 0.6f
 
 #define UNDERGROUND_THRESHOLD -20.0f
 
@@ -20,8 +20,10 @@ void BackgroundManager::start(){
 
     sunAndMoon = &scene->createEntity("Sun and Moon");
     Ref<Texture>& sun = AssetPool::getTexture("../assets/img/sun.png");
+
     auto& spr = sunAndMoon->addComponent<Component::SpriteRenderer>(SpriteSheet(sun, 1, 1));
     spr.color.a = 0.7f;
+
     auto& trans = sunAndMoon->getComponent<Component::Transform>();
     trans.setScale(glm::vec2(SUN_MOON_SCALE, SUN_MOON_SCALE));
     scene->addToRenderer(*sunAndMoon);
@@ -95,7 +97,7 @@ void BackgroundManager::initForest(){
     backgrounds[BackgroundType::forest].reserve(1);
 
     Ref<Texture> textures[1] = {
-        AssetPool::getTexture("../assets/img/Shotty.png")
+        AssetPool::getTexture("../assets/img/forest.png"),
     };
 
     float p[1] = {

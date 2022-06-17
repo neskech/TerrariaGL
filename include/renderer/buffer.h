@@ -55,11 +55,11 @@ class Buffer{
         bool isValid() const{ return ID != 0; }
 
         inline BufferType getBufferType() { return static_cast<BufferType>(bufferType); }
-        inline uint32_t getLength(){ return length; }
+        inline int getLength(){ return length; }
         inline unsigned int getID(){ return ID; }
     private:
         unsigned int ID;
         int bufferType;
-        uint32_t length;
+        int length;
 
 };

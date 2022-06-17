@@ -178,11 +178,3 @@ void Shader::uploadTextures(const std::string& name, int* slots) const
 {
     glUniform1iv(glGetUniformLocation(programID, name.c_str()), 8, slots);
 }
-
-void Shader::activate(){
-    glUseProgram(programID);
-}
-
-void Shader::deActivate(){
-    glUseProgram(0);
-}

@@ -11,7 +11,7 @@ Renderer::Renderer(): frameBufferVBO(BufferType::VBO)
         assert(false);
     instance = this;
 
-    lightingData.dayColor = glm::vec3(0.20f, 0.25f, 0.99f); //ambient
+    lightingData.dayColor = glm::vec3(0.20f, 0.25f, 0.99f);   //ambient
     lightingData.nightColor = glm::vec3(0.95f, 0.70f, 0.50f); //ambient
     lightingData.interpolationThreshold = 0.1f;
     
@@ -74,14 +74,6 @@ void Renderer::init(World* world){
     fontRenderer->init();
 }
 
-static glm::vec3 vectorInterp(const glm::vec3& v1, const glm::vec3& v2, float t){
-    glm::vec3 f;
-    f.x = v1.x + t * (v2.x - v1.x);
-    f.y = v1.y + t * (v2.y - v1.y);
-    f.z = v1.z + t * (v2.z - v1.z);
-    return f;
-}
-
 void Renderer::render(){
     frameBuffer.bind();
 
@@ -100,6 +92,55 @@ void Renderer::render(){
 
     glm::vec3 ambientColor;
     float ambientStrength;
+    interpolateColorAndAmbience(ambientColor, ambientStrength);
+
+    frameBufferShader->setFloat("ambience", ambientStrength);
+    frameBufferShader->setVec3("ambientColor", ambientColor);
+    frameBufferShader->setVec3("ambientColor", ambientColor);
+
+    const glm::vec2& cam = Camera::getPosition();
+
+    const int numTorches = MIN(8 - lightingData.playerLight, lightingData.torches.size());
+    frameBufferShader->setFloat("numTorches", numTorches + lightingData.playerLight);
+
+    if (lightingData.playerLight){
+        glm::vec2 p;
+        p.x = (lightingData.playerTransform->position.x - cam.x + CAM_WIDTH / 2.0f) / CAM_WIDTH * Window::getWidth();
+        p.y = (lightingData.playerTransform->position.y - cam.y + CAM_HEIGHT / 2.0f) / CAM_HEIGHT * Window::getHeight();
+        frameBufferShader->setVec2("torchLocations[0]", p);
+    }
+
+
+    for (int i = 0; i < numTorches; i++){ 
+        glm::vec2 p;
+        //convert to screen coordinates before sending to the shader
+        p.x = (lightingData.torches[i].x - cam.x + CAM_WIDTH / 2.0f) / CAM_WIDTH * Window::getWidth();
+        p.y = (lightingData.torches[i].y - cam.y + CAM_HEIGHT / 2.0f) / CAM_HEIGHT * Window::getHeight();
+        frameBufferShader->setVec2(std::string("torchLocations[") + std::to_string(i + lightingData.playerLight) + std::string("]"), p);
+    }
+
+    frameBufferVAO.bind();
+
+    glDisable(GL_DEPTH_TEST);
+    glBindTexture(GL_TEXTURE_2D, frameBuffer.textureColorAttachment());
+    glDrawArrays(GL_TRIANGLES, 0, 6);  
+    glBindTexture(GL_TEXTURE_2D, 0);
+
+    frameBufferVAO.unBind();
+    frameBufferShader->deActivate();
+
+}
+
+static glm::vec3 vectorInterp(const glm::vec3& v1, const glm::vec3& v2, float t){
+    glm::vec3 f;
+    f.x = v1.x + t * (v2.x - v1.x);
+    f.y = v1.y + t * (v2.y - v1.y);
+    f.z = v1.z + t * (v2.z - v1.z);
+    return f;
+}
+
+void Renderer::interpolateColorAndAmbience(glm::vec3& ambientColor, float& ambientStrength){
+
     float dayProp = lightingData.currentTime / lightingData.dayPeriod;
     if (1.0f - dayProp <= lightingData.interpolationThreshold){
         float t = (1.0f - dayProp) / lightingData.interpolationThreshold;
@@ -128,39 +169,6 @@ void Renderer::render(){
         }
 
     }
-
-    frameBufferShader->setFloat("ambience", ambientStrength);
-    frameBufferShader->setVec3("ambientColor", ambientColor);
-    frameBufferShader->setVec3("ambientColor", ambientColor);
-
-    const glm::vec2& cam = Camera::getPosition();
-
-    const int numTorches = MIN(8 - lightingData.playerLight, lightingData.torches.size());
-    frameBufferShader->setFloat("numTorches", numTorches + lightingData.playerLight);
-
-    if (lightingData.playerLight){
-        glm::vec2 p;
-        p.x = (lightingData.playerTransform->position.x - cam.x + CAM_WIDTH / 2.0f) / CAM_WIDTH * Window::getWidth();
-        p.y = (lightingData.playerTransform->position.y - cam.y + CAM_HEIGHT / 2.0f) / CAM_HEIGHT * Window::getHeight();
-        frameBufferShader->setVec2("torchLocations[0]", p);
-    }
-
-
-    for (int i = 0; i < numTorches; i++){ 
-        glm::vec2 p;
-        p.x = (lightingData.torches[i].x - cam.x + CAM_WIDTH / 2.0f) / CAM_WIDTH * Window::getWidth();
-        p.y = (lightingData.torches[i].y - cam.y + CAM_HEIGHT / 2.0f) / CAM_HEIGHT * Window::getHeight();
-        frameBufferShader->setVec2(std::string("torchLocations[") + std::to_string(i + lightingData.playerLight) + std::string("]"), p);
-    }
-
-    frameBufferVAO.bind();
-    glDisable(GL_DEPTH_TEST);
-    glBindTexture(GL_TEXTURE_2D, frameBuffer.textureColorAttachment());
-    glDrawArrays(GL_TRIANGLES, 0, 6);  
-    glBindTexture(GL_TEXTURE_2D, 0);
-    frameBufferVAO.unBind();
-    frameBufferShader->deActivate();
-
 }
 
 void Renderer::renderScene(){
@@ -194,7 +202,7 @@ void Renderer::submit(Terra::Entity& ent){
     for (auto& rend : spriteRenderers){
         numSprites += rend->getNumSprites();
         if (rend->hasRoomSprites() && (rend->hasRoomTextures() || rend->containsTexture(spr))
-        && rend->getZIndex() == trans.zIndex){
+        && rend->zIndex == trans.zIndex){
             rend->addEntity(ent);
             return;
         }
@@ -208,7 +216,7 @@ void Renderer::submit(Terra::Entity& ent){
     
     std::sort(spriteRenderers.begin(), spriteRenderers.begin() + spriteRenderers.size(), 
         [](const Scoped<SpriteRenderer>& spr1, const Scoped<SpriteRenderer>& spr2){
-            return spr1->getZIndex() < spr2->getZIndex();
+            return spr1->zIndex < spr2->zIndex;
         }
     );
 
@@ -223,6 +231,7 @@ void Renderer::remove(Terra::Entity& ent){
          }
     }
 
+    //If you tried removing and the entity wasn't in any of the renderers
     assert(false);
 }
 

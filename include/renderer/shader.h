@@ -9,9 +9,6 @@ class Shader{
         Shader(const Shader&& other) = delete;
         ~Shader();
 
-        void activate();
-        void deActivate();
-
         void setBool(const std::string& name, bool value) const;
         void setInt(const std::string& name, int value) const;
         void setFloat(const std::string& name, float value) const;
@@ -23,6 +20,8 @@ class Shader{
         void uploadTexture(const std::string& name, int slot) const;
         void uploadTextures(const std::string& name, int* slots) const;
 
+        inline void activate(){ glUseProgram(programID); }
+        inline void deActivate(){ glUseProgram(0); }
         inline int getID(){ return programID; }
     private:
         bool readShaders(const char* shaderPath, std::string& vs, std::string& fs);
