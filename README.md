@@ -1,4 +1,4 @@
-v# TerrariaGL
+# TerrariaGL
 
 **A terraria clone made with OpengGL and C++**
 
