@@ -7,16 +7,16 @@ I've always loved learning about how games work at their lowest level, so this p
 ## Screenshots
 
 - Building and Destroying Tiles
-![Building and Destroying Tiles](./screenshots/building.png)
+![Building and Destroying Tiles](./screenShots/building.png)
 
 - Biomes
-![Biomes](./screenshots/desert.png)
+![Biomes](./screenShots/desert.png)
 
 - Procedural Terrain Generation
-![Procedural Terrain Generation](./screenshots/snow.png)
+![Procedural Terrain Generation](./screenShots/snow.png)
 
 - Lighting and Day Night Cycle
-![Lighting and Day Night Cycle](./screenshots/lighting.png)
+![Lighting and Day Night Cycle](./screenShots/lighting.png)
 
 ## Building the Project
 
