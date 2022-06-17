@@ -499,9 +499,12 @@ CMakeFiles/terraria.dir/src/scene/scene.cpp.o: \
   /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/renderer/VAO.h \
   /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/renderer/debugRenderer.h \
   /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/renderer/tileMapRenderer.h \
+  /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/renderer/fontRenderer.h \
+  /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/renderer/framebuffer.h \
   /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/core/input.h \
   /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/core/window.h \
   /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/util/image.h \
   /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/scripts/characterController.h \
   /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/scripts/backgroundManager.h \
+  /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/scripts/Inventory.h \
   /Users/shauntemellor/Documents/Documents\ -\ Shaunte’s\ MacBook\ Pro/comsci/Projects/Terraria/include/physics/physicsSystem.h

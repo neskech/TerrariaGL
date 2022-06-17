@@ -78,7 +78,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/terraria.dir/DependInfo.cmake"
-  "CMakeFiles/imgui.dir/DependInfo.cmake"
   "CMakeFiles/stb_image.dir/DependInfo.cmake"
   "libs/glfw/CMakeFiles/uninstall.dir/DependInfo.cmake"
   "libs/glfw/src/CMakeFiles/glfw.dir/DependInfo.cmake"

@@ -24,6 +24,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx" "CMakeFiles/terraria.dir/src/renderer/VAO.cpp.o" "gcc" "CMakeFiles/terraria.dir/src/renderer/VAO.cpp.o.d"
   "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/src/renderer/debugRenderer.cpp" "CMakeFiles/terraria.dir/src/renderer/debugRenderer.cpp.o" "gcc" "CMakeFiles/terraria.dir/src/renderer/debugRenderer.cpp.o.d"
   "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx" "CMakeFiles/terraria.dir/src/renderer/debugRenderer.cpp.o" "gcc" "CMakeFiles/terraria.dir/src/renderer/debugRenderer.cpp.o.d"
+  "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/src/renderer/fontRenderer.cpp" "CMakeFiles/terraria.dir/src/renderer/fontRenderer.cpp.o" "gcc" "CMakeFiles/terraria.dir/src/renderer/fontRenderer.cpp.o.d"
+  "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx" "CMakeFiles/terraria.dir/src/renderer/fontRenderer.cpp.o" "gcc" "CMakeFiles/terraria.dir/src/renderer/fontRenderer.cpp.o.d"
   "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/src/renderer/framebuffer.cpp" "CMakeFiles/terraria.dir/src/renderer/framebuffer.cpp.o" "gcc" "CMakeFiles/terraria.dir/src/renderer/framebuffer.cpp.o.d"
   "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx" "CMakeFiles/terraria.dir/src/renderer/framebuffer.cpp.o" "gcc" "CMakeFiles/terraria.dir/src/renderer/framebuffer.cpp.o.d"
   "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/src/renderer/renderer.cpp" "CMakeFiles/terraria.dir/src/renderer/renderer.cpp.o" "gcc" "CMakeFiles/terraria.dir/src/renderer/renderer.cpp.o.d"
@@ -40,6 +42,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx" "CMakeFiles/terraria.dir/src/scene/camera.cpp.o" "gcc" "CMakeFiles/terraria.dir/src/scene/camera.cpp.o.d"
   "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/src/scene/scene.cpp" "CMakeFiles/terraria.dir/src/scene/scene.cpp.o" "gcc" "CMakeFiles/terraria.dir/src/scene/scene.cpp.o.d"
   "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx" "CMakeFiles/terraria.dir/src/scene/scene.cpp.o" "gcc" "CMakeFiles/terraria.dir/src/scene/scene.cpp.o.d"
+  "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/src/scripts/Inventory.cpp" "CMakeFiles/terraria.dir/src/scripts/Inventory.cpp.o" "gcc" "CMakeFiles/terraria.dir/src/scripts/Inventory.cpp.o.d"
+  "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx" "CMakeFiles/terraria.dir/src/scripts/Inventory.cpp.o" "gcc" "CMakeFiles/terraria.dir/src/scripts/Inventory.cpp.o.d"
   "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/src/scripts/backgroundManager.cpp" "CMakeFiles/terraria.dir/src/scripts/backgroundManager.cpp.o" "gcc" "CMakeFiles/terraria.dir/src/scripts/backgroundManager.cpp.o.d"
   "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx" "CMakeFiles/terraria.dir/src/scripts/backgroundManager.cpp.o" "gcc" "CMakeFiles/terraria.dir/src/scripts/backgroundManager.cpp.o.d"
   "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/src/scripts/characterController.cpp" "CMakeFiles/terraria.dir/src/scripts/characterController.cpp.o" "gcc" "CMakeFiles/terraria.dir/src/scripts/characterController.cpp.o.d"
@@ -60,7 +64,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
 set(CMAKE_TARGET_LINKED_INFO_FILES
   "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/glfw/src/CMakeFiles/glfw.dir/DependInfo.cmake"
   "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/libs/Glad/CMakeFiles/glad.dir/DependInfo.cmake"
-  "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles/imgui.dir/DependInfo.cmake"
   "/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles/stb_image.dir/DependInfo.cmake"
   )
 

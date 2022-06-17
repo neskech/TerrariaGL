@@ -13,14 +13,18 @@ struct SpriteSheet{
     float cellWidth, cellHeight;
 
     SpriteSheet(Ref<Texture>& tex_, int rows_, int cols_) : tex(tex_), numRows(rows_), numCols(cols_){
-        // cellWidth = ( tex->getWidth() - pow(2, tex->getMipMapLevels()) * (numCols + 1) ) / numCols;
-        // cellHeight = ( tex->getHeight() - pow(2, tex->getMipMapLevels()) * (numRows + 1) ) / numRows;
         cellWidth = tex->getWidth() / numCols;
         cellHeight = tex->getHeight() / numRows;
     }
+
+    SpriteSheet(const SpriteSheet& other): tex(other.tex), numRows(other.numRows), numCols(other.numCols),
+                cellWidth(other.cellWidth), cellHeight(other.cellHeight) {}
+
+    SpriteSheet(){}
 };
 
 //Setter for the row and col indices, asserts false if invalid index
 struct Sprite{
     int row, col;
+    Sprite(int row_, int col_): row(row_), col(col_) {}
 };

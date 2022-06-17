@@ -30,7 +30,7 @@ void DebugRenderer::init(){
     VBO.unBind();
     VAO.unBind();
 
-    shader = AssetPool::getShader("/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/assets/shaders/debugShader.glsl");
+    shader = AssetPool::getShader("../assets/shaders/debugShader.glsl");
 }
 
 void DebugRenderer::render(){

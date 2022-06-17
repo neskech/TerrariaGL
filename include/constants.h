@@ -13,19 +13,10 @@
 
 //Camera.cpp
 
-#define CAM_WIDTH 64
+#define CAM_WIDTH 48
 #define CAM_HEIGHT 32
 
 //PhysicsSystem.cpp
 
-#define NUM_PHYSICS_STEPS 1
+#define NUM_PHYSICS_STEPS 2
 
-//World.cpp
-
-#define CHUNK_BLEND_DISTANCE 10
-#define CHUNK_BLEND_CUTOFF 0.5f
-
-#define MAX_CHUNKS 11
-#define CHUNK_POP_SIZE 3
-#define CHUNK_POP_DISTANCE 3
-#define MIN_BIOME_LENGTH 1

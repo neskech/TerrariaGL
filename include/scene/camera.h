@@ -16,10 +16,7 @@ class Camera{
         static inline glm::vec2 getPosition(){ return instance->pos; }
         static inline int getCamViewWidth(){ return CAM_WIDTH; }
         static inline int getCamViewHeight(){ return CAM_HEIGHT; } 
-        static inline bool isDirty(){ return instance->dirty; }
-        static inline void unDirty(){ instance->dirty = false; }
     private:
         glm::vec2 pos;
-        bool dirty;
         static Camera* instance;
 };

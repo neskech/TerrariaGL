@@ -5,11 +5,12 @@
 #include "core/input.h"
 #include "scripts/characterController.h"
 #include "scripts/backgroundManager.h"
+#include "scripts/Inventory.h"
 #include "constants.h"
 #include "physics/physicsSystem.h"
 
 using namespace Terra;
-
+static Entity* controller;
 
 Scene::Scene(){
    world = new World();
@@ -35,9 +36,13 @@ void Scene::init(){
 
    Entity& sprite = createEntity("Player");
    sprite.addComponent<Component::Script>((ScriptableObject*)(new CharacterController(sprite, this)));
+   controller = &sprite;
 
    Entity& bm = createEntity("BackgroundManager");
    bm.addComponent<Component::Script>((ScriptableObject*)(new BackgroundManager(bm, this)));
+
+   Entity& inv = createEntity("InventoryManager");
+   inv.addComponent<Component::Script>((ScriptableObject*)(new Inventory(inv, this)));
    
    auto view = registry.view<Component::Script>();
    for (auto entity : view){
@@ -50,13 +55,22 @@ void Scene::init(){
 void Scene::update(float timeStep){
     world->update();
 
+    //Have to update this first because it moves the camera. If not updated first, everything will not be synched with the camera
+    auto& script = controller->getComponent<Component::Script>();
+    script.update(timeStep);
+
     auto view = registry.view<Component::Script>();
     for (auto entity : view){
+        if (entity == controller->getInnerEntity())
+            continue;
+
         auto& scr = view.get<Component::Script>(entity);
         scr.update(timeStep);
     }
+
+
     
-    simulate(registry, world,timeStep);
+    simulate(registry, world, timeStep);
 
     
 }
@@ -73,10 +87,10 @@ void Scene::removeFromRenderer(Entity& ent){
     renderer->remove(ent);
 }
 
-Terra::Entity& Scene::createEntity(const char* name){
+Terra::Entity& Scene::createEntity(const std::string& name){
     Terra::Entity ent(registry.create(), this);
 
-    if (name != nullptr)
+    if (name != std::string("None"))
         ent.addComponent<Component::Tag>(std::string(name));
     else
         ent.addComponent<Component::Tag>(std::string("Object #") + std::to_string((int)ent.getInnerEntity()));
@@ -87,12 +101,22 @@ Terra::Entity& Scene::createEntity(const char* name){
 }
 
 void Scene::deleteEntity(Terra::Entity& ent, bool removeFromRenderer){
-    if (removeFromRenderer && ent.hasComponent<Component::SpriteRenderer>())
+    if (removeFromRenderer && ent.hasComponent<Component::SpriteRenderer>()){
         renderer->remove(ent);
+    }
 
     if (ent.hasComponent<Component::Script>())
         ent.getComponent<Component::Script>().onDestroy();
+
+    for (int i = 0; i < entites.size(); i++){
+        if (&entites[i] == &ent){
+            entites.erase(entites.begin() + i);
+            break;
+        }
+    }
+    //Bug in the library. This method causes heap corruption. Spent 5 hours trying to debug this. DO NOT USE Scene::deleteEntity()
     registry.destroy(ent.getInnerEntity());
+
 }
 
 void Scene::deleteEntityByTagName(const std::string& tagName){

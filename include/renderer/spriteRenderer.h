@@ -7,6 +7,16 @@
 
 #include "constants.h"
 
+struct SpriteSheetBinding{
+    SpriteSheet sheet;
+    int owners;
+    SpriteSheetBinding(): owners(0) {}
+    SpriteSheetBinding(const SpriteSheet& sheet_): sheet(sheet_)
+    {
+        owners = 1;
+    }
+};
+
 class SpriteRenderer{
     public:
         SpriteRenderer(Renderer& renderer, int zIndex = 0);
@@ -33,7 +43,9 @@ class SpriteRenderer{
         void updateTransformData(Component::Transform& trans, uint32_t index);
         void updateColorData(Component::SpriteRenderer& spr, uint32_t index);
         void updateTexCordData(Component::SpriteRenderer& spr, uint32_t index);
+        void textureChange(Component::SpriteRenderer& spr, uint32_t index);
         void updateTexIDData(int16_t texID, uint32_t index);
+        void removeSpriteSheet(int16_t texID);
         void updateDirtyFlags();
 
         uint32_t numSprites;
@@ -47,7 +59,7 @@ class SpriteRenderer{
         VertexArrayObject VAO;
 
         Terra::Entity* entities[MAX_INSTANCES / MAX_INSTANCE_RENDERERS];
-        SpriteSheet* spriteSheets[MAX_TEXTURES]; //Spritesheets can be 1 sprite or multiple
+        SpriteSheetBinding spriteSheets[MAX_TEXTURES]; //Spritesheets can be 1 sprite or multiple
         std::unordered_map<Terra::Entity*, uint16_t> index_map;
 
         Ref<Shader> shader;

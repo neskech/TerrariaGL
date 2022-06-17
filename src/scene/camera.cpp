@@ -5,7 +5,7 @@
 
 Camera* Camera::instance = nullptr;
 
-Camera::Camera(const glm::vec2& pos_): pos(pos_), dirty(false){
+Camera::Camera(const glm::vec2& pos_): pos(pos_){
      if (instance != nullptr)
         assert(false);
 
@@ -25,5 +25,4 @@ void Camera::changePosition(const glm::vec2& position){
     //Ensuring that the camera does not go out of bounds of the chunks
     instance->pos.y = std::clamp(position.y, (float) (-CHUNK_HEIGHT / 2  + 1 + CAM_HEIGHT / 2), (float)(CHUNK_HEIGHT / 2 - CAM_HEIGHT / 2));
     instance->pos.x = position.x; 
-    instance->dirty = position != instance->pos;
 }

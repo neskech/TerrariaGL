@@ -4,6 +4,18 @@
 #include "util/assetPool.h"
 #include "scene/scene.h"
 
+//Just the FPS
+struct SettingsInfo{
+
+        bool display = true;
+        float elapsedTimeBeforeHiding = 0.0f;
+        float hideDelay= 0.5f;
+
+        float refreshRate = 0.5f;
+        float elapsedTimeBeforeRefresh = 0.0f;
+        int FPS = 0;
+};
+
 class Application{
 
     public:
@@ -19,6 +31,7 @@ class Application{
         inline Window* getWindow(){ return window; }
 
     private:
+        void displaySettingsAndInfo(float delta);
         static Application* instance;
         
         Scene* scene;
@@ -26,4 +39,6 @@ class Application{
         KeyListener* keyListener;
         MouseListener* mouseListener;
         AssetPool* assetPool;
+
+        SettingsInfo settings;
 };

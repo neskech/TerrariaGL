@@ -24,53 +24,29 @@ add_subdirectory(libs/Glad EXCLUDE_FROM_ALL)
 # glm
 add_subdirectory(libs/glm EXCLUDE_FROM_ALL)
 
-# imgui
-add_library(
-        imgui EXCLUDE_FROM_ALL
-        libs/imgui/imgui.cpp
-        libs/imgui/imgui.h
-        libs/imgui/imgui_demo.cpp
-        libs/imgui/imgui_draw.cpp
-        libs/imgui/imgui_internal.h
-        libs/imgui/imgui_widgets.cpp
-        libs/imgui/imstb_rectpack.h
-        libs/imgui/imstb_textedit.h
-        libs/imgui/imstb_truetype.h
-        libs/imgui/imconfig.h
-        libs/imgui/imgui_tables.cpp
-        libs/imgui/backends/imgui_impl_glfw.h
-        libs/imgui/backends/imgui_impl_glfw.cpp
-        libs/imgui/backends/imgui_impl_opengl3.h
-        libs/imgui/backends/imgui_impl_opengl3.cpp
-)
-
-
-include_directories(imgui libs/imgui libs/imgui/backends)
+#Entt
 include_directories(entt libs/entt)
+#Glad
 include_directories(Glad libs/Glad/include)
+#FastNoiseLite
 include_directories(terraria libs/FastNoiseLite/include)
-
 
 
 # stb_image
 add_library(stb_image EXCLUDE_FROM_ALL libs/stb_image/stb_image.h libs/stb_image/stb_image.cpp)
 include_directories(stb_image libs/stb_image)
 
-#find_package(OpenGL REQUIRED)
-#target_include_directories(terraria PUBLIC ${OPENGL_INCLUDE_DIR})
 
 
 # link glfw to imgui and link everything to the main app
-#if (APPLE)
+if (APPLE)
     target_link_libraries(terraria "-framework Cocoa")
     target_link_libraries(terraria "-framework OpenGL")
     target_link_libraries(terraria "-framework IOKit")
     target_link_libraries(terraria "-framework Foundation")
     target_link_libraries(terraria "-framework CoreFoundation")
     target_link_libraries(terraria "-framework CoreVideo")
-   # target_link_libraries(terraria PUBLIC "-framework CoreGraphics")
-#endif (APPLE)
+endif (APPLE)
 
-target_link_libraries(imgui PRIVATE glfw)
-target_link_libraries(terraria glfw glm glad imgui stb_image )
+target_link_libraries(terraria glfw glm glad stb_image)
 

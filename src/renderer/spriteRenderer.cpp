@@ -14,7 +14,7 @@ SpriteRenderer::SpriteRenderer(Renderer& renderer_, int zIndex_):
     instanceVBO(BufferType::VBO), templateVBO(BufferType::VBO),
     templateEBO(BufferType::EBO), VAO(), renderer(renderer_)
 {
-    //index_map.reserve(MAX_INSTANCES);
+
 }
 
 SpriteRenderer::~SpriteRenderer(){
@@ -70,6 +70,8 @@ void SpriteRenderer::init(){
 }
 
 void SpriteRenderer::render(){
+    updateDirtyFlags();
+    
     VAO.bind();
 
     shader->activate();
@@ -78,11 +80,11 @@ void SpriteRenderer::render(){
 
     for (int i = 0; i < numSpriteSheets; i++){
           glActiveTexture(GL_TEXTURE0 + i);
-          spriteSheets[i]->tex->bind();
-          shader->uploadTexture(std::string("uTextures[" + std::to_string(i) + "]"), i);
+          spriteSheets[i].sheet.tex->bind();
 
-          shader->setVec2("spriteDimensions[" + std::to_string(i) + "]", glm::vec2(spriteSheets[i]->cellWidth, spriteSheets[i]->cellHeight));
-          shader->setFloat("cols[" + std::to_string(i) + "]", spriteSheets[i]->numCols);
+          shader->uploadTexture(std::string("uTextures[" + std::to_string(i) + "]"), i);
+          shader->setVec2("spriteDimensions[" + std::to_string(i) + "]", glm::vec2(spriteSheets[i].sheet.cellWidth, spriteSheets[i].sheet.cellHeight));
+          shader->setFloat("cols[" + std::to_string(i) + "]", spriteSheets[i].sheet.numCols);
     }
 
     templateEBO.bind();
@@ -90,12 +92,11 @@ void SpriteRenderer::render(){
     shader->deActivate();
 
     for (int i = 0; i < numSpriteSheets; i++){
-          spriteSheets[i]->tex->unBind();
+          spriteSheets[i].sheet.tex->unBind();
     }
 
     VAO.unBind();
     templateEBO.unBind();
-    updateDirtyFlags();
 }
 
 void SpriteRenderer::addEntity(Terra::Entity& ent){ 
@@ -104,17 +105,19 @@ void SpriteRenderer::addEntity(Terra::Entity& ent){
     int16_t texID = -1;
     for (int i = 0; i < numSpriteSheets; i++){
 
-        if (&spr.sheet == spriteSheets[i]){
+        if (spr.sheet.tex.get() == spriteSheets[i].sheet.tex.get()){
             texID = i;
+            spriteSheets[i].owners++;
             break;
         }
     }
-    
+
     if (texID == -1){
-        spriteSheets[numSpriteSheets] = &spr.sheet;
+        //Copy the spritesheet into the array
+        spriteSheets[numSpriteSheets] = SpriteSheetBinding(spr.sheet);
         texID = numSpriteSheets++;
     }
-   
+
     index_map[&ent] = numSprites;
     entities[numSprites] = &ent;
 
@@ -186,6 +189,69 @@ void SpriteRenderer::updateTexIDData(int16_t texID, uint32_t index){
     instanceVBO.unBind();
 }
 
+ void SpriteRenderer::textureChange(Component::SpriteRenderer& spr, uint32_t index){
+     //Find the sprite's previous texture
+    instanceVBO.bind();
+
+    float* buffer_ptr = instanceVBO.mapBuffer<float>();
+    uint32_t offset = index * VERTEX_SIZE + (TEXCORD_VERT_SIZE);
+    int16_t texID = buffer_ptr[offset];
+
+    instanceVBO.unMapBuffer();
+    instanceVBO.unBind();
+
+    for (int i = 0; i < numSpriteSheets; i++){
+        //If the texture is the same
+        if (spr.sheet.tex.get() == spriteSheets[i].sheet.tex.get() && i == texID)
+            return;
+        //If the texID is a different texture in the array, therefore we have a new texture
+        else if (spr.sheet.tex.get() == spriteSheets[i].sheet.tex.get()){
+            updateTexIDData(i, index);
+
+            //handle the previous texture
+            spriteSheets[texID].owners--;
+
+            //handle removal
+            if (spriteSheets[texID].owners == 0){
+                removeSpriteSheet(texID);
+            }
+
+            return;
+        }
+    }
+
+    //if the texture was not in the array at all...
+    int new_texID = numSpriteSheets++;
+    updateTexIDData(new_texID, index);
+    spriteSheets[new_texID] = SpriteSheetBinding(spr.sheet);
+
+    //And remove the previous texture...
+    spriteSheets[texID].owners--;
+     if (spriteSheets[texID].owners == 0){
+         removeSpriteSheet(texID);
+    }
+ }
+
+void SpriteRenderer::removeSpriteSheet(int16_t texID){
+    for (int16_t j = texID; j < numSpriteSheets - 1; j++)
+        spriteSheets[j] = spriteSheets[j + 1]; 
+
+    numSpriteSheets--;
+
+    instanceVBO.bind();
+    float* buffer_ptr = instanceVBO.mapBuffer<float>();
+
+     uint32_t offset;
+     for (int i = 0; i < numSprites; i++){
+        offset = i * VERTEX_SIZE + (TEXCORD_VERT_SIZE);
+        if (buffer_ptr[offset] >= texID)
+            buffer_ptr[offset] -= 1;
+     }
+
+    instanceVBO.unMapBuffer();
+    instanceVBO.unBind();
+}
+
 void SpriteRenderer::removeEntity(Terra::Entity& ent){
      uint32_t index = index_map[&ent];
 
@@ -206,14 +272,28 @@ void SpriteRenderer::removeEntity(Terra::Entity& ent){
      }
 
      index_map.erase(&ent);
+
+     Texture* tex = ent.getComponent<Component::SpriteRenderer>().sheet.tex.get();
+     for (int i = 0; i < numSpriteSheets; i++){
+         if (spriteSheets[i].sheet.tex.get() == tex){
+             spriteSheets[i].owners--;
+
+             if (spriteSheets[i].owners <= 0){
+                removeSpriteSheet(i);
+             }
+             else
+                break;
+         }
+     }
+
     
      numSprites--;
 
 }
 
 bool SpriteRenderer::containsTexture(const Component::SpriteRenderer& spr){
-    for (SpriteSheet* sheet : spriteSheets){
-        if (&spr.sheet == sheet)
+    for (int i = 0; i < numSpriteSheets; i++){
+        if (spr.sheet.tex.get() == spriteSheets[i].sheet.tex.get())
             return true;
     }
     return false;
@@ -222,10 +302,11 @@ bool SpriteRenderer::containsTexture(const Component::SpriteRenderer& spr){
 
 void SpriteRenderer::updateDirtyFlags(){
 
-    for (uint32_t i = 0; i < numSprites; i++){
+    for (int32_t i = numSprites - 1; i >= 0; i--){
         Component::SpriteRenderer& spr = entities[i]->getComponent<Component::SpriteRenderer>();
         if (spr.dirty){
             updateTexCordData(spr, i);
+            textureChange(spr, i);
             updateColorData(spr, i);
             spr.dirty = false;
         }
@@ -234,13 +315,14 @@ void SpriteRenderer::updateDirtyFlags(){
         if (trans.dirty){
 
             if (trans.zIndex != zIndex){
-                std::cout << "MY ZINDEX " << zIndex << " TRANS ZINDEX " << trans.zIndex << std::endl;
                 Terra::Entity& ent = *entities[i];
+ 
                 renderer.remove(ent);
                 renderer.submit(ent);
+
+                continue;
             }
-            else
-                updateTransformData(trans, i);
+            updateTransformData(trans, i);
 
             trans.dirty = false;
         }

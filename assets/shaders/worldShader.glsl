@@ -24,8 +24,9 @@ out vec4 fColor;
 
 void main(){
     ivec2 texSize = textureSize(texture_atlas, 0);
-    float s_offset = (1.0 / (float(texSize.x))) * 0.5;
-    float t_offset = (1.0 / (float(texSize.y))) * 0.5;
+    float s_offset = (1.0 / (float(texSize.x))) * 0.5 * 0.0;
+    float t_offset = (1.0 / (float(texSize.y))) * 0.5 * 0.0;
+
     vec2 uv_final = vec2(fUVS.x + s_offset, fUVS.y + t_offset);
     fColor = texture(texture_atlas, uv_final);
 

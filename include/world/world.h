@@ -8,7 +8,6 @@
 struct Chunk{
     Biome biomeType;
     std::array<TileType, CHUNK_WIDTH * CHUNK_HEIGHT> tiles;
-    //uint8_t tiles[CHUNK_WIDTH * CHUNK_HEIGHT];
 
     Chunk(Biome biomeType_): biomeType(biomeType_) {}
 };
@@ -36,8 +35,10 @@ class World{
         void init(); //Generates the first MAX_CHUNKS chunks
         void update(); //checks if chunks need to be popped  
         TileType tileTypeAtWorldCoordinate(int x, int y);
+        void removeTileAtWorldCoordinate(int x, int y);
+        void placeTileAtWorldCoordinate(int x, int y, TileType tile);
         Node<Chunk>* getChunkAtXCoordinate(int x);
-        
+
         inline Biome getBiomeTypeAt(int x){ return getChunkAtXCoordinate(x)->value->biomeType; }
         inline LinkedList<Chunk>& getChunksList(){ return chunks; }
         inline int getChunkIndexInArray(int worldChunkIndex);
@@ -47,6 +48,7 @@ class World{
         void popChunks(Direction direction);
         void appendChunks(Direction direction);
         void generateNewBiomeData(BiomeGenData& data);
+        void generateFlaura(Biome biome, int x, int y, Chunk* chunk);
 
         LinkedList<Chunk> chunks;
         BiomeRule* biomeGenerators[3];
@@ -57,6 +59,8 @@ class World{
         BiomeGenData rightGeneration;
         BiomeGenData leftGeneration;
         NoiseSettings biomeBlending;
+
+        NoiseSettings flaura;
 
         static World* instance;
 

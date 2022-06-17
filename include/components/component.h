@@ -45,10 +45,10 @@ namespace Component{
         glm::vec2 position;
         glm::vec2 rotation;
         glm::vec2 scale;
-        int zIndex = 0.0;
-        bool dirty;
+        int zIndex = 0;
+        bool dirty = false;
 
-        Transform(glm::vec2& translation_): position(translation_) {}
+        Transform(glm::vec2& translation_): position(translation_), zIndex(0) {}
         Transform() = default;
 
         glm::mat4 getTransform(){
@@ -92,6 +92,15 @@ namespace Component{
             sheet(sheet_), sprite(spr_), color(color_), dirty(false) {}
         
         void changeColor(const glm::vec4& c){ color = c; dirty = true; }
+
+        void changeTexture(Ref<Texture>& tex, int numRows = 1, int numCols = 1){ 
+            sheet.tex = tex;
+            sheet.numRows = numRows;
+            sheet.numCols = numCols;
+            sheet.cellWidth = tex->getWidth() / (float)numCols;
+            sheet.cellHeight = tex->getHeight() / (float)numRows;
+            dirty = true;
+        }
 
         void changeSprite(Sprite spr){ sprite = spr; dirty = true; }
     };

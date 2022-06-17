@@ -48,7 +48,7 @@ static TileType getType(TileData* baseRanges, int length, float noiseValue, floa
     }
 
     for (int i = 0; i < length; i++)
-        std::cout << baseRanges[i].modifier.modifier << " base " << baseRanges[i].proportion << " aug " << augRanges[i] <<  " height " << heightValue <<  " noise "  << noiseValue <<  " sample " << baseRanges[i].modifier.sampleWithRange(heightValue, baseRanges[i].proportion) << " HHAHAHHD" << std::endl;
+        std::cout << baseRanges[i].modifier.modifier << " base " << baseRanges[i].proportion << " aug " << augRanges[i] <<  " height " << heightValue <<  " noise "  << noiseValue <<  " sample " << baseRanges[i].modifier.sampleWithRange(heightValue, baseRanges[i].proportion) <<  std::endl;
 
     assert(false);
     return TileType::air;
@@ -57,7 +57,7 @@ static TileType getType(TileData* baseRanges, int length, float noiseValue, floa
 BiomeRule::BiomeRule(): 
     caveMap(true), tileMap(true), heightMap(true), oreMap(true), caveModifier(true)
 {
-    heightMap = NoiseSettings(10000, 5, 0.2f, 2.0f, 0.5f, 0.03f, FastNoiseLite::NoiseType::NoiseType_OpenSimplex2S);
+    heightMap = NoiseSettings(5, 0.2f, 0.5f, 0.03f, FastNoiseLite::NoiseType::NoiseType_OpenSimplex2S);
 } 
 
 int* BiomeRule::getHeightMap(int startX){
@@ -77,15 +77,23 @@ ForestBiome::ForestBiome(): BiomeRule()
 {}
 
 void ForestBiome::init(){
-    baseTiles[0] = TileData(TileType::dirt, .70f, HeightModifier(.90f, CHUNK_HEIGHT / 3, 0.8f, -1.0f));
-    baseTiles[1] = TileData(TileType::stone, .30f, HeightModifier(.90f, CHUNK_HEIGHT / 3, 1.2f, 10.0f));
+    baseTiles[0] = TileData(TileType::dirt, .70f, HeightModifier(-.25f, CHUNK_HEIGHT / 3, 0.8f, -1.0f));
+    baseTiles[1] = TileData(TileType::stone, .30f, HeightModifier(.70f, CHUNK_HEIGHT / 3, 1.2f, 20.0f));
 
-    ores[0] = TileData(TileType::iron, .40f, HeightModifier(.20f, CHUNK_HEIGHT / 2, 1.2f, 0));
+    oreCutoffProportion = 0.85f;
+    minOreHeight = 7;
+    
+    ores[0] = TileData(TileType::iron, .40f, HeightModifier(-.50f, CHUNK_HEIGHT / 2, 1.2f, 3));
     ores[1] = TileData(TileType::lead, .30f, HeightModifier(.30f, CHUNK_HEIGHT / 2, 1.2f, 0 + CHUNK_HEIGHT / 8));
     ores[2] = TileData(TileType::silver, .20f, HeightModifier(.40f, CHUNK_HEIGHT / 2, 1.3f, 0 + CHUNK_HEIGHT / 6));
     ores[3] = TileData(TileType::gold, .10f, HeightModifier(.40f, CHUNK_HEIGHT / 2, 1.4f, 0 + CHUNK_HEIGHT / 4));
 
     caveModifier = HeightModifier{.20f, CHUNK_HEIGHT / 2, 0.9f, 20.0f};
+    
+    caveMap = NoiseSettings(5, 0.8f, 0.3f, 0.03f);
+
+    oreMap = NoiseSettings(5, 0.8f, 0.03f, 0.05f);
+
 }
 
 TileType ForestBiome::sampleBlock(int x, int y){
@@ -96,13 +104,15 @@ TileType ForestBiome::sampleBlock(int x, int y){
     if (caveValue >= caveCutoffProportion)
         return TileType::air;
 
-    setNoiseSettings(oreMap);
-    float oreValue = sampleNoise(x + 0.1f, y + 0.1f);
-    oreValue = (oreValue + 1.0f) / 2.0f;
+    if (y >= minOreHeight){
+        setNoiseSettings(oreMap);
+        float oreValue = sampleNoise(x + 0.1f, y + 0.1f);
+        oreValue = (oreValue + 1.0f) / 2.0f;
 
-    if (oreValue >= oreCutoffProportion){
-        float oreValueNormalized = (oreValue - oreCutoffProportion) / (1.0f - oreCutoffProportion);
-        return getType(ores, 4, oreValueNormalized, y);
+        if (oreValue >= oreCutoffProportion){
+            float oreValueNormalized = (oreValue - oreCutoffProportion) / (1.0f - oreCutoffProportion);
+            return getType(ores, 4, oreValueNormalized, y);
+        }
     }
 
     setNoiseSettings(tileMap);
@@ -119,14 +129,16 @@ SandBiome::SandBiome(): BiomeRule()
 {}
 
 void SandBiome::init(){
-    baseTiles[0] = TileData(TileType::sand, .50f, HeightModifier(true));
-    baseTiles[1] = TileData(TileType::sandstone, .0f, HeightModifier(.90f, CHUNK_HEIGHT / 2, 1.0f, 0.0f));
+    baseTiles[0] = TileData(TileType::sand, .80f, HeightModifier(-.30f, CHUNK_HEIGHT / 3, 0.8f, -1.0f));
+    baseTiles[1] = TileData(TileType::sandstone, .20f, HeightModifier(.90f, CHUNK_HEIGHT / 2, 1.0f, 0.0f));
         
-
-    caveModifier = HeightModifier(.30f, CHUNK_HEIGHT / 2, 1.5f, CHUNK_HEIGHT / 10);
+    caveCutoffProportion = 0.8f;
+    caveModifier = HeightModifier(.10f, CHUNK_HEIGHT / 2, 1.5f, CHUNK_HEIGHT / 10);
     heightMap.frequency = 0.03f;
     heightMap.persistance = 1.5f;
     heightMap.lacrinarity = 3.8f;
+
+    //caveMap = NoiseSettings(5, 0.8f, 0.3f, 0.03f);
 }
 
 TileType SandBiome::sampleBlock(int x, int y){
@@ -152,16 +164,19 @@ SnowBiome::SnowBiome(): BiomeRule()
 {}
 
 void SnowBiome::init(){
-     baseTiles[0] = TileData(TileType::snow, .50f, HeightModifier(true));
-     baseTiles[1] = TileData(TileType::packedSnow, .30f, HeightModifier(.90f, CHUNK_HEIGHT / 2, 1.0f, 0.0f));
-     baseTiles[2] = TileData(TileType::ice, .20f, HeightModifier(.20f, CHUNK_HEIGHT / 2, 1.0f, 0.0f));
-        
-     ores[0] =  TileData(TileType::iron, .40f, HeightModifier(.20f, CHUNK_HEIGHT / 2, 1.2f, 0));
-     ores[1] =  TileData(TileType::lead, .30f, HeightModifier(.30f, CHUNK_HEIGHT / 2, 1.2f, 0 + CHUNK_HEIGHT / 8));
-     ores[2] =  TileData(TileType::silver, .20f, HeightModifier(.40f, CHUNK_HEIGHT / 2, 1.3f, 0 + CHUNK_HEIGHT / 6));
-     ores[3] =  TileData(TileType::gold, .10f, HeightModifier(.40f, CHUNK_HEIGHT / 2, 1.4f, 0 + CHUNK_HEIGHT / 4));
+     surfaceAmplitude = 20;
 
-     caveModifier = HeightModifier{.30f, CHUNK_HEIGHT / 2, 1.5f, CHUNK_HEIGHT / 10};
+     baseTiles[0] = TileData(TileType::snow, .15f, HeightModifier(-.30f, CHUNK_HEIGHT / 3, 0.8f, 0.0f));
+     baseTiles[1] = TileData(TileType::packedSnow, .05f, HeightModifier(.20f, CHUNK_HEIGHT / 2, 1.0f, 10.0f));
+     baseTiles[2] = TileData(TileType::ice, .80f, HeightModifier(.30f, CHUNK_HEIGHT / 2, 1.0f, 0.0f));
+    
+     minOreHeight = 15;
+     ores[0] =  TileData(TileType::lead, .40f, HeightModifier(-.30f, CHUNK_HEIGHT / 2, 1.2f, minOreHeight + 0));
+     ores[1] =  TileData(TileType::silver, .20f, HeightModifier(-.40f, CHUNK_HEIGHT / 2, 1.3f, minOreHeight + 2));
+     ores[2] =  TileData(TileType::gold, .30f, HeightModifier(.40f, CHUNK_HEIGHT / 2, 1.4f, minOreHeight + 6));
+     ores[3] =  TileData(TileType::diamond, .10f, HeightModifier(.60f, CHUNK_HEIGHT / 2, 1.4f, minOreHeight + 10));
+
+     caveModifier = HeightModifier{.50f, CHUNK_HEIGHT / 2, 1.5f, 0};
 }
 
 TileType SnowBiome::sampleBlock(int x, int y){
@@ -171,16 +186,18 @@ TileType SnowBiome::sampleBlock(int x, int y){
     if (caveValue >= caveCutoffProportion)
         return TileType::air;
 
-    setNoiseSettings(oreMap);
-    float oreValue = sampleNoise(x, y);
+    if (y >= minOreHeight){
+        setNoiseSettings(oreMap);
+        float oreValue = sampleNoise(x, y);
 
-    if (oreValue >= oreCutoffProportion){
-        float oreValueNormalized = (oreValue - oreCutoffProportion) / (1.0f - oreCutoffProportion);
-        return getType(ores, 4, oreValueNormalized, y);
+        if (oreValue >= oreCutoffProportion){
+            float oreValueNormalized = (oreValue - oreCutoffProportion) / (1.0f - oreCutoffProportion);
+            return getType(ores, 4, oreValueNormalized, y);
+        }
     }
 
     setNoiseSettings(tileMap);
     float tileValue = sampleNoise(x, y);
 
-    return getType(baseTiles, 4, tileValue, y);
+    return getType(baseTiles, 3, tileValue, y);
 }

@@ -22,7 +22,7 @@ static std::optional<CollisionData> isTileCollison(int startX, int width, int st
                 break;
 
              TileType tile = chunkArray.at((y + y_cord) * CHUNK_WIDTH + xx);
-             if (tile != TileType::air)
+             if (tile != TileType::air && tile < TileType::background)
                  return CollisionData(glm::vec2(startX + x + 0.5f, startY - y - 0.5f), Component::AABB(0.5f, 0.5f));    
 
         }
@@ -117,7 +117,7 @@ void simulate(entt::registry& reg, World* world, float timeStep){
 
     }  
 
-    //then iterate through scripts
+    //then iterate through those with scripts
     auto view2 = reg.view<Component::physicsBody, Component::AABB, Component::Transform, Component::Script>();
     for (auto entity : view2){
             auto& body = view2.get<Component::physicsBody>(entity);

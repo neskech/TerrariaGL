@@ -2,13 +2,13 @@
 #include "pch.h"
 #include "scene/camera.h"
 #include "world/world.h"
-#include <vector>
 
 //forward declarations
 class Renderer;
 namespace Terra{
     class Entity;
 }
+
 
 
 class Scene{
@@ -22,7 +22,7 @@ class Scene{
 
         void addToRenderer(Terra::Entity& ent);
         void removeFromRenderer(Terra::Entity& ent);
-        Terra::Entity& createEntity(const char* name = nullptr);
+        Terra::Entity& createEntity(const std::string& = "None");
         void deleteEntity(Terra::Entity& ent, bool removeFromRenderer = true);
 
         void deleteEntityByTagName(const std::string& tagName);
@@ -37,5 +37,4 @@ class Scene{
         World* world;
         Renderer* renderer;
         Camera* camera;
-
 };

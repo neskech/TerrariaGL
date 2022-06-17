@@ -12,6 +12,7 @@ void Window::error_callback(int error, const char* description)
 void Window::resize_callback(GLFWwindow *window, int32_t width_, int32_t height_){
      instance->width = width_;
      instance->height = height_;
+     glViewport(0, 0, instance->width, instance->height);
 }
 
 
@@ -51,6 +52,8 @@ bool Window::init(){
         return false;
     }
 
+    width *= 2;
+    height *= 2;
     return true;
 }
 
@@ -61,18 +64,13 @@ bool Window::initOPENGL(){
     }
 
     glfwSwapInterval(1);
-    
-    glEnable(GL_BLEND);  
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);  
-    glEnable(GL_DEPTH_TEST);
-    glDepthFunc(GL_LEQUAL);
-    // glEnable(GL_CULL_FACE);
-    // glCullFace(GL_FRONT);
+
     return true;
 }
 
 void Window::setupCallbacks(){
     glfwSetErrorCallback(error_callback);
+    glfwSetFramebufferSizeCallback(glfw_window, resize_callback);
     glfwSetKeyCallback(glfw_window, KeyListener::keyCallBack);
     glfwSetCursorPosCallback(glfw_window, MouseListener::cursor_position_callback);
     glfwSetMouseButtonCallback(glfw_window, MouseListener::mouse_button_callback);
@@ -89,9 +87,6 @@ void Window::update(){
     if (KeyListener::isKeyPressed(GLFW_KEY_ESCAPE))
         glfwSetWindowShouldClose(glfw_window, true);
 
-   // glViewport(0, 0, width, height);
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glClearColor(0.9f, 0.95f, 0.9f, 1.0f);
 }
 
 void Window::pollEvents(){

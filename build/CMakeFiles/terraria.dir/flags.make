@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/clang++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I"/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/terraria" -I"/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/include" -I"/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/imgui" -I"/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/imgui" -I"/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/imgui/backends" -I"/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/entt" -I"/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/entt" -I"/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/Glad" -I"/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/Glad/include" -I"/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/FastNoiseLite/include" -I"/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/stb_image" -I"/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/stb_image" -I"/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/include" -I"/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glm"
+CXX_INCLUDES = -I"/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/terraria" -I"/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/include" -I"/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/entt" -I"/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/entt" -I"/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/Glad" -I"/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/Glad/include" -I"/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/FastNoiseLite/include" -I"/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/stb_image" -I"/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/stb_image" -I"/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glfw/include" -I"/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/libs/glm"
 
 CXX_FLAGSarm64 = -g -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -std=gnu++2b
 
@@ -26,6 +26,8 @@ CXX_FLAGS = -g -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Develop
 
 # PCH options: CMakeFiles/terraria.dir/src/renderer/debugRenderer.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx
 
+# PCH options: CMakeFiles/terraria.dir/src/renderer/fontRenderer.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx
+
 # PCH options: CMakeFiles/terraria.dir/src/renderer/framebuffer.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx
 
 # PCH options: CMakeFiles/terraria.dir/src/renderer/renderer.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx
@@ -41,6 +43,8 @@ CXX_FLAGS = -g -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Develop
 # PCH options: CMakeFiles/terraria.dir/src/scene/camera.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx
 
 # PCH options: CMakeFiles/terraria.dir/src/scene/scene.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx
+
+# PCH options: CMakeFiles/terraria.dir/src/scripts/Inventory.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx
 
 # PCH options: CMakeFiles/terraria.dir/src/scripts/backgroundManager.cpp.o_OPTIONS = -Winvalid-pch;;-Xarch_arm64;-include/Users/shauntemellor/Documents/Documents - Shaunte’s MacBook Pro/comsci/Projects/Terraria/build/CMakeFiles/terraria.dir/cmake_pch_arm64.hxx
 
