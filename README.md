@@ -68,6 +68,8 @@ cmake --build .
      - `Ctrl + x` Freely move the Camera
      - `Ctrl + g` Disable gravity
      - `Ctrl + q` Super speed
+     
+     - *on mac systems, 'ctlr' is replaced with option*
   
 ## Libraries
 
