@@ -68,6 +68,7 @@ cmake --build .
      - `Ctrl + x` Freely move the Camera
      - `Ctrl + g` Disable gravity
      - `Ctrl + q` Super speed
+     - `Tab` To Enable and Disable the FPS Counter
      
      - *on mac systems, 'ctlr' is replaced with option*
   
